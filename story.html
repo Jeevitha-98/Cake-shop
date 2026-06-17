@@ -167,3 +167,1312 @@
 });
 
 </script>
+
+<!-- MAIN OUR STORY CANVAS TARGET -->
+<main class="story-page-canvas">
+  
+  <!-- CURATED INTRO HERO SECTION WITH ADVANCED IMAGE ENVELOPE -->
+  <section class="story-intro-hero">
+    
+    <!-- CINEMATIC BACKDROP IMMERSION HOOK -->
+    <div class="story-hero-bg-holder">
+      <!-- BACKGROUND IMAGE OPTION: Swap path safely with your vintage kitchen sketch or heritage atelier asset -->
+      <img src="./Assests/orders - 3rd sec.webp" alt="Atelier Heritage Drafting Canvas Backdrop" class="story-hero-backdrop-img">
+      <div class="story-hero-dark-mask"></div>
+    </div>
+
+    <!-- STAGGERED ENTRANCE TEXT CONTENT BOX -->
+    <div class="story-hero-content-box">
+      
+      <!-- Micro Tag: Loose high-fashion tracking format -->
+      <span class="story-micro-tag story-stagger-1">
+        <span class="tag-accent-thread">—</span> Our Heritage <span class="tag-accent-thread">—</span>
+      </span>
+      
+      <!-- Title Headline: Includes infinite smooth gold-leaf text shimmer pulse wave -->
+      <h1 class="story-main-title story-stagger-2">
+        A Heritage of Artistry, <br>
+        Born from <em class="story-title-glow-wave">Sugar Architecture.</em>
+      </h1>
+
+      <!-- Narrative Paragraph: Concise editorial value proposition -->
+      <p class="story-narrative-paragraph story-stagger-3">
+        Tracing our roots from classical European confectionery salons to modern geometric sculpting. Every milestone layer is hand-drafted to merge taste purity with absolute structural design boundaries.
+      </p>
+
+      <!-- Branded Balanced Capsule Action Buttons Hub -->
+      <div class="story-hero-action-buttons story-stagger-4">
+        <a href="#heritage-timeline-section" class="story-btn btn-primary-caramel">
+          Explore Our Timeline 
+          <span class="btn-arrow-vector">→</span>
+        </a>
+        <a href="menu.html" class="story-btn btn-secondary-translucent">
+          View Current Collections
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+<style>
+    /* ==========================================================================
+   1. GLOBAL SYSTEM BASE RESET
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  background-color: #170E08; /* Brand core signature dark chocolate espresso */
+  color: #F7F3EE;            /* Crisp ivory silk text color */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* ==========================================================================
+   2. HERO CONTAINER INTEGRATION & CAMERA GEAR ACTIONS
+   ========================================================================== */
+.story-page-canvas { 
+  padding-top: 0; 
+  width: 100%; 
+}
+
+.story-intro-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #170E08;
+  
+  /* CRITICAL: Spatially mounts 3D depth camera field for progressive unfolds */
+  perspective: 1000px;
+}
+
+/* BACKDROP COVER CONTAINER IMAGE ENVELOPE */
+.story-hero-bg-holder {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  z-index: 3;
+  transform: scale(1) translateZ(0);
+  will-change: transform;
+}
+
+/* Hardware accelerated continuous camera slow-motion Ken Burns zoom */
+.story-hero-backdrop-img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
+  opacity: 0.92; /* Low footprint presence locks pristine textual link contrast */
+  filter: grayscale(25%) brightness(45%) contrast(105%);
+  animation: continuousBackdropZoom 24s ease-in-out infinite alternate;
+}
+
+/* Dense smoke cocoa mask wash integrates flawlessly downpage */
+.story-hero-dark-mask {
+  position: absolute;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    rgba(23, 14, 8, 0.8) 0%, 
+    rgba(23, 14, 8, 0.4) 60%, 
+    #170E08 100%
+  );
+  z-index: 2;
+}
+
+/* ==========================================================================
+   3. STAGGERED REVEAL TIMELINES TYPOGRAPHY SETUPS
+   ========================================================================== */
+.story-hero-content-box {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  max-width: 880px;
+  width: 90%;
+  margin-top: 0; 
+}
+
+/* Forces structural text roll unfold blocks dynamically upon screen load */
+.story-hero-content-box [class*="story-stagger-"] {
+  opacity: 0;
+  transform: translateY(25px) scale(0.96) rotateX(-8deg);
+  transform-origin: bottom center;
+  animation: storyContentUnfold 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.story-hero-content-box .story-stagger-1 { animation-delay: 0.15s; }
+.story-hero-content-box .story-stagger-2 { animation-delay: 0.35s; }
+.story-hero-content-box .story-stagger-3 { animation-delay: 0.55s; }
+.story-hero-content-box .story-stagger-4 { animation-delay: 0.75s; }
+
+.story-micro-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  text-transform: uppercase;
+  letter-spacing: 5px; /* Loose print style layout typography letter tracking */
+  margin-bottom: 20px;
+}
+.story-micro-tag .tag-accent-thread { opacity: 0.4; }
+
+.story-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4.8vw, 3.8rem);
+  font-weight: 700;
+  color: #F7F3EE;
+  line-height: 1.25;
+  margin-bottom: 22px;
+}
+
+.story-narrative-paragraph {
+  font-size: clamp(0.95rem, 1.2vw, 1.12rem);
+  line-height: 1.65;
+  color: #C1B4AA; /* Soft readable matte latte gray tone copy description */
+  max-width: 620px;
+  margin: 0 auto 44px auto;
+  transition: color 0.4s ease;
+}
+
+/* ==========================================================================
+   INFINITE GLOW TEXT SHIMMER WAVE FOR PHRASE
+   ========================================================================== */
+.story-main-title .story-title-glow-wave {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #ECE5DF !important;
+  position: relative;
+  cursor: default;
+  transform: scale(1) translateZ(0);
+  
+  animation: failSafeStoryShimmer 3.5s ease-in-out infinite alternate;
+  transition: color 0.4s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ACTIVE POINTER TRACKING REACTION CONTENT HOVERS */
+.story-hero-content-box:hover .story-title-glow-wave {
+  color: #FFFFFF !important;
+  letter-spacing: 0.8px; /* Airy typography character widening extension */
+  transform: scale(1.02) translateY(-1px); /* Breathes forward in space */
+  animation-play-state: paused; /* Locks background pulse loop to grab absolute white focus contrast */
+  
+  /* Custom drop shadow layering maps a soft gold-leaf aura behind font faces */
+  filter: drop-shadow(0 0 15px rgba(203, 181, 161, 0.6))
+          drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.story-hero-content-box:hover .story-narrative-paragraph {
+  color: #ECE5DF; /* Brightens sub-description content layout fields smoothly */
+}
+
+/* ==========================================================================
+   4. PAIRED LUXURY CAPSULE ACTION CONTROLS PORTAL
+   ========================================================================== */
+.story-hero-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.story-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  padding: 18px 40px;
+  border-radius: 50px; /* Pill profile geometry coordinates with header button systems */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Primary Brighter Caramel Style Core rules */
+.btn-primary-caramel {
+  background-color: #CBB5A1;
+  color: #170E08; /* Deep rich espresso contrast font color */
+  border: 1px solid #CBB5A1;
+  box-shadow: 0 4px 15px rgba(203, 181, 161, 0.15);
+}
+
+.btn-primary-caramel .btn-arrow-vector {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-primary-caramel:hover {
+  background-color: #E2D2C3; /* Vanilla gold bloom on cursor hover focus */
+  border-color: #E2D2C3;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(203, 181, 161, 0.35);
+}
+
+.btn-primary-caramel:hover .btn-arrow-vector {
+  transform: translateX(5px); /* Arrow token drifts forward rightward smoothly */
+}
+
+/* Secondary Translucent Smoked Glass Button Style rules */
+.btn-secondary-translucent {
+  background-color: rgba(247, 243, 238, 0.02);
+  color: #F7F3EE;
+  border: 1px solid rgba(247, 243, 238, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.btn-secondary-translucent:hover {
+  background-color: #F7F3EE;
+  color: #170E08; /* Inverts layout colors on active hover target focus trackers */
+  border-color: #F7F3EE;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(247, 243, 238, 0.15);
+}
+
+/* ==========================================================================
+   5. GPU HARDWARE-ACCELERATED TIMELINE REVEALS LOOP TRACK
+   ========================================================================== */
+@keyframes continuousBackdropZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+@keyframes storyContentUnfold {
+  0% { opacity: 0; transform: translateY(25px) scale(0.96) rotateX(-8deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotateX(0deg); }
+}
+
+@keyframes failSafeStoryShimmer {
+  0% {
+    color: #ECE5DF;
+    text-shadow: -10px 0 15px rgba(203, 181, 161, 0.4), 0 0 2px rgba(203, 181, 161, 0.1);
+  }
+  50% {
+    color: #FFFFFF;
+    text-shadow: 0 0 20px rgba(253, 251, 247, 0.7), 0 0 5px rgba(203, 181, 161, 0.3);
+  }
+  100% {
+    color: #ECE5DF;
+    text-shadow: 10px 0 15px rgba(203, 181, 161, 0.4), 0 0 2px rgba(203, 181, 161, 0.1);
+  }
+}
+
+/* ==========================================================================
+   6. FLUID RESPONSIVE VIEWPORT BREAKPOINTS MOBILE TERMINALS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .story-intro-hero {
+    padding: 60px 0; 
+    height: auto;
+    min-height: 100vh;
+  }
+  .story-hero-content-box {
+    margin-top: 0;
+  }
+  .story-main-title {
+    line-height: 1.35;
+  }
+  
+  /* Re-flows horizontal buttons row into an expandable vertical mobile touch column stack */
+  .story-hero-action-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .story-btn {
+    width: 100%; /* Stretches block touch targets fluidly edge to edge within screen borders */
+  }
+}
+
+</style>
+
+<!-- LUXURY ATELIER CHRONOLOGICAL HERITAGE TIMELINE -->
+<section id="heritage-timeline-section" class="story-timeline-section" aria-labelledby="timeline-section-title">
+  
+  <!-- LOW-OPACITY BACKGROUND IMAGE TEXTURE ENVELOPE -->
+  <div class="timeline-section-bg-holder">
+    <!-- BACKGROUND IMAGE OPTION: Replace path below with your high-end interior bakery or texture wallpaper asset -->
+    <img src="./Assests/orders-hero.webp" alt="Atelier Archive Table Blueprint Backdrop" class="timeline-backdrop-img" onerror="this.style.display='none';">
+    <div class="timeline-smoky-mask"></div>
+  </div>
+
+  <div class="timeline-main-container">
+    
+    <!-- EDITORIAL INTRO SECTION HEADER -->
+    <div class="timeline-section-header">
+      <span class="timeline-micro-tag-trail">— The Chronology —</span>
+      <h2 id="timeline-section-title" class="timeline-display-heading">
+        Our Evolution Through <br>
+        <em>Confectionery Chronology.</em>
+      </h2>
+    </div>
+
+    <!-- STAGGERED VERTICAL AXIS PIPELINE CONTROLLER GRID -->
+    <div class="timeline-asymmetrical-flow-grid">
+      
+      <!-- THE BACKDROP INTERCONNECTED TIMELINE CONNECTOR LINE -->
+      <div class="timeline-connector-pipeline-wire"></div>
+      
+      <!-- TIMELINE MILESTONE 1 CARD -->
+      <article class="timeline-process-card card-era-01">
+        <div class="timeline-card-laser-line-glow"></div>
+        <div class="timeline-card-inner-chassis">
+          <div class="timeline-header-meta-row">
+            <span class="timeline-numerical-3d-node">2016</span>
+            <span class="timeline-process-tag-label">The Inception // Paris</span>
+          </div>
+          <h3 class="timeline-card-serif-title">Classic Apprenticeship Foundations</h3>
+          <p class="timeline-card-body-copy">
+            Starting as a micro private baking studio under a classical apprentice wing in Paris, mastering ancestral European sponge folding techniques and mirror lacquer metrics.
+          </p>
+        </div>
+      </article>
+
+      <!-- TIMELINE MILESTONE 2 CARD -->
+      <article class="timeline-process-card card-era-02">
+        <div class="timeline-card-laser-line-glow"></div>
+        <div class="timeline-card-inner-chassis">
+          <div class="step-header-meta-row">
+            <span class="timeline-numerical-3d-node">2021</span>
+            <span class="timeline-process-tag-label">The Shift // Geometric</span>
+          </div>
+          <h3 class="timeline-card-serif-title">Architectural Sugar Modeling</h3>
+          <p class="timeline-card-body-copy">
+            Pivoting standard pastry production boundaries to introduce structural engineering blueprints, calculating stress variances on tall multi-layered cake frames.
+          </p>
+        </div>
+      </article>
+
+      <!-- TIMELINE MILESTONE 3 CARD -->
+      <article class="timeline-process-card card-era-03">
+        <div class="timeline-card-laser-line-glow"></div>
+        <div class="timeline-card-inner-chassis">
+          <div class="step-header-meta-row">
+            <span class="timeline-numerical-3d-node">2026</span>
+            <span class="timeline-process-tag-label">The Salon // Present</span>
+          </div>
+          <h3 class="timeline-card-serif-title">The High-Fashion Cake Salon</h3>
+          <p class="timeline-card-body-copy">
+            Launching our flagship digital concierge studio showroom, custom-building bespoke sugar sculptures using clean organic wildflower reductions for life's prime events.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   1. TIMELINE CONTAINER WITH RE-USED MOCHA BACKDROP IMMERSION
+   ========================================================================== */
+.story-timeline-section {
+  position: relative;
+  width: 100%;
+  padding: 30px 0 180px 0; /* Extra lower padding space accounts for the desktop card downward offset */
+  background-color: #170E08; /* Theme deep roasted dark chocolate espresso base color */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.timeline-section-bg-holder {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 3;
+}
+
+.timeline-backdrop-img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.86; /* Faint background footprint maintains perfect readability contrast */
+  filter: grayscale(50%) brightness(35%);
+}
+
+.timeline-smoky-mask {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, #170E08 0%, rgba(23, 14, 8, 0.78) 50%, #170E08 100%);
+  z-index: 2;
+}
+
+.timeline-main-container {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. EDITORIAL INTRO SECTION HEADERS WITH GLOW SYSTEM
+   ========================================================================== */
+.timeline-section-header {
+  text-align: center;
+  margin-bottom: 74px;
+}
+
+.timeline-micro-tag-trail {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #CBB5A1; /* Brand signature caramel gold accent token color */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.timeline-display-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  color: #F7F3EE; /* Ivory Silk header font text face */
+  line-height: 1.25;
+}
+
+/* Infinite glowing shadow pulse loops applied to headline text accent */
+.timeline-display-heading em {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #E6D4C3 !important;
+  animation: timelineHeaderPulse 4s ease-in-out infinite alternate;
+  transition: transform 0.4s ease, letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.timeline-section-header:hover .timeline-display-heading em {
+  color: #FFFFFF !important;
+  letter-spacing: 0.8px; /* Horizontal layout letter tracking extension */
+  transform: scale(1.015) translateY(-1px);
+  animation-play-state: paused; /*固定 Shimmer to solid color on active hover */
+  filter: drop-shadow(0 0 15px rgba(203, 181, 161, 0.5));
+}
+
+/* ==========================================================================
+   3. THE GRID CHASSIS AND UNBREAKABLE FLOWCHART CONNECTOR LINE
+   ========================================================================== */
+.timeline-asymmetrical-flow-grid {
+  position: relative; /* Structural anchor point for the absolute vector line positioning */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px; /* Widened layout gap space accents the connection pipeline wire segments */
+  width: 100%;
+}
+
+/* The horizontal flowing connection wire */
+.timeline-connector-pipeline-wire {
+  position: absolute;
+  top: 50%; 
+  left: 5%;
+  width: 90%;
+  height: 2px;
+  background-color: rgba(203, 181, 161, 0.15); /* Semi-translucent gold base track line */
+  z-index: 1; /* Layers line directly beneath your card elements */
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Shimmering energy laser pulse node rolling infinitely across your pipeline */
+.timeline-connector-pipeline-wire::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #CBB5A1, transparent);
+  animation: continuousLineEnergyPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ==========================================================================
+   4. INDEPENDENT PROCESS CARDS RESIZING & ASYMMETRICAL OFFSETS
+   ========================================================================== */
+.timeline-process-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(38, 24, 15, 0.45) 0%, rgba(23, 14, 8, 0.6) 100__);
+  border: 1px solid rgba(203, 181, 161, 0.08); 
+  border-radius: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+  cursor: default;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Lifts cards clear above the connection wire layer (z-index 1) */
+  z-index: 3; 
+  
+  transform: translateY(0) translateZ(0);
+  will-change: transform, border-color, box-shadow;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.3, 1),
+              border-color 0.5s ease,
+              box-shadow 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+/* STAGGERED ASYMMETRICAL STEP ELEVATION PLACEMENT CHANNELS */
+.card-era-02 { transform: translateY(30px); } /* Offsets center card lower to match high-end layout blueprint templates */
+.card-era-03 { transform: translateY(60px); }
+
+/* Underlying expanding laser-line light draw edge overlay background */
+.timeline-card-laser-line-glow {
+  position: absolute;
+  top: 0; left: 0; width: 4px; height: 100%;
+  background-color: #CBB5A1; /* Brand caramel gold laser bar indicator track */
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.3, 1), transform 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.timeline-card-inner-chassis {
+  padding: 44px 36px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ==========================================================================
+   5. CARD INNER COMPONENTS FORMATTING TRANSITIONS
+   ========================================================================== */
+.timeline-header-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* 3D Elevated numerical node indicators */
+.timeline-numerical-3d-node {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: rgba(203, 181, 161, 0.15); /* Faded watermark default look */
+  line-height: 1;
+  display: inline-block;
+  transform: scale(1) translateZ(0);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.4s ease;
+  will-change: transform;
+}
+
+.timeline-process-tag-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.timeline-card-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-style: italic; /* Signature premium formatting template touch */
+  color: #F7F3EE;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.timeline-card-body-copy {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #A39387; /* Soft muted gray description text copy row */
+  transition: color 0.4s ease;
+}
+
+/* ==========================================================================
+   6. SUPERCHARGED ACTIVE HOVER MICRO-INTERACTIONS MATRIX
+   ========================================================================== */
+
+/* Lifts cards up and casts an elegant ambient drop shadow depth footprint */
+.timeline-process-card:hover {
+  border-color: rgba(203, 181, 161, 0.35); /* Illuminates outline frame wire */
+  background-color: rgba(43, 28, 17, 0.65); /* Richer dark chocolate backdrop contrast */
+  
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(203, 181, 161, 0.05);
+}
+
+/* Counter-balance lift transformations preserve layout offsets during active hovers */
+.card-era-01:hover { transform: translateY(-10px) scale(1.01); }
+.card-era-02:hover { transform: translateY(20px) scale(1.01) !important; } 
+.card-era-03:hover { transform: translateY(50px) scale(1.01) !important; }
+
+/* Releases vertical caramel laser light line edge draw indicator */
+.timeline-process-card:hover .timeline-card-laser-line-glow {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Spring bounce overshoot zoom on numerical nodes */
+.timeline-process-card:hover .timeline-numerical-3d-node {
+  transform: scale(1.15) translateY(-2px) translateZ(10px);
+  color: #CBB5A1; /* Highlights marker to rich brand caramel gold */
+}
+
+/* Brightens title fields and description paragraphs for absolute scannability */
+.timeline-process-card:hover .timeline-card-serif-title { color: #FFFFFF; transform: translateX(2px); }
+.timeline-process-card:hover .timeline-card-body-copy { color: #D6C7BC; }
+
+/* ==========================================================================
+   7. GPU COMPATIBLE CORE GRAPHICS ANIMATIONS KEYFRAMES
+   ========================================================================== */
+@keyframes timelineHeaderPulse {
+  0% { text-shadow: 0 0 4px rgba(203, 181, 161, 0.2); }
+  100% { text-shadow: 0 0 16px rgba(203, 181, 161, 0.55), 0 0 2px rgba(203, 181, 161, 0.15); }
+}
+
+@keyframes continuousLineEnergyPulse {
+  0% { left: -50%; }
+  100% { left: 150%; } /* Glides horizontal lighting ray across flowchart infinitely */
+}
+
+@keyframes verticalLineEnergyPulse {
+  0% { top: -50%; }
+  100% { top: 150%; } /* Downward mobile pulse tracking */
+}
+
+/* ==========================================================================
+   8. FLUID RESPONSIVE ACCORDION RE-STACKS (992PX MOBILE BREAKPOINTS)
+   ========================================================================== */
+@media (max-width: 992px) {
+  /* Restructures grid container from horizontal row track to a vertical flowchart stack column */
+  .timeline-asymmetrical-flow-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-left: 20px; /* Leaves clear margin room for the vertical pipeline wire */
+  }
+
+/* Removes horizontal offset drops to ensure safe smartphone alignment boundaries */
+.timeline-process-card,.card-era-02,.card-era-03 {transform: none !important;width: 100% !important;}
+/* Fallback mobile lift tracking hovers */.timeline-process-card:hover {transform: translateY(-5px) !important;}
+
+.timeline-connector-pipeline-wire {top: 0;left: 20px; width: 2px;height: 100%;}
+/* Switches shimmer direction from horizontal slide to vertical down-drop pulse */
+.timeline-connector-pipeline-wire::after {top: -50%;left: 0;width: 100%;height: 40%;
+background: linear-gradient(180deg, transparent, #CBB5A1, transparent);
+animation-name: verticalLineEnergyPulse;}}
+@media (max-width: 650px) {.story-timeline-section { padding: 80px 0; }
+.timeline-card-inner-chassis { padding: 32px 24px; }.timeline-card-serif-title { font-size: 1.25rem; }}
+</style>
+
+<!-- LUXURY ASYMMETRICAL LOOKBOOK GALLERY MATRIX -->
+<section class="story-lookbook-gallery-section" aria-labelledby="gallery-section-title">
+  
+  <!-- FLOATING BACKGROUND WALLPAPER COVER -->
+  <div class="gallery-section-bg-holder">
+    <!-- BACKGROUND IMAGE OPTION: Replace path safely with your cake sketchbook sketch wallpaper asset -->
+    <img src="./Assests/catering.webp" alt="Atelier Canvas Blueprint Backdrop" class="gallery-backdrop-img" onerror="this.style.display='none';">
+    <div class="gallery-smoky-mask"></div>
+  </div>
+
+  <div class="gallery-main-container">
+    
+    <!-- MINIMALIST EDITORIAL HEADING WITH SHIMMER GLOW -->
+    <div class="gallery-section-header">
+      <span class="gallery-micro-tag-trail">— Visual Archives —</span>
+      <h2 id="gallery-section-title" class="gallery-display-heading">
+        Every Masterpiece Tells <br>
+        A Structural <em class="glowing-gallery-text">Love Story.</em>
+      </h2>
+    </div>
+
+    <!-- ASYMMETRICAL INTERLOCKING PHOTO MATRIX GRID PUZZLE -->
+    <div class="gallery-mosaic-interlock-mesh">
+      
+      <!-- CARD 1: THE BRIDAL TIER EDIT -->
+      <article class="gallery-mosaic-card mesh-portrait-left">
+        <div class="gallery-image-envelope">
+          <img src="./Assests/home 3 - 2.webp" alt="Grand Architectural Ivory Fondant Wedding Cake" class="gallery-actual-img">
+          <div class="gallery-card-veil"></div>
+        </div>
+        <!-- FLOATING ARTISANAL SPEC CARD OVERLAY -->
+        <div class="gallery-specs-overlay-box">
+          <span class="gallery-index-token">ARCHIVE // ARCH.01</span>
+          <h3 class="gallery-card-serif-title">The Bridal Tier Monolith</h3>
+          <p class="gallery-hidden-paragraph">
+            Balancing vertical weight physics dynamically across four tiers of organic sponge, encased inside structural sugar ivory sheets.
+          </p>
+        </div>
+      </article>
+
+      <!-- CARD 2: THE MIRROR GLOSS TECHNIQUE -->
+      <article class="gallery-mosaic-card mesh-square-top-right">
+        <div class="gallery-image-envelope">
+          <img src="./Assests/mirror.webp" alt="Pouring Vibrant Ruby Red Mirror Glaze onto Cake Mousse Dome" class="gallery-actual-img">
+          <div class="gallery-card-veil"></div>
+        </div>
+        <div class="gallery-specs-overlay-box">
+          <span class="gallery-index-token">ARCHIVE // GLAZE.02</span>
+          <h3 class="gallery-card-serif-title">94% Refraction Lacquer</h3>
+          <p class="gallery-hidden-paragraph">
+            Formulating ultra-smooth fruit gelatin gloss coatings to cascade flawlessly over white chocolate mousse domes.
+          </p>
+        </div>
+      </article>
+
+      <!-- CARD 3: THE PRESSED FLOWER INLAYS -->
+      <article class="gallery-mosaic-card mesh-compact-lower-right">
+        <div class="gallery-image-envelope">
+          <img src="./Assests/petal.webp" alt="Hand-pressing Purple Lavender Wildflowers into Buttercream Cake" class="gallery-actual-img">
+          <div class="gallery-card-veil"></div>
+        </div>
+        <div class="gallery-specs-overlay-box">
+          <span class="gallery-index-token">ARCHIVE // FLORA.03</span>
+          <h3 class="gallery-card-serif-title">Pressed Botanical Swatches</h3>
+          <p class="gallery-hidden-paragraph">
+            Imprinting hand-pressed lavender wildflowers and organic honeycomb ridges precisely onto rich vanilla bean crumb coat faces.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   1. GALLERY CONTAINER SYSTEM WITH HOUSING OVERLAY CANVAS
+   ========================================================================== */
+.story-lookbook-gallery-section {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #170E08; /* Brand core dark chocolate espresso baseline theme color */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.gallery-section-bg-holder {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 3;
+}
+
+.gallery-backdrop-img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.85; /* Low opacity prevents background lines from swallowing text links */
+  filter: grayscale(60%) brightness(35%);
+}
+
+.gallery-smoky-mask {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, #170E08 0%, rgba(23, 14, 8, 0.8) 50%, #170E08 100%);
+  z-index: 2;
+}
+
+.gallery-main-container {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. MINIMALIST SECTION HEADERS WITH GLOW SYSTEM
+   ========================================================================== */
+.gallery-section-header {
+  text-align: center;
+  margin-bottom: 74px;
+}
+
+.gallery-micro-tag-trail {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #CBB5A1; /* Pastry caramel gold accent color */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.gallery-display-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 700;
+  color: #F7F3EE; /* Ivory Silk font text face */
+  line-height: 1.25;
+}
+
+/* Infinite text shadow glow wave loop applied to "Love Story." phrase */
+.gallery-display-heading .glowing-gallery-text {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #E6D4C3 !important;
+  animation: galleryTitlePulse 4s ease-in-out infinite alternate;
+  transition: transform 0.4s ease, letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-section-header:hover .glowing-gallery-text {
+  color: #FFFFFF !important;
+  letter-spacing: 0.8px; /* Airy typographic expansion tracking width */
+  transform: scale(1.015) translateY(-1px);
+  animation-play-state: paused; /* Suspends pulse cycle to capture pure crisp focus contrast */
+  filter: drop-shadow(0 0 15px rgba(203, 181, 161, 0.55));
+}
+
+/* ==========================================================================
+   3. ASYMMETRICAL INTERLOCKING COMPOSITE PHOTO GRID PUZZLE MESH
+   ========================================================================== */
+.gallery-mosaic-interlock-mesh {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr; /* Left master portrait gets a broader available footprint space */
+  gap: 36px;
+  width: 100%;
+}
+
+.gallery-mosaic-card {
+  position: relative;
+  background-color: #1A100A;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 181, 161, 0.08); /* Faint framework wire perimeter wire */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  
+  transform: translateY(0) translateZ(0);
+  will-change: transform, border-color, box-shadow;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.5s ease,
+              box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Photo Wrapper Envelope boxes */
+.gallery-image-envelope {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.gallery-actual-img {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+  filter: brightness(60%) grayscale(15%);
+}
+
+.gallery-card-veil {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, transparent 40%, rgba(15, 9, 5, 0.95) 90%);
+  z-index: 2;
+  transition: background 0.5s ease;
+}
+
+/* PRECISION ASYMMETRICAL BOX HEIGHT HEIGHT TRACK BOUNDS */
+.mesh-portrait-left {
+  grid-row: span 2; /* Stretches the left panel full-height across two grid rows */
+  height: 600px;
+}
+
+.mesh-square-top-right {
+  height: 282px;
+}
+
+.mesh-compact-lower-right {
+  height: 282px;
+}
+
+/* ==========================================================================
+   4. DYNAMIC HOVER GEOMETRIC CARD ACCORDION OPEN REVEALS
+   ========================================================================== */
+.gallery-specs-overlay-box {
+  position: relative;
+  z-index: 5; /* Layers element tags safely above picture layers block */
+  padding: 36px;
+  width: 100%;
+}
+
+.gallery-index-token {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.gallery-card-serif-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-style: italic; /* Signature luxury touch matches headers style formatting */
+  color: #F7F3EE;
+  margin-bottom: 0; /* Hidden default paragraph manages vertical height expansion lines */
+  line-height: 1.35;
+  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* UNLOCKS AND REVEALS DETAILED ARCHIVE PARAMETERS GEOMETRICALLY ON ACTIVE HOVER */
+.gallery-hidden-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #C1B4AA; /* Soft coffee grey body copy description text */
+  
+  max-height: 0; /* Initial hidden default state marker anchor */
+  opacity: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.5s ease,
+              margin-top 0.4s ease,
+              visibility 0.5s ease;
+}
+
+/* ==========================================================================
+   5. SUPERCHARGED POINTER HOVER MICRO-INTERACTIONS MATRIX (3D LENS POP)
+   ========================================================================== */
+.gallery-mosaic-card:hover {
+  transform: translateY(-8px); /* Clean upward vertical layout lift */
+  border-color: rgba(203, 181, 161, 0.35); /* Illuminates outline frame wire perimeter lines */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.65);
+}
+
+.gallery-mosaic-card:hover .gallery-actual-img {
+  transform: scale(1.06); /* Slow hardware camera zoom scale pull */
+  filter: brightness(50%) grayscale(0%); /* Restores true rich pastry colors on cursor hover focus tracking */
+}
+
+.gallery-mosaic-card:hover .gallery-card-veil {
+  background: linear-gradient(180deg, rgba(15, 9, 5, 0.2) 0%, rgba(15, 9, 5, 0.98) 75%);
+}
+
+.gallery-mosaic-card:hover .gallery-card-serif-title {
+  color: #CBB5A1; /* Transforms card title string into brand caramel gold */
+  transform: translateY(-4px);
+}
+
+/* EXPANDS BOUNDING VIEWPORT BOX HEIGHT LIMITS TO SLIDE UNMASK ARCHIVE PARAGRAPHS */
+.gallery-mosaic-card:hover .gallery-hidden-paragraph {
+  max-height: 100px; /* Safely opens box height boundary to unmask text lines */
+  opacity: 1;
+  visibility: visible;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   6. GRAPHICS HARDWARE TIMELINE MOTION KEYFRAMES CONTROLLERS
+   ========================================================================== */
+@keyframes galleryTitlePulse {
+  0% { text-shadow: 0 0 4px rgba(203, 181, 161, 0.2); }
+  100% { text-shadow: 0 0 16px rgba(203, 181, 161, 0.55), 0 0 2px rgba(203, 181, 161, 0.15); }
+}
+
+/* ==========================================================================
+   7. FLUID RESPONSIVE COMPATIBILITY BREAKPOINTS TERMINALS
+   ========================================================================== */
+@media (max-width: 992px) {
+  /* Restructures layout mesh grid from asymmetrical side-by-side columns to standard splits */
+  .gallery-mosaic-interlock-mesh {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .mesh-portrait-left {
+    grid-row: auto; /* Drops the vertical span height merge hook on tablet display layers */
+    height: 440px;
+  }
+  .mesh-square-top-right,
+  .mesh-compact-lower-right {
+    height: 440px;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-lookbook-gallery-section { padding: 80px 0; }
+  
+  .gallery-mosaic-interlock-mesh {
+    grid-template-columns: 1fr; /* smartphone screen constraints flattens directly to 1 single full-width vertical stack column flow */
+    gap: 20px;
+  }
+  
+  .mesh-portrait-left,
+  .mesh-square-top-right,
+  .mesh-compact-lower-right {
+    height: 380px; /* Slims profile box height footprint down to maximize fast touchscreen scrolling speeds */
+  }
+  
+  /* Forces archive text panels to stay permanently expanded on mobile viewports to ensure fast reading scannability */
+  .gallery-hidden-paragraph {
+    max-height: 100px;
+    opacity: 1;
+    visibility: visible;
+    margin-top: 10px;
+  }
+}
+
+</style>
+<!-- LUXURY BRIGHTER SINGLE-LINE CALL TO ACTION BANNER -->
+<section class="atelier-inline-cta-section" aria-label="Heritage Consultation Gateway">
+  <div class="inline-cta-lens-glow"></div>
+  
+  <!-- PURE CSS GEOMETRIC VECTOR ACCENT PARTICLES -->
+  <span class="inline-vector-sparkle item-sparkle-gold"></span>
+  <span class="inline-vector-sparkle item-circle-espresso"></span>
+
+  <div class="inline-cta-main-container">
+    <div class="inline-cta-flex-row">
+      
+      <!-- LEFT ACCENT: STYLISH SINGLE-LINE TEXT ENVELOPE -->
+      <div class="inline-cta-text-envelope">
+        <span class="inline-cta-micro-badge">Hand-Drafted Legacy</span>
+        <h2 class="inline-cta-display-title">
+          Ready to co-author your next <em class="liquid-gold-shimmer">celebration chapter?</em>
+        </h2>
+      </div>
+
+      <!-- RIGHT ACCENT: BRAND-MATCHED PILL PORTAL CTA BUTTON -->
+      <div class="inline-cta-action-hub">
+        <a href="orders.html" class="inline-cta-vogue-pill-btn">
+          Commission Creation
+          <span class="inline-cta-arrow-vector">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   FORCED CONTRAST BREAKOUT CANVAS (BLACK & LUXURY GOLD PROFILES)
+   ========================================================================== */
+.atelier-inline-cta-section {
+  position: relative !important;
+  width: 100% !important;
+  background-color: #FDFBF7 !important; /* Rich radiant vanilla cream backdrop */
+  padding: 80px 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 9999 !important;
+  box-sizing: border-box !important;
+}
+
+.inline-cta-main-container {
+  width: 90% !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+}
+
+.inline-cta-flex-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 40px !important;
+}
+
+/* ==========================================================================
+   BLACK & GOLD TYPOGRAPHY ENGAGEMENT (FIXES INVISIBLE WHITE FONTS)
+   ========================================================================== */
+.inline-cta-text-envelope {
+  text-align: left !important;
+}
+
+/* Micro Badge Title Tag */
+.inline-cta-text-envelope .inline-cta-micro-badge {
+  display: block !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  color:  #CBB5A1 !important; /* Premium luxury metallic gold tone */
+  text-transform: uppercase !important;
+  letter-spacing: 3px !important;
+  margin-bottom: 8px !important;
+  transition: letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Main Display Title */
+.inline-cta-text-envelope .inline-cta-display-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem) !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  color: #170E08 !important; /* Forces crisp deep black espresso chocolate tone */
+  margin: 0 !important;
+}
+
+/* Shimmer Accent Text Phrase ("celebration chapter?") */
+.inline-cta-text-envelope .inline-cta-display-title .liquid-gold-shimmer {
+  font-style: italic !important;
+  font-weight: 700 !important; 
+  display: inline-block !important;
+  color:  #CBB5A1 !important; /* Metallic luxury gold tone */
+  position: relative !important;
+  z-index: 2 !important;
+  cursor: default !important;
+  transform: scale(1) translateZ(0) !important;
+  letter-spacing: 0px !important;
+  
+  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important,
+              letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important,
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important,
+              text-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* ==========================================================================
+   ACTIVE INTERACTIVE REACTION HOVERS
+   ========================================================================== */
+
+/* Triggers an elegant layout expansion when mouse cursor passes near the copy area */
+.inline-cta-text-envelope:hover .liquid-gold-shimmer {
+  color: black !important; /* Illuminates sharply to a brilliant champagne gold on focus */
+  letter-spacing: 0.6px !important; /* Soft, airy typographic character expansion trail */
+  transform: scale(1.02) translateY(-1px) !important; /* Gently breathes forward in space */
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.45) !important,
+               0 2px 4px rgba(23, 14, 8, 0.08) !important;
+}
+
+.inline-cta-text-envelope:hover .inline-cta-micro-badge {
+  letter-spacing: 4px !important; /* Widens upper badge tracking bounds on hover focus */
+}
+
+/* ==========================================================================
+   PURE CSS GEOMETRIC ABSTRACT VECTOR PARTICLES
+   ========================================================================== */
+.inline-vector-sparkle {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.25;
+  will-change: transform;
+  transition: opacity 0.4s ease;
+}
+
+.item-sparkle-gold {
+  top: 20%; left: 8%;
+  width: 10px; height: 10px;
+  background-color: #CBB5A1;
+  transform: rotate(45deg);
+  animation: inlineNodeFloat 5s ease-in-out infinite alternate;
+}
+
+.item-circle-espresso {
+  bottom: 25%; right: 10%;
+  width: 12px; height: 12px;
+  border: 2px solid #170E08;
+  border-radius: 50%;
+  animation: inlineNodeFloat 4s ease-in-out infinite alternate -1s;
+}
+
+.atelier-inline-cta-section:hover .inline-vector-sparkle { opacity: 0.55; }
+
+/* ==========================================================================
+   CAPSULE PILL BUTTON CORE RESTORATION (FIXES BLUE UNDERLINE LINK BUG)
+   ========================================================================== */
+.inline-cta-action-hub {
+  flex-shrink: 0;
+}
+
+.inline-cta-vogue-pill-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  text-decoration: none !important; /* Deletes any generic link underlines */
+  
+  /* Solid inverse brand contrast palette mapping */
+  background-color: #170E08 !important; /* Deep Rich Espresso Core Black */
+  color: #FDFBF7 !important;             /* Crisp Light Vanilla Text */
+  border: 1px solid #170E08 !important;
+  
+  padding: 16px 38px !important;
+  border-radius: 50px !important; /* Restores elegant capsule pill curves geometry */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  
+  box-shadow: 0 4px 15px rgba(23, 14, 8, 0.12) !important;
+  transition: all 0.4s ease !important;
+}
+
+.inline-cta-arrow-vector {
+  display: inline-block !important;
+  color: #FDFBF7 !important;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* ACTIVE PRESENCE PORTAL HOVERS */
+.inline-cta-vogue-pill-btn:hover {
+  background-color:  #CBB5A1!important; /* Sweeps into brand luxury gold on focus */
+  border-color:  #CBB5A1 !important;
+  color: #170E08 !important;            /* Inverts text to dark espresso */
+  transform: translateY(-4px) !important; /* Vertical elevation bounce */
+  box-shadow: 0 12px 26px rgba(212, 175, 55, 0.32) !important;
+}
+
+.inline-cta-vogue-pill-btn:hover .inline-cta-arrow-vector {
+  transform: translateX(5px) !important; /* Link arrow token drifts rightward */
+  color: #170E08 !important;
+}
+
+@keyframes inlineNodeFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(15deg); }
+}
+
+/* ==========================================================================
+   FLUID RESPONSIVE ADAPTABILITY BREAKPOINTS (768PX LIMITS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .atelier-inline-cta-section {
+    padding: 50px 0 !important;
+  }
+  
+  /* Restructures layout from horizontal side-by-side splits into a single left-aligned stack */
+  .inline-cta-flex-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 24px !important;
+  }
+  
+  .inline-cta-main-container { width: 86% !important; }
+  .inline-cta-action-hub { width: 100% !important; }
+  
+  .inline-cta-vogue-pill-btn {
+    width: 100% !important;
+    justify-content: center !important; /* Full touch target block expansion on smartphones */
+  }
+}
+
+</style>
