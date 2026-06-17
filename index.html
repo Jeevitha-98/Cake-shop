@@ -187,21 +187,81 @@
     
     <!-- CHIC EDITORIAL SERIF TYPOGRAPHY HEADING -->
    <!-- CHIC EDITORIAL SERIF TYPOGRAPHY HEADING WITH DYNAMIC TEXT ROTATOR -->
-<!-- UPDATED COUTURE HEADING PREVENTS SCROLLBAR EXTRA OVERFLOWS -->
+<!-- CORRECTED MARKUP SECURES PERFECT WORD GAP FOOTPRINTS -->
 <h1 class="hero-main-title">
   Crafting Sweet Moments, <br>
   <span class="highlight-serif text-confection-line">
-    One 
-    <span class="dynamic-word-swapper-box">
-      <span class="swappable-word active-word">Confection</span>
-      <span class="swappable-word">Masterpiece</span>
-      <span class="swappable-word">Celebration</span>
-    </span> 
-    at a Time.
+    <!-- Placing &nbsp; forces explicit whitespace pads on both sides of the tag -->
+    One&nbsp;<span class="glowing-confection-word">Confection</span>&nbsp;at a Time.
   </span>
 </h1>
 
+
+
 <style>
+
+    /* ==========================================================================
+   CONFECTION GLOW ENGINE & TRANSITION SYSTEM
+   ========================================================================== */
+.highlight-serif .glowing-confection-word {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #E6D4C3 !important; /* Premium soft cream silk base tint */
+  position: relative;
+  z-index: 2;
+  cursor: default;
+  
+  /* Prep paths for smooth hardware-accelerated transforms */
+  transform: scale(1) translateZ(0);
+  letter-spacing: 0px;
+  
+  /* 
+     Combines the infinite ambient glow wave animation with a 
+     high-end, responsive transition curve for mouse hovers
+  */
+  animation: luxuryConfectionPulse 4s ease-in-out infinite alternate;
+  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   INTERACTIVE ACTIVE HOVER STATE
+   ========================================================================== */
+/* Fires an elegant expansion when the user hovers anywhere near the parent h1 title container */
+.hero-main-title:hover .glowing-confection-word {
+  color: #FFFFFF !important; /* Illuminates sharply to crisp pure white */
+  letter-spacing: 0.6px; /* Soft, airy typographic character expansion layout */
+  transform: scale(1.02) translateY(-1px); /* Gently breathes forward and lifts in space */
+  
+  /* Pauses the background pulsing cycle to lock into a brilliant, high-contrast glow focus */
+  animation-play-state: paused; 
+  
+  /* Custom shadow layering bypasses browser background clipping bugs */
+  filter: drop-shadow(0 0 15px rgba(203, 181, 161, 0.55)) 
+          drop-shadow(0 2px 4px rgba(23, 14, 8, 0.2));
+}
+
+/* ==========================================================================
+   INFINITE GLOW TIMELINE KEYFRAMES (CONTINUOUS BACKGROUND MODE)
+   ========================================================================== */
+@keyframes luxuryConfectionPulse {
+  0% {
+    color: #E6D4C3;
+    /* Soft, warm caramel outline halo focused gently behind the letters */
+    text-shadow: 0 0 8px rgba(203, 181, 161, 0.25),
+                 0 0 2px rgba(203, 181, 161, 0.1);
+  }
+  100% {
+    color: #F7F3EE; /* Subtle shift to an illuminated lighter cream silk */
+    /* Deepens and expands to create a soft, breathing gold-leaf aura */
+    text-shadow: 0 0 16px rgba(203, 181, 161, 0.5),
+                 0 0 6px rgba(203, 181, 161, 0.25);
+  }
+}
+
     /* ==========================================================================
    DYNAMIC TEXT ROTATOR LAYER CODES
    ========================================================================== */
@@ -356,6 +416,29 @@
   color: #F7F3EE;
   padding-top: 60px;
 }
+/* ==========================================================================
+   MOBILE TEXT WRAPPING SECURITY LAYER (FIXES OVERFLOW BREAKS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  .text-confection-line {
+    /* 
+       CRITICAL FIX: Overrides the strict horizontal flex row container setup 
+       so words can wrap onto a new line naturally instead of clipping
+    */
+    display: inline-block !important; 
+    width: 100%;
+    text-align: center;
+    line-height: 1.4 !important; /* Adds breathing room between wrapped lines */
+  }
+
+  .highlight-serif .glowing-confection-word {
+    /* Ensures the word "Confection" wraps cleanly as a single unit */
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+}
+
 /* ==========================================================================
    MOBILE COMPREHENSIVE OVERLAP & TOUCHING FIX
    ========================================================================== */
@@ -4034,11 +4117,11 @@ try {
       <div class="footer-links-column">
         <h4 class="footer-menu-title">Collections</h4>
         <ul class="footer-links-list">
-          <li><a href="menu.html">Wedding Tiered</a></li>
-          <li><a href="menu.html">Mirror Entremets</a></li>
-          <li><a href="menu.html">Bespoke Sculptures</a></li>
-          <li><a href="menu.html">Petit Fours</a></li>
-          <li><a href="menu.html">Seasonal Edits</a></li>
+          <li><a href="404.html">Wedding Tiered</a></li>
+          <li><a href="404.html">Mirror Entremets</a></li>
+          <li><a href="404.html">Bespoke Sculptures</a></li>
+          <li><a href="404.html">Petit Fours</a></li>
+          <li><a href="404.html">Seasonal Edits</a></li>
         </ul>
       </div>
 
@@ -4091,25 +4174,76 @@ try {
    1. GLOBAL FOOTER COAT WALL (Deep Dark Cocoa Baseline Theme)
    ========================================================================== */
 /* ==========================================================================
-   GLOBAL FOOTER COAT WALL (FIXED SCROLL CLIPPING OVERRIDE)
+   GLOBAL FOOTER COAT WALL WITH AMBIENT BACKGROUND IMAGE
    ========================================================================== */
 .global-bakery-footer {
   position: relative;
   width: 100%;
-  background-color: #0F0905; /* Extra deep rich roasted espresso core black */
-  padding: 90px 0 40px 0;
-  border-top: 1px solid rgba(203, 181, 161, 0.1); /* Subtle caramel dividing perimeter */
+  background-color: #0F0905; /* Deep rich roasted espresso black fallback base */
+  padding: 80px 0 40px 0;
+  border-top: 1px solid rgba(203, 181, 161, 0.1); /* Subtle caramel dividing track */
   font-family: 'Plus Jakarta Sans', sans-serif;
   box-sizing: border-box;
   
   /* 
-     CRITICAL SCROLL RE-ACTIVATOR: Replaced rigid global 'overflow: hidden' 
-     with a safer horizontal clipping rule. This prevents side-shifting gaps 
-     while allowing your fixed circular button to project and function properly.
+     1. BACKGROUND IMAGE ENGINE PIPELINE 
+     Replace the url path below with your high-quality bakery backdrop image asset
   */
+  background-image: url('./Assests/petal.webp');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Re-activates standard vertical scrolling pathways over hidden container traps */
   overflow-x: hidden; 
   overflow-y: visible !important;
 }
+
+/* 
+   2. CINEMATIC DARK INTERIOR SHADE OVERLAY MASK
+   Sits directly on top of your background picture to ensure high text contrast.
+*/
+.global-bakery-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Dense dark cocoa gradient wash keeps background patterns beautifully subtle */
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 9, 5, 0.96) 0%, 
+    rgba(23, 14, 8, 0.90) 50%, 
+    rgba(15, 9, 5, 0.98) 100%
+  );
+  z-index: 1; /* Sits directly behind your text layers */
+  pointer-events: none; /* Keeps it completely non-interactive */
+}
+
+/* 
+   3. MAIN CONTENT MATRIX FORWARD POSITIONING
+   Forces your footer menus and forms to layer safely on top of the image mask.
+*/
+.footer-main-container {
+  position: relative;
+  z-index: 2; /* Lifts content clear above your background mask layer (z-index 1) */
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   4. LAYER ISOLATION SECURITY RULES (PREVENTS CLICK BLOCKING BUGS)
+   ========================================================================== */
+.footer-brand-column {
+  position: relative !important;
+  /* Lifts your logo links clear above background images so your mouse can click them */
+  z-index: 99999 !important; 
+  pointer-events: auto !important; /* Secures interactive click recognition pathways */
+}
+
 
 
 .footer-main-container {

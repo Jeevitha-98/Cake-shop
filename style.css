@@ -191,13 +191,55 @@ body {
 }
 
 /* Optional Class dynamic hook: If you add JavaScript scroll listeners later */
-.global-header.floating-transparent-header.scrolled-state {
-  top: 0;
-  width: 100%;
-  border-radius: 0;
-  background-color: rgba(23, 14, 8, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+/* ==========================================================================
+   ENHANCED FLOATING CAPULE SCROLL TRANSITION (PREVENTS RIGID EDGE CHOPPING)
+   ========================================================================== */
+.global-header.floating-transparent-header {
+  position: fixed;
+  top: 24px; /* Starting position floating down from browser ceiling */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  max-width: 1240px;
+  height: 76px;
+  background-color: rgba(23, 14, 8, 0.5); /* Smoky glass translucent cocoa */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(203, 181, 161, 0.15);
+  border-radius: 50px; /* Perfect sleek pill geometry */
+  display: flex;
+  align-items: center;
+  z-index: 9999;
+  
+  /* High-end custom easing bezier curve manages shape transformations cleanly */
+  transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              width 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              height 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.4s ease,
+              border-radius 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.4s ease;
 }
+
+/* 
+   RE-DESIGNED SCROLLED ACTIVATION STATE HOOK:
+   Maintains pill geometry, shrinks height tightly, and deepens cocoa density 
+   for premium legibility without snapping into a rigid flat box strip layout.
+*/
+.global-header.floating-transparent-header.scrolled-state {
+  top: 12px; /* Pulls slightly tighter up to the view track line */
+  width: 88%; /* Shrinks layout bounds slightly inward to accentuate floating dimensions */
+  height: 64px; /* Slims vertical thickness footprint to optimize image scannability */
+  
+  /* Deepens glass mask density to preserve text contrast over scrolling assets */
+  background-color: rgba(23, 14, 8, 0.88); 
+  border-color: rgba(203, 181, 161, 0.3); /* Soft golden perimeter highlight glow */
+  border-radius: 40px; /* Retains fluid rounded pill shape contours */
+  
+  /* Premium low-frequency ambient box shadow emphasizes visual 3D elevation */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+              0 0 20px rgba(203, 181, 161, 0.03);
+}
+
 
 .nav-container {
   width: 94%;
