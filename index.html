@@ -1,0 +1,4415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- FIXED: Removed absolute leading slash to prevent hard drive local origin errors -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACKLY — Cake Shop</title>
+    
+    <!-- FIXED: Restored Complete Google Fonts Infrastructure Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+<link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <!-- FIXED: Restored Secure Production FontAwesome Vector Icon Engine Link -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+<!-- SWEET DELIGHTS PASTEL SYSTEM LOADING MODULE -->
+<!-- BAKERY MODERN PRELOADER CONTAINER -->
+<div id="bakery-preloader-shroud">
+  <div class="modern-loader-container">
+    
+    <!-- MINIMALIST BOUNCING VISUAL ELEMENT -->
+   <div class="cake-bounce-wrapper">
+  <!-- Update the src path to point directly to your brand asset file -->
+  <img src="./Assests/Loader.webp" alt="Bakery Logo" class="bakery-custom-logo-icon" />
+</div>
+
+
+    <!-- CLEAN BRAND TYPOGRAPHY -->
+    <div class="bakery-brand-title">Sugar &amp; Spice</div>
+    <div class="bakery-brand-subtitle">Artisanal Cake Atelier</div>
+    
+    <!-- MINIMAL LINEAR STRETCH PROGRESS BAR -->
+    <div class="linear-progress-track">
+      <div class="linear-progress-fill-bar"></div>
+    </div>
+
+    <!-- SUBTLE STATUS METRIC -->
+    <div class="bakery-oven-status">Baking in progress...</div>
+
+  </div>
+</div>
+<script>
+    (function() {
+  /**
+   * Smoothly fades and unloads the modern stone/mocha preloader
+   */
+  function liftModernPreloader() {
+    const preloader = document.getElementById('bakery-preloader-shroud');
+    
+    if (preloader) {
+      // 1. Adds the clear class to trigger the 0.5s CSS opacity fade-out
+      preloader.classList.add('shroud-clear');
+      
+      // 2. Safely removes the element from the page markup after the fade finishes
+      setTimeout(function() {
+        preloader.remove();
+      }, 500); // 500ms perfectly matches your CSS transition timeline
+    }
+  }
+
+  /**
+   * Queues the fade-out to align with the linear loading bar animation
+   */
+  function queuePreloaderLift() {
+    // 1800ms gives your linear-progress-fill-bar time to expand fully across the screen
+    setTimeout(liftModernPreloader, 1800);
+  }
+
+  // Runs immediately if the page markup is ready, or hooks into the load listener
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    queuePreloaderLift();
+  } else {
+    document.addEventListener('DOMContentLoaded', queuePreloaderLift);
+  }
+})();
+
+</script>
+
+<header class="global-header floating-transparent-header">
+  <div class="nav-container">
+      
+    <!-- BRAND IDENTITY LOGO TARGET -->
+    <a href="index.html" class="logo-container">
+      <div class="logo-wrapper">
+        <img 
+          src="./Assests/Cakeshop.webp" 
+          alt="Sugar &amp; Spice Logo"
+          class="nav-logo-icon"
+          onerror="this.src='https://placehold.co'"
+        />
+      </div>
+    </a>
+
+    <!-- BAKERY OVERLAY NAVIGATION MENU -->
+    <nav class="nav-menu" id="mobile-nav-overlay">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="menu.html">Our Menu</a></li>
+        <li><a href="orders.html">Custom Orders</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Find Us</a></li>
+        
+        <!-- PAIRED PREMIUM AUTHENTICATION GROUP -->
+        <li class="auth-action-group">
+          <a href="login.html" class="auth-btn btn-login">Log In</a>
+          <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- HAMBURGER MENU ICON FOR MOBILE RESPONSIVENESS -->
+    <button id="menu-toggle-trigger" class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    
+  </div>
+</header>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const menuToggleButton = document.getElementById("menu-toggle-trigger");
+  const navigationMenuOverlay = document.getElementById("mobile-nav-overlay");
+  const overlayLinksList = document.querySelectorAll(".nav-links a");
+  const mainHeaderElement = document.querySelector(".global-header");
+
+  // 1. MOBILE HAMBURGER NAVIGATION SYSTEM
+  if (menuToggleButton && navigationMenuOverlay) {
+    // Open/Close menu overlay view on click
+    menuToggleButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      navigationMenuOverlay.classList.toggle("mobile-menu-active");
+    });
+
+    // Close panel drawer automatically upon choosing a routing option
+    overlayLinksList.forEach(function (link) {
+      link.addEventListener("click", function () {
+        navigationMenuOverlay.classList.remove("mobile-menu-active");
+      });
+    });
+
+    // Close panel menu immediately if user clicks background area outside elements
+    document.addEventListener("click", function (event) {
+      if (!navigationMenuOverlay.contains(event.target) && !menuToggleButton.contains(event.target)) {
+        navigationMenuOverlay.classList.remove("mobile-menu-active");
+      }
+    });
+  }
+
+  // 2. DYNAMIC SCROLL CAPSULE CONVERSION CONTROLLER
+  if (mainHeaderElement) {
+    window.addEventListener("scroll", function () {
+      // Flattens out floating capsule design to sticky top bar after 40px scroll depth
+      if (window.scrollY > 40) {
+        mainHeaderElement.classList.add("scrolled-state");
+      } else {
+        mainHeaderElement.classList.remove("scrolled-state");
+      }
+    });
+  }
+});
+
+</script>
+
+<!-- HERO BANNER WRAPPER WITH INTEGRATED VIDEO ENGINE -->
+<!-- ENHANCED HERO BANNER WRAPPER WITH SEAMLESS ANIMATION STATES -->
+<section class="hero-video-section">
+  
+  <div class="video-background-container">
+    <video autoplay loop muted playsinline class="hero-bg-video">
+      <source src="./Assests/0_Food_Bakery_3840x2160.mp4" type="video/mp4">
+    </video>
+    <div class="video-darkness-overlay"></div>
+  </div>
+
+  <!-- STAGGERED ENTRANCE CONTAINER -->
+  <div class="hero-content-container animate-fade-up">
+    
+    <!-- SUBTITLE IDENTITY TRAIL -->
+    <span class="hero-micro-tag entry-1">Est. 2026 — Artisanal Cake Atelier</span>
+    
+    <!-- CHIC EDITORIAL SERIF TYPOGRAPHY HEADING -->
+   <!-- CHIC EDITORIAL SERIF TYPOGRAPHY HEADING WITH DYNAMIC TEXT ROTATOR -->
+<!-- UPDATED COUTURE HEADING PREVENTS SCROLLBAR EXTRA OVERFLOWS -->
+<h1 class="hero-main-title">
+  Crafting Sweet Moments, <br>
+  <span class="highlight-serif text-confection-line">
+    One 
+    <span class="dynamic-word-swapper-box">
+      <span class="swappable-word active-word">Confection</span>
+      <span class="swappable-word">Masterpiece</span>
+      <span class="swappable-word">Celebration</span>
+    </span> 
+    at a Time.
+  </span>
+</h1>
+
+<style>
+    /* ==========================================================================
+   DYNAMIC TEXT ROTATOR LAYER CODES
+   ========================================================================== */
+.text-rotator-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Spaces out text words gracefully */
+  vertical-align: bottom;
+}
+
+.rotating-words-container {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.25em; /* Matches font height rules exactly */
+  overflow: auto; /* Hides words that aren't active */
+  position: relative;
+}
+
+.word-slide-item {
+  display: block;
+  height: 1.25em;
+  line-height: 1.25em;
+  color: #CBB5A1; /* Warm caramel gold highlights */
+  font-style: italic;
+  
+  /* 
+     Total Animation Duration: 9 seconds (3 seconds per word)
+     Change '9s' to speed up or slow down the cycle 
+  */
+  animation: scrollTextUp 9s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+/* ==========================================================================
+   ROTATOR KEYFRAME TIMELINE (3-Word Cycle Grid)
+   ========================================================================== */
+@keyframes scrollTextUp {
+  /* Word 1: "Masterpiece" (0% to 25%) */
+  0%, 25% {
+    transform: translateY(0);
+  }
+  /* Slide transition from Word 1 to Word 2 */
+  30%, 55% {
+    transform: translateY(-1.25em); /* Moves up to show "Celebration" */
+  }
+  /* Slide transition from Word 2 to Word 3 */
+  60%, 85% {
+    transform: translateY(-2.5em);  /* Moves up further to show "Confection" */
+  }
+  /* Smoothly snaps back down to Word 1 loop baseline */
+  90%, 100% {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Alignment Fixes */
+@media (max-width: 768px) {
+  .text-rotator-wrapper {
+    display: inline; /* Unwraps flexbox to stack beautifully on tight displays */
+  }
+  .rotating-words-container {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}
+
+</style>
+    
+    <!-- CONCISE VALUE PROP DESCRIPTION STRIP -->
+    <p class="hero-description entry-3">
+      Experience the symphony of rich dark chocolate, velvet buttercream, and freshly baked layers custom-designed for life's most exquisite celebrations.
+    </p>
+
+    <!-- RESTRUCTURED PREMIUM CTA INTERACTION GATEWAYS -->
+    <div class="hero-action-buttons entry-4">
+      <!-- Primary: Confectionary Gold Portal directly to onboarding profile portal -->
+      <a href="signup.html" class="hero-btn btn-primary-gold">
+        Begin Your Journey
+        <span class="btn-arrow-vector">→</span>
+      </a>
+      <!-- Secondary: Refined Glass outline leading directly to bespoke commissions/contact page -->
+      <a href="contact.html" class="hero-btn btn-secondary-outline">Bespoke Inquiries</a>
+    </div>
+
+  </div>
+
+  <!-- MINIMALIST SCROLL DOWN INDICATOR MOUSE -->
+<!-- LUXURY EDITORIAL COMPASS SCROLL INDICATOR -->
+<div class="scroll-down-indicator-luxury">
+  <div class="compass-spin-wrapper">
+    <!-- Spinning SVG Typography Text Ring -->
+    <svg class="text-ring-vector" viewBox="0 0 100 100">
+      <path id="circlePath" d="M 50, 50 m -38, 0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="transparent" />
+      <text class="ring-typography">
+        <textPath href="#circlePath">SCROLL DOWN • EXPLORE MORE •</textPath>
+      </text>
+    </svg>
+    <!-- Central Active Thread Needle -->
+    <div class="central-needle-thread"></div>
+  </div>
+</div>
+
+
+</section>
+
+<style>
+  /* ==========================================================================
+   1. HERO ANIMATION CONTAINER & LAYER BALANCING
+   ========================================================================== */
+.hero-video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #170E08; 
+}
+
+.video-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-darkness-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(23, 14, 8, 0.85) 0%, rgba(35, 27, 21, 0.65) 100%);
+  z-index: 2;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 950px;
+  text-align: center;
+  color: #F7F3EE;
+  padding-top: 60px;
+}
+/* ==========================================================================
+   MOBILE COMPREHENSIVE OVERLAP & TOUCHING FIX
+   ========================================================================== */
+@media (max-width: 1024px) {
+
+  /* 1. EXTEND HERO CONTAINER INTERNAL HEIGHT padding */
+  .hero-video-section {
+    height: auto !important; /* Converts from rigid 100vh to adaptive automatic fluid height */
+    min-height: 100vh;
+    padding-top: 130px !important; /* CRITICAL FIX: Pushes text safely out from behind the floating header capsule */
+    padding-bottom: 80px !important; /* CRITICAL FIX: Forces an absolute defensive wall gap at the section floor line */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 2. OPTIMIZE CENTERED MARGIN CONTAINER FLOW */
+  .hero-content-container {
+    padding-top: 0 !important; /* Reset child padding to let the parent section manage spacing safely */
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  /* 3. REFINE MAIN TITLE TYPOGRAPHY SCALING FOR TIGHT SCREENS */
+  .hero-main-title {
+    font-size: 1.95rem !important; /* Scales font size down slightly so it doesn't overexpand vertically */
+    line-height: 1.3 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* 4. SEPARATE BUTTON ACTIONS AND ADD FLOATED FLOOR PADDING */
+  .hero-action-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    gap: 14px !important;
+    margin: 32px auto 0 auto !important; /* Spaces out buttons from the description paragraph above */
+  }
+
+  /* 5. INDEPENDENT CLEAN ADJUSTMENT FOR THE BOTTOM GHOST CTA BUTTON */
+  .btn-secondary-outline {
+    margin-bottom: 10px !important; /* Extra spacing anchor ensures 'Bespoke Inquiries' never pinches the section line split */
+  }
+}
+
+/* ==========================================================================
+   2. STYLISH TYPOGRAPHY SETUP
+   ========================================================================== */
+.hero-micro-tag {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #CBB5A1;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+}
+.text-confection-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.dynamic-word-swapper-box {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  vertical-align: bottom;
+  
+  /* 
+     CRITICAL LAYOUT FIX: Reserves a safe horizontal spacing boundary matching 
+     your longest key string. This ensures that the words "at a Time" stay anchored 
+     and are never pushed, clipped, or forced onto multiple lines.
+  */
+  min-width: 250px; 
+  margin: 0 10px;
+}
+
+.swappable-word {
+  /* CRITICAL FIX: Stacks all inactive text nodes invisibly on top of each other */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  
+  opacity: 0;
+  visibility: hidden;
+  color: #CBB5A1; /* Warm pastry caramel gold theme highlight */
+  font-style: italic;
+  font-weight: 400;
+  
+  /* High-end smooth blend curve manages word fade transitions cleanly */
+  transition: opacity 0.5s cubic-bezier(0.25, 1, 0.5, 1), 
+              visibility 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Dynamic visibility active class hook */
+.swappable-word.active-word {
+  position: relative; /* Returns the single active word back into the document layout flow */
+  left: 0;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Smartphone screen responsive scaling overrides */
+@media (max-width: 768px) {
+  .dynamic-word-swapper-box {
+    min-width: 180px; /* Safely shrinks layout boundary width limits on narrow display viewports */
+  }
+}
+.hero-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 5.2vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.hero-main-title .highlight-serif {
+  font-style: italic;
+  font-weight: 400;
+  color: #E6D4C3;
+}
+
+/* ==========================================================================
+   PREMIUM DESCRIPTION HOVER MECHANICS
+   ========================================================================== */
+.hero-description {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+  line-height: 1.7;
+  color: #D6C7BC; /* Soft muted latte base tone */
+  max-width: 680px;
+  margin: 0 auto 40px auto;
+  
+  /* Prep paths for hardware-accelerated 3D transforms */
+  position: relative;
+  display: block;
+  cursor: default;
+  transform: scale(1) translateZ(0);
+  letter-spacing: 0px;
+  
+  /* High-end easing curve mimics an elegant physical pull effect */
+  transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              letter-spacing 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              text-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* INTERACTIVE ACTIVE HOVER STATE */
+.hero-description:hover {
+  color: #F7F3EE; /* Illuminates sharply to rich silk white */
+  letter-spacing: 0.3px; /* Subtle typographic expansion stretch */
+  transform: scale(1.015) translateY(-2px); /* Lifts forward slightly in 3D space */
+  
+  /* Creates an ultra-premium ambient backdrop glow effect */
+  text-shadow: 0 0 15px rgba(247, 243, 238, 0.15),
+               0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================================================
+   3. HIGH-END ANIMATION SEQUENCE (STAGGERED RISE EFFECT)
+   ========================================================================== */
+.hero-content-container [class*="entry-"] {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: elegantFadeUp 1.2s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+/* Delay timelines give a continuous, rolling presentation effect */
+.hero-content-container .entry-1 { animation-delay: 0.2s; }
+.hero-content-container .entry-2 { animation-delay: 0.4s; }
+.hero-content-container .entry-3 { animation-delay: 0.6s; }
+.hero-content-container .entry-4 { animation-delay: 0.8s; }
+
+/* ==========================================================================
+   4. STYLISH CTA HOVER MECHANICS
+   ========================================================================== */
+.hero-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  padding: 18px 38px;
+  border-radius: 50px; /* Smooth curved pills match your capsule header */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Main Caramel Gold CTA */
+.btn-primary-gold {
+  background-color: #CBB5A1;
+  color: #170E08;
+  border: 1px solid #CBB5A1;
+  box-shadow: 0 4px 15px rgba(203, 181, 161, 0.15);
+}
+
+.btn-primary-gold .btn-arrow-vector {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary-gold:hover {
+  background-color: #E2D2C3;
+  border-color: #E2D2C3;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(203, 181, 161, 0.35);
+}
+
+/* Smooth forward slide on arrow vector icon when hovering */
+.btn-primary-gold:hover .btn-arrow-vector {
+  transform: translateX(4px);
+}
+
+/* Translucent Glass Outline CTA */
+.btn-secondary-outline {
+  background-color: rgba(247, 243, 238, 0.03);
+  color: #F7F3EE;
+  border: 1px solid rgba(247, 243, 238, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.btn-secondary-outline:hover {
+  background-color: #F7F3EE;
+  color: #170E08; /* Color invert on focus gives a high-end luxury feel */
+  border-color: #F7F3EE;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(247, 243, 238, 0.15);
+}
+
+/* ==========================================================================
+   5. MOUSE WHEEL DECORATIVE SCROLL LOOP
+   ========================================================================== */
+/* ==========================================================================
+   FIXED SCROLL INDICATOR SYSTEM (PREVENTS OVERLAPPING)
+   ========================================================================== */
+.scroll-down-indicator-luxury {
+  position: absolute;
+  /* 
+     CRITICAL FIX: Ties the indicator directly to the absolute bottom floor 
+     of the 100vh screen, keeping it independent of hero text sizing heights
+  */
+  bottom: 10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  
+  /* Prevents any potential text selection blocking over background assets */
+  pointer-events: auto; 
+}
+
+.compass-spin-wrapper {
+  position: relative;
+  /* Reduced size slightly to 76px to guarantee breathing room on all laptop displays */
+  width: 56px; 
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==========================================================================
+   SPINNING TEXT RING CONFIGURATION
+   ========================================================================== */
+.text-ring-vector {
+  width: 100%;
+  height: 100%;
+  animation: continuousLuxurySpin 14s linear infinite; /* Slightly slowed down for elegance */
+}
+
+.ring-typography {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  fill: rgba(203, 181, 161, 0.45); /* Subtle warm caramel asset tint */
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+  transition: fill 0.3s ease;
+}
+
+/* Illuminates the text ring on hover */
+.scroll-down-indicator-luxury:hover .ring-typography {
+  fill: #CBB5A1;
+}
+
+/* ==========================================================================
+   CENTRAL NEEDLE THREAD DESIGN
+   ========================================================================== */
+.central-needle-thread {
+  position: absolute;
+  width: 1px;
+  height: 18px; /* Slightly shortened needle to optimize layout footprint */
+  background: linear-gradient(to bottom, transparent, #CBB5A1, transparent);
+  animation: fluidNeedleBounce 2s ease-in-out infinite;
+}
+
+/* ==========================================================================
+   REFINED MOTION CONTROLS
+   ========================================================================== */
+@keyframes continuousLuxurySpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fluidNeedleBounce {
+  0%, 100% {
+    transform: translateY(-2px) scaleY(0.9);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(4px) scaleY(1.1);
+    opacity: 1;
+  }
+}
+
+/* Hidden immediately on smaller mobile viewports where vertical space is tight */
+@media (max-width: 768px) {
+  .scroll-down-indicator-luxury {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   6. MOTION MATH TIMELINES
+   ========================================================================== */
+@keyframes elegantFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mouseScrollAnim {
+  0% { top: 8px; opacity: 1; }
+  100% { top: 24px; opacity: 0; }
+}
+
+
+</style>
+<script>
+    // Add this execution routine inside your main page DOMContentLoaded event handler script loop
+try {
+  const heroResponse = await fetch('./components/cakeshop/hero.html');
+  if (heroResponse.ok) {
+    const heroHtml = await heroResponse.text();
+    // Injects the hero structure directly inside your index page's main layout container element
+    document.getElementById('main-content-wrapper').innerHTML = heroHtml;
+  }
+} catch (err) {
+  console.error("Failed to load modular cakeshop hero banner canvas:", err);
+}
+
+</script>
+
+
+<!-- RECONSTRUCTED SIGNATURE SECTION -->
+<section class="signature-collections-section">
+  <div class="signature-section-overlay"></div>
+  
+  <div class="signature-section-container">
+    
+    <!-- HEADER BLOCK -->
+    <div class="signature-section-header">
+    <!-- REBRANDED EDITORIAL MICRO-TAG -->
+<span class="section-micro-tag">
+  <span class="tag-accent-line line-left">—</span>
+  The Atelier Edit
+  <span class="tag-accent-line line-right">—</span>
+</span>
+
+      <!-- UPDATE INLINE HEADER WORDS TARGET -->
+<h2 class="section-main-title">
+  Bespoke Confections &amp; <em class="running-shimmer-text">Signature Layers</em>
+</h2>
+<style>
+    /* ==========================================================================
+   PURE CSS CONTINUOUS GLOW WAVE (100% RELIABLE)
+   ========================================================================== */
+.section-main-title .running-shimmer-text {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  
+  /* Forces the base text color to clear color overlays */
+  color: #ECE5DF !important; 
+  position: relative;
+  z-index: 2;
+  
+  /* 
+     Infinite motion timeline loop. 
+     Change '3s' to make the running light wave faster or slower.
+  */
+  animation: failSafeContinuousWave 3s ease-in-out infinite alternate;
+}
+
+/* ==========================================================================
+   FAIL-SAFE SHADOW-WAVE MOTION MATRIX TIMELINE
+   ========================================================================== */
+@keyframes failSafeContinuousWave {
+  0% {
+    color: #ECE5DF;
+    /* Rich warm caramel glow focused on the left edge */
+    text-shadow: -15px 0 20px rgba(203, 181, 161, 0.6), 
+                 0 0 4px rgba(203, 181, 161, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    /* Radiant white shimmer peak focused on the center */
+    color: #FFFFFF;
+    text-shadow: 0 0 25px rgba(253, 251, 247, 0.8), 
+                 0 0 8px rgba(203, 181, 161, 0.4);
+    transform: scale(1.01); /* Gives a ultra-subtle breathing feel */
+  }
+  100% {
+    color: #ECE5DF;
+    /* Warm gold glow rolling over to the right edge */
+    text-shadow: 15px 0 20px rgba(203, 181, 161, 0.6), 
+                 0 0 4px rgba(203, 181, 161, 0.2);
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   PREMIUM SUBTITLE HOVER MECHANICS
+   ========================================================================== */
+.section-subtitle-description {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #A39387; /* Soft latte tone base */
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  
+  /* Hardware optimization setup for smooth scaling transformations */
+  display: block;
+  cursor: default;
+  letter-spacing: 0px;
+  transform: translateY(0) translateZ(0);
+  
+  /* Transition settings carefully tuned for a high-end luxury feel */
+  transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              letter-spacing 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              text-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* INTERACTIVE ACTIVE HOVER STATE */
+.section-subtitle-description:hover {
+  color: #F7F3EE; /* Illuminates sharply to match headline ivory cream */
+  letter-spacing: 0.4px; /* Soft, airy typographic expansion layout */
+  transform: translateY(-2px) scale(1.01); /* Gently lifts and breathes forward */
+  
+  /* Adds a subtle high-end ambient backdrop reflection glow */
+  text-shadow: 0 0 12px rgba(247, 243, 238, 0.1),
+               0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+</style>
+      <p class="section-subtitle-description">Every creation is meticulously tailored, balancing rich flavor architecture with contemporary artistic design.</p>
+    </div>
+
+    <!-- CARDS GRID CONTAINER -->
+    <div class="collections-interactive-grid">
+      
+      <!-- CARD 1 -->
+      <a href="signup.html" class="collection-card-frame">
+        <span class="card-icon-badge">✨</span>
+        <span class="card-meta-tag">Signature Trend</span>
+        <h3 class="card-title-serif">Velvet Espresso Cocoa</h3>
+        <p class="card-body-description">Layered single-origin dark chocolate cake infused with freshly roasted espresso cream.</p>
+        <div class="card-action-vector-link">Commission <span>→</span></div>
+      </a>
+
+      <!-- CARD 2 -->
+      <a href="signup.html" class="collection-card-frame">
+        <span class="card-icon-badge">🌸</span>
+        <span class="card-meta-tag">Bespoke Editorial</span>
+        <h3 class="card-title-serif">Gilded Vanilla Bean</h3>
+        <p class="card-body-description">Tahitian vanilla bean sponge with organic raspberry reduction and 24k gold leaf accents.</p>
+        <div class="card-action-vector-link">Commission <span>→</span></div>
+      </a>
+
+      <!-- CARD 3 -->
+      <a href="signup.html" class="collection-card-frame">
+        <span class="card-icon-badge">🍬</span>
+        <span class="card-meta-tag">Botanical Series</span>
+        <h3 class="card-title-serif">Smoked Honey Lavender</h3>
+        <p class="card-body-description">Delicate almond cake layered with wildflower honey buttercream and smoked lavender notes.</p>
+        <div class="card-action-vector-link">Commission <span>→</span></div>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   SIGNATURE COLLECTIONS CORE LAYOUT & CONTRAST FIX
+   ========================================================================== */
+.signature-collections-section {
+  position: relative;
+  width: 100%;
+  padding: 100px 0;
+  background-color: #170E08; /* Deep roasted dark cocoa fallback base */
+  overflow: hidden;
+}
+
+.signature-section-container {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Text Alignments & Contrast Fixes */
+/* ==========================================================================
+   1. HEADER WRAPPER CONTAINER
+   ========================================================================== */
+.signature-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 10; /* Ensures text stays stacked securely over your background image */
+}
+
+/* ==========================================================================
+   2. RECONSTRUCTED ANIMATED ELEMENT CLASSES (DIRECT TARGETING)
+   ========================================================================== */
+.section-micro-tag {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #CBB5A1; /* Warm caramel gold tag */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 12px;
+
+  /* Animation Setup */
+  opacity: 0;
+  animation: failSafeGlideUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation-delay: 0.1s;
+}
+/* ==========================================================================
+   REBRANDED PREMIUM PASTRY MICRO-TAG STYLES
+   ========================================================================== */
+.section-micro-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Spaces out the text from the accent lines smoothly */
+  
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #CBB5A1; /* Premium warm caramel gold */
+  text-transform: uppercase;
+  
+  /* Wide tracking space matches the aesthetic of high-end luxury fashion houses */
+  letter-spacing: 5px; 
+  margin-bottom: 14px;
+  cursor: default;
+  
+  transition: color 0.4s ease, letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Base style rules for the decorative side bars */
+.tag-accent-line {
+  display: inline-block;
+  font-weight: 300;
+  opacity: 0.6;
+  color: #CBB5A1;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease;
+}
+
+/* ==========================================================================
+   INTERACTIVE CONTINUOUS HOVER TRANSFORMATIONS
+   ========================================================================== */
+/* Triggers elegant expansion when the user hovers near the header module wrapper */
+.signature-section-header:hover .section-micro-tag {
+  color: #E6D4C3; /* Illuminates softly to cream vanilla */
+  letter-spacing: 5.5px; /* Airy horizontal tracking expand stretch */
+}
+
+/* Pushes the left accent line outward to the left */
+.signature-section-header:hover .line-left {
+  transform: translateX(-6px);
+  opacity: 1;
+}
+
+/* Pushes the right accent line outward to the right */
+.signature-section-header:hover .line-right {
+  transform: translateX(6px);
+  opacity: 1;
+}
+
+.section-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: #F7F3EE; /* Crisp ivory cream text */
+  margin-bottom: 16px;
+
+  /* Animation Setup */
+  opacity: 0;
+  animation: failSafeGlideUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation-delay: 0.3s; /* Staggered delayed sequence split */
+}
+
+/* Optional styling anchor for any italic text inside your title */
+.section-main-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #E6D4C3;
+}
+
+.section-subtitle-description {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #A39387; /* Soft latte tone */
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+
+  /* Animation Setup */
+  opacity: 0;
+  animation: failSafeGlideUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation-delay: 0.5s; /* Slides in last to guide the user's eyes downwards */
+}
+
+/* ==========================================================================
+   3. HARDWARE-ACCELERATED TRANSITION KEYFRAMES
+   ========================================================================== */
+@keyframes failSafeGlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+/* ==========================================================================
+   ENHANCED INTERACTIVE SIGNATURE GRID
+   ========================================================================== */
+.collections-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px; /* Increased padding slightly for an airy, elegant workspace layout */
+  width: 100%;
+}
+
+/* ==========================================================================
+   LUXURY RE-DESIGNED CARD FRAME
+   ========================================================================== */
+.collection-card-frame {
+  background: linear-gradient(145deg, rgba(38, 24, 15, 0.45) 0%, rgba(23, 14, 8, 0.6) 100%);
+  border: 1px solid rgba(203, 181, 161, 0.1); /* Subtle premium framing wire */
+  border-radius: 20px; /* Softer, high-fashion curved corners */
+  padding: 40px 36px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  
+  /* Prompts hardware-acceleration to guarantee fluid, lag-free rendering layouts */
+  transform: translateY(0) translateZ(0); 
+  
+  /* Custom easing bezier curves mimic professional, high-end studio motions */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Elegant ambient under-glow that expands dynamically from the bottom-right corner */
+.collection-card-frame::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom right, rgba(203, 181, 161, 0.12) 0%, transparent 65%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.6s ease;
+}
+
+/* ==========================================================================
+   INNER COMPONENT TRANSITIONS
+   ========================================================================== */
+.card-icon-badge {
+  font-size: 34px;
+  margin-bottom: 28px;
+  display: inline-block;
+  transform: scale(1) rotate(0deg);
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); /* Playful spring pop */
+}
+
+.card-meta-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #A39387;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  transition: color 0.4s ease, letter-spacing 0.4s ease;
+}
+
+.card-title-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #F7F3EE; /* Ivory Silk text base */
+  margin-bottom: 14px;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.card-body-description {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #C1B4AA; /* Muted latte description text */
+  margin-bottom: 32px;
+  flex-grow: 1;
+  transition: color 0.4s ease;
+}
+
+/* Rebranded luxury anchor text link element */
+.card-action-vector-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #CBB5A1 !important; /* Locks theme gold color against default blue bugs */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+}
+
+/* Elegant micro underline accent thread that slides in horizontally */
+.card-action-vector-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #CBB5A1;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-action-vector-link span {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   ACTIVE INTERACTIVE HOVER CONFIGURATIONS
+   ========================================================================== */
+.collection-card-frame:hover {
+  transform: translateY(-12px) scale(1.015); /* Clean vertical lift and expansion zoom */
+  background-color: rgba(43, 28, 17, 0.75); /* Richer dark chocolate backdrop contrast */
+  border-color: rgba(203, 181, 161, 0.35); /* Illuminates framing grid outline */
+  
+  /* Implements a soft, ambient multi-layered structural shadow box */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(203, 181, 161, 0.04);
+}
+
+/* Trigger structural backdrop ambient expansion glow */
+.collection-card-frame:hover::before {
+  opacity: 1;
+}
+
+/* Playful icon jump */
+.collection-card-frame:hover .card-icon-badge {
+  transform: scale(1.2) rotate(8deg);
+}
+
+/* Micro tracking widening styling on meta labels */
+.collection-card-frame:hover .card-meta-tag {
+  color: #CBB5A1;
+  letter-spacing: 3.5px;
+}
+
+/* Text shifts slightly into focus position */
+.collection-card-frame:hover .card-title-serif {
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+.collection-card-frame:hover .card-body-description {
+  color: #E1D6CD; /* Brightens text slightly to optimize paragraph scannability */
+}
+
+/* Link underline extension slide-out mechanics */
+.collection-card-frame:hover .card-action-vector-link::after {
+  width: 100%;
+}
+
+/* Pushes vector arrow token icon forward smoothly */
+.collection-card-frame:hover .card-action-vector-link span {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   RESPONSIVE COMPATIBILITY BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .collections-interactive-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Columns layout balance on tablet screens */
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .collections-interactive-grid {
+    grid-template-columns: 1fr; /* 1 Column vertical stack flow on mobile screens */
+    gap: 24px;
+  }
+  
+  .collection-card-frame {
+    padding: 32px 28px; /* Tighter inner margins optimization */
+  }
+}
+
+
+</style>
+
+
+<!-- ARTISAN STORY & HERITAGE SECTION WRAPPER -->
+<section class="artisan-heritage-section">
+  
+  <!-- BACKGROUND LAYER PARALLAX HOOK -->
+  <div class="heritage-background-container">
+    <!-- Replace this placeholder url path with your high-end background image asset -->
+    <img src="./Assests/home - 3.webp" alt="Artisanal Kitchen Backdrop" class="heritage-bg-image" onerror="this.style.display='none';">
+    <div class="heritage-darkness-mask"></div>
+  </div>
+
+  <div class="heritage-section-container">
+    <div class="heritage-split-grid">
+      
+      <!-- LEFT BLOCK: ASYMMETRICAL IMAGE COLLAGE FRAME -->
+      <!-- UPDATED ASYMMETRICAL IMAGE COLLAGE WITH FLOATING HIGHLIGHTS -->
+<div class="heritage-media-showcase fade-in-left">
+  
+  <!-- FLOATING ELEMENT NODES MATRIX -->
+  <span class="floating-baking-token item-wheat">🌾</span>
+  <span class="floating-baking-token item-sparkle">✨</span>
+  <span class="floating-baking-token item-star">⭐️</span>
+  <span class="floating-baking-token item-leaf">🍃</span>
+  <span class="floating-baking-token item-berry">🍒</span>
+
+  <div class="main-portrait-frame">
+    <img src="./Assests/home 3 - 2.webp" alt="Master Pastry Chef" class="portrait-img">
+    
+    <!-- Glassmorphism experience badge -->
+    <div class="floating-experience-badge">
+      <span class="badge-number">12+</span>
+      <span class="badge-text">Years of Sugar Artistry</span>
+    </div>
+  </div>
+
+  <div class="secondary-detail-frame">
+    <img src="./Assests/home 3 - 3.webp" alt="Cake Detail" class="detail-img">
+  </div>
+
+</div>
+
+       
+
+      <!-- RIGHT BLOCK: EDITORIAL CONTENT BOX -->
+      <div class="heritage-text-block fade-in-right">
+        <span class="heritage-micro-tag">
+          <span class="tag-line">—</span> Our Philosophy <span class="tag-line">—</span>
+        </span>
+        
+     <!-- UPDATE INLINE HEADER WORDS TARGET -->
+<h2 class="heritage-main-title">
+  Where Haute Couture <br>
+  Met the <em class="continuous-baking-wave">Art of Baking</em>
+</h2>
+
+        <p class="heritage-paragraph lead-text">
+          Founded on the principle that cakes should be as visually captivating as they are delicious, we treat every layer as an architectural canvas.
+        </p>
+        
+        <p class="heritage-paragraph">
+          Our master artisans select only premium single-origin cocoa beans, organic vanilla orchids, and locally sourced seasonal botanicals. We bypass standard baking templates to deliver bespoke confectionary sculptures tailored precisely to your milestone celebrations.
+        </p>
+
+        <!-- LUXURY TIMELINE KEYPOINTS LIST -->
+        <div class="heritage-hallmarks-list">
+          <div class="hallmark-item-card">
+            <div class="hallmark-icon">⚜️</div>
+            <div class="hallmark-content">
+              <h4>Bespoke Blueprinting</h4>
+              <p>Every cake begins as a custom hand-drawn sketch coordinated to your event theme guidelines.</p>
+            </div>
+          </div>
+          <div class="hallmark-item-card">
+            <div class="hallmark-icon">🌱</div>
+            <div class="hallmark-content">
+              <h4>Pure Organic Integrity</h4>
+              <p>Zero artificial preservatives or cheap stabilizers. Only authentic, luxury ingredients enter our ovens.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="heritage-action-gate">
+          <a href="about.html" class="heritage-luxury-btn">
+            Read Our Full Story 
+            <span class="btn-thread-arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   1. SECTION COVERAGE BASE LAYER & BACKGROUND PARALLAX
+   ========================================================================== */
+.artisan-heritage-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #170E08; /* Fallback deep roasted dark cocoa base */
+}
+
+.heritage-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.heritage-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65; /* Subdued background imagery blends elegantly with code layout background colors */
+  filter: grayscale(30%) sepia(20%);
+}
+
+.heritage-darkness-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #170E08 0%, rgba(23, 14, 8, 0.85) 50%, #170E08 100%);
+  z-index: 2;
+}
+
+.heritage-section-container {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. ASYMMETRICAL EDITORIAL DISPLAY SPLIT GRID
+   ========================================================================== */
+.heritage-split-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ==========================================================================
+   3. LEFT BLOCK: INTERACTIVE COMPOSITE CARDS LAYER
+   ========================================================================== */
+/* ==========================================================================
+   1. CORE COLLAGE CONTAINER & FLOATING VECTOR HOOKS
+   ========================================================================== */
+.heritage-media-showcase {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+/* ==========================================================================
+   MOBILE VIEW LAYOUT BUG FIX (768PX AND BELOW)
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Restructure the container to center images cleanly */
+  .heritage-media-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 20px;
+    gap: 20px; /* Creates a clean gap between the two stacked cards */
+  }
+
+  /* 2. Reset the main strawberry cake frame constraints */
+  .main-portrait-frame {
+    position: relative;
+    width: 100% !important; /* Forces the box to scale to full width within phone borders */
+    max-width: 420px;       /* Keeps it from getting too large on wide phones */
+    height: 380px !important; /* Shortens the vertical size to look balanced on small screens */
+    left: 0 !important;
+    transform: none !important;
+  }
+
+  /* 3. RESET BLUEBERRY CARD: Removes absolute breaking bugs */
+  .secondary-detail-frame {
+    position: relative !important; /* Converts from absolute to relative document flow */
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    
+    width: 100% !important;  /* Stretches safely inside the viewport margins */
+    max-width: 420px;        /* Matches the portrait image scaling size */
+    height: 260px !important;
+    margin-top: 10px;        /* Adds explicit separation spacing below the first card */
+    
+    /* Subtle layout offset adds an editorial look without cutting off borders */
+    transform: translateX(15px) !important; 
+    z-index: 5;
+  }
+
+  /* 4. Reposition the Glassmorphism Experience Badge for tight screens */
+  .floating-experience-badge {
+    bottom: 20px !important;
+    left: 20px !important;
+    padding: 12px 16px !important; /* Tighter internal padding limits */
+  }
+  
+  .floating-experience-badge .badge-number {
+    font-size: 1.8rem !important;
+  }
+  
+  .floating-experience-badge .badge-text {
+    font-size: 0.6rem !important;
+  }
+
+  /* 5. Strips away background watermarks to avoid screen clutter on mobile devices */
+  .heritage-media-showcase::before {
+    display: none !important;
+  }
+}
+
+
+/* Base style rules for all background floating token assets */
+.floating-baking-token {
+  position: absolute;
+  font-size: 28px;
+  z-index: 10;
+  pointer-events: none; /* Stops tokens from breaking mouse clicks on pictures */
+  
+  /* Blends emoji colors with your dark cocoa/caramel brand palette */
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4)) sepia(25%) contrast(95%);
+  will-change: transform, opacity;
+}
+
+/* ==========================================================================
+   2. FLOATING ASSET COORDINATES & TIMING ASSIGNMENTS
+   ========================================================================== */
+.item-wheat {
+  top: -25px;
+  left: 8%;
+  animation: premiumVerticalDrift 5s ease-in-out infinite alternate;
+}
+
+.item-sparkle {
+  top: 50px;
+  right: 28%;
+  font-size: 24px;
+  animation: premiumPulseGlow 3.5s ease-in-out infinite alternate;
+}
+
+.item-star {
+  top: 45%;
+  left: -40px;
+  font-size: 22px;
+  animation: premiumHorizontalDrift 5.5s ease-in-out infinite alternate;
+  animation-delay: 0.3s;
+}
+
+.item-leaf {
+  bottom: -20px;
+  left: 18%;
+  font-size: 26px;
+  animation: premiumVerticalDrift 6.5s ease-in-out infinite alternate;
+  animation-delay: 0.6s;
+}
+
+.item-berry {
+  bottom: 50px;
+  right: -25px;
+  font-size: 30px;
+  animation: premiumHorizontalDrift 4.5s ease-in-out infinite alternate;
+  animation-delay: 0.1s;
+}
+
+/* ==========================================================================
+   3. ORIGINAL ASYMMETRICAL IMAGE COLLAGE STYLES
+   ========================================================================== */
+.main-portrait-frame {
+  position: relative;
+  width: 70%;
+  height: 520px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 181, 161, 0.2);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.portrait-img, .detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.secondary-detail-frame {
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  width: 45%;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 181, 161, 0.2);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  z-index: 4;
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.floating-experience-badge {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background: rgba(23, 14, 8, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(203, 181, 161, 0.25);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.floating-experience-badge .badge-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.floating-experience-badge .badge-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ECE5DF;
+  text-align: center;
+}
+
+/* ==========================================================================
+   4. INTERACTIVE HOVER TRANSFORMS
+   ========================================================================== */
+/* ==========================================================================
+   4. CORRECTED HOVER TRANSFORMS (PREVENTS ANIMATION FREEZING)
+   ========================================================================== */
+.heritage-media-showcase:hover .main-portrait-frame {
+  transform: translateY(-8px);
+}
+
+.heritage-media-showcase:hover .secondary-detail-frame {
+  transform: translateY(12px); /* Moves conversely to create 3D separation depth */
+}
+
+.heritage-media-showcase:hover .portrait-img,
+.heritage-media-showcase:hover .detail-img {
+  transform: scale(1.04);
+}
+
+/* 
+   CRITICAL BUG FIX: We apply a secondary shift wrapper effect using CSS filters 
+   or margins instead of transforming the base property. This keeps the 
+   infinite floating loops running perfectly at the same time!
+*/
+.heritage-media-showcase:hover .item-wheat { 
+  margin-top: -8px; 
+  margin-left: -5px;
+  filter: drop-shadow(0 8px 16px rgba(203, 181, 161, 0.4)) sepia(25%);
+}
+
+.heritage-media-showcase:hover .item-berry { 
+  margin-bottom: -8px; 
+  margin-right: -8px;
+  filter: drop-shadow(0 8px 16px rgba(23, 14, 8, 0.6)) sepia(25%);
+}
+
+.heritage-media-showcase:hover .item-sparkle {
+  font-size: 28px; /* Gently grows in size when the user interacts with the card block */
+}
+
+/* ==========================================================================
+   5. MOTION TIMELINE KEYFRAMES (GPU HARDWARE ACCELERATED)
+   ========================================================================== */
+@keyframes premiumVerticalDrift {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-16px) rotate(6deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes premiumHorizontalDrift {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(14px) rotate(-8deg);
+    opacity: 0.85;
+  }
+}
+
+@keyframes premiumPulseGlow {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.95;
+    filter: drop-shadow(0 0 12px rgba(203, 181, 161, 0.5)) sepia(25%);
+  }
+}
+
+/* Hidden immediately on smaller viewports to keep mobile screens readable */
+@media (max-width: 768px) {
+  .floating-baking-token {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   4. RIGHT BLOCK: TYPOGRAPHY & INTERACTIVE TEXT LIST CARDS
+   ========================================================================== */
+.heritage-text-block .heritage-micro-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+.heritage-text-block .tag-line {
+  opacity: 0.5;
+}
+
+.heritage-main-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 700;
+  color: #F7F3EE;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+
+/* ==========================================================================
+   CONTINUOUS TEXT SHIMMER WAVE RUNNING EFFECT
+   ========================================================================== */
+.heritage-main-title .continuous-baking-wave {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  
+  /* Forces the baseline text color to clear background-clip bugs */
+  color: #ECE5DF !important; 
+  position: relative;
+  z-index: 2;
+  
+  /* 
+     Infinite linear motion matrix timeline loop.
+     Change '3.5s' to make the running light wave faster or slower.
+  */
+  animation: continuousBakeryWave 3.5s ease-in-out infinite alternate;
+}
+
+/* ==========================================================================
+   CONTINUOUS SHADOW-WAVE MOTION MATRIX TIMELINE
+   ========================================================================== */
+@keyframes continuousBakeryWave {
+  0% {
+    color: #ECE5DF;
+    /* Soft warm caramel glow focused on the left edge of the words */
+    text-shadow: -12px 0 18px rgba(203, 181, 161, 0.6), 
+                 0 0 4px rgba(203, 181, 161, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    /* Radiant silk white shimmer peak focused right on the center */
+    color: #FFFFFF;
+    text-shadow: 0 0 22px rgba(253, 251, 247, 0.75), 
+                 0 0 6px rgba(203, 181, 161, 0.35);
+    transform: scale(1.005); /* Ultra-subtle luxury breathing feel */
+  }
+  100% {
+    color: #ECE5DF;
+    /* Warm gold glow rolling completely over to the right edge */
+    text-shadow: 12px 0 18px rgba(203, 181, 161, 0.6), 
+                 0 0 4px rgba(203, 181, 161, 0.2);
+    transform: scale(1);
+  }
+}
+
+.heritage-main-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #E6D4C3;
+}
+
+.heritage-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #C1B4AA;
+  margin-bottom: 20px;
+}
+
+.heritage-paragraph.lead-text {
+  font-size: 1.15rem;
+  color: #ECE5DF;
+  line-height: 1.6;
+}
+
+/* Keypoint Hallmark Cards Layout */
+.heritage-hallmarks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 36px 0 44px 0;
+}
+
+.hallmark-item-card {
+  display: flex;
+  gap: 20px;
+  background: rgba(38, 24, 15, 0.3);
+  border: 1px solid rgba(203, 181, 161, 0.08);
+  padding: 24px;
+  border-radius: 14px;
+  transition: border-color 0.4s ease, background-color 0.4s ease;
+}
+
+.hallmark-icon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.hallmark-content h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #F7F3EE;
+  margin-bottom: 6px;
+}
+
+.hallmark-content p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #A39387;
+}
+
+/* ==========================================================================
+   ENHANCED HERITAGE HALLMARKS LIST LAYOUT
+   ========================================================================== */
+.heritage-hallmarks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 36px 0 44px 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LUXURY RE-DESIGNED HALLMARK ITEM CARD
+   ========================================================================== */
+.hallmark-item-card {
+  display: flex;
+  gap: 24px;
+  background: rgba(38, 24, 15, 0.35); /* Translucent rich chocolate backing */
+  border: 1px solid rgba(203, 181, 161, 0.08); /* Subtle premium framing wire */
+  padding: 26px 28px;
+  border-radius: 16px; /* Elegant curved corners */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: default;
+  
+  /* Prompts hardware-acceleration to guarantee fluid, lag-free scrolling speeds */
+  transform: translateX(0) translateZ(0);
+  
+  /* Custom easing curves mimic professional, high-end design motions */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Dynamic ambient under-glow that expands across the card background from the left */
+.hallmark-item-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(203, 181, 161, 0.05) 0%, transparent 70%);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+}
+
+/* ==========================================================================
+   INNER CONTENT STATE TRANSITIONS
+   ========================================================================== */
+.hallmark-icon {
+  font-size: 26px;
+  line-height: 1;
+  display: inline-block;
+  transform: scale(1) translateY(0);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              filter 0.4s ease; /* Fluid spring bounce curve */
+}
+
+.hallmark-content h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #F7F3EE; /* Ivory Silk heading text */
+  margin-bottom: 6px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.hallmark-content p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #A39387; /* Soft muted latte description text */
+  transition: color 0.4s ease;
+}
+
+/* ==========================================================================
+   ACTIVE INTERACTIVE HOVER CONFIGURATIONS
+   ========================================================================== */
+.hallmark-item-card:hover {
+  /* Slides the item slightly to the right and lifts up for an asymmetrical 3D effect */
+  transform: translateX(6px) translateY(-2px); 
+  background-color: rgba(43, 28, 17, 0.6); /* Richer dark chocolate backdrop contrast */
+  border-color: rgba(203, 181, 161, 0.28); /* Illuminates the framing perimeter outline */
+  
+  /* Soft, ambient multi-layered structural shadow box */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35),
+              0 0 20px rgba(203, 181, 161, 0.03);
+}
+
+/* Triggers ambient expansion backglow */
+.hallmark-item-card:hover::before {
+  opacity: 1;
+}
+
+/* Playful spring hop on the emoji graphics vector */
+.hallmark-item-card:hover .hallmark-icon {
+  transform: scale(1.15) translateY(-2px);
+  filter: drop-shadow(0 4px 10px rgba(203, 181, 161, 0.4));
+}
+
+/* Elevates and illuminates heading fields smoothly */
+.hallmark-item-card:hover .hallmark-content h4 {
+  color: #FFFFFF;
+  transform: translateX(1px);
+}
+
+/* Brightens body copy text slightly to optimize message readability */
+.hallmark-item-card:hover .hallmark-content p {
+  color: #CBB5A1; /* Warm pastry caramel gold highlight on active selection */
+}
+
+
+/* Luxury Thread Call to Action Anchor Link */
+.heritage-luxury-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #CBB5A1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.heritage-luxury-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #CBB5A1;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.heritage-luxury-btn .btn-thread-arrow {
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.heritage-luxury-btn:hover::after {
+  width: 100%;
+}
+
+.heritage-luxury-btn:hover .btn-thread-arrow {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   5. COMPLETE SCROLL REVEAL ENTRANCE ANIMATIONS
+   ========================================================================== */
+.fade-in-left, .fade-in-right {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, opacity;
+}
+
+.fade-in-left { transform: translateX(-40px); }
+.fade-in-right { transform: translateX(40px); }
+
+/* Class targets automatically mounted by the IntersectionObserver script */
+.heritage-section-container.section-revealed .fade-in-left,
+.heritage-section-container.section-revealed .fade-in-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE FLUID MEDIA QUERIES TERMINALS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .heritage-split-grid {
+    gap: 40px;
+  }
+  .main-portrait-frame {
+    height: 44px;
+    height: 420px;
+  }
+  .secondary-detail-frame {
+    height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .artisan-heritage-section {
+    padding: 80px 0;
+  }
+  .heritage-split-grid {
+    grid-template-columns: 1fr; /* Formats grid into 1 single vertical column stacked layout */
+    gap: 60px;
+  }
+  .heritage-media-showcase {
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  .main-portrait-frame {
+    width: 85%;
+    height: 460px;
+  }
+  .secondary-detail-frame {
+    right: -10px;
+    bottom: -30px;
+    width: 50%;
+    height: 240px;
+  }
+  .fade-in-left, .fade-in-right {
+    transform: translateY(30px); /* Adjusts movement direction vertically on tight spaces */
+  }
+}
+
+</style>
+<script>
+    // Append this initialization function directly inside your main DOMContentLoaded script block
+(function initializeHeritageScrollReveal() {
+  const heritageContainer = document.querySelector('.heritage-section-container');
+
+  if (heritageContainer) {
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Mounts the display class to release your fade-in-left and fade-in-right layout rules
+          heritageContainer.classList.add('section-revealed');
+          observer.unobserve(entry.target); // Unmount tracker loop right after execution
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12 // Fires smoothly when 12% of the content block cuts into viewport space
+    });
+
+    sectionObserver.observe(heritageContainer);
+  }
+})();
+
+</script>
+
+<!-- PREMIUM ATELIER SERVICES AND CATERING SECTION -->
+<section class="atelier-services-section">
+  
+  <!-- MAIN BACKGROUND BACKDROP MASK PANEL -->
+  <div class="services-background-holder">
+    <!-- Replace path with your high-end interior bakery or texture wallpaper image asset -->
+    <img src="./Assests/home 4 - back.webp" alt="Atelier Spices Wallpaper" class="services-backdrop-asset" onerror="this.style.display='none';">
+    <div class="services-smoky-overlay"></div>
+  </div>
+
+  <div class="services-main-container">
+    
+    <!-- EDITORIAL INTRO HEADER MODULE -->
+    <div class="services-section-header">
+      <span class="section-micro-tag">
+        <span class="tag-accent-line line-left">—</span>
+        Bespoke Offerings
+        <span class="tag-accent-line line-right">—</span>
+      </span>
+      <!-- UPDATE SERVICES INLINE HEADER WORDS TARGET -->
+<h2 class="section-main-title">
+  Curated Experiences Tailored <br>
+  To Your <em class="glowing-standards-text">Highest Standards</em>
+</h2>
+<style>
+    /* ==========================================================================
+   CONTINUOUS GOLD-LEAF GLOW & HOVER SYSTEM
+   ========================================================================== */
+.section-main-title .glowing-standards-text {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #ECE5DF !important; /* Soft ivory base tone */
+  position: relative;
+  z-index: 2;
+  cursor: default;
+  
+  /* Prep path for smooth hardware-accelerated transforms */
+  transform: scale(1) translateZ(0);
+  letter-spacing: 0px;
+  
+  /* 
+     Combines the infinite ambient glow wave animation with a 
+     high-end, responsive transition curve for mouse hovers
+  */
+  animation: luxuryGlowPulse 4s ease-in-out infinite alternate;
+  transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              letter-spacing 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              text-shadow 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   INTERACTIVE ACTIVE HOVER STATE
+   ========================================================================== */
+/* Fires an elegant expansion when the user hovers anywhere near the header block wrapper */
+.services-section-header:hover .glowing-standards-text {
+  color: #FFFFFF !important; /* Illuminates sharply to crisp silk white */
+  letter-spacing: 0.8px; /* Airy typographic letter-spacing expansion */
+  transform: scale(1.02) translateY(-1px); /* Gently breathes forward in 3D space */
+  
+  /* Pauses the background pulsing cycle to lock into a brilliant, high-contrast glow focus */
+  animation-play-state: paused; 
+  
+  text-shadow: 0 0 25px rgba(253, 251, 247, 0.85), 
+               0 0 12px rgba(203, 181, 161, 0.6),
+               0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================================================================
+   INFINITE GLOW TIMELINE KEYFRAMES (CONTINUOUS BACKGROUND MODE)
+   ========================================================================== */
+@keyframes luxuryGlowPulse {
+  0% {
+    color: #ECE5DF;
+    /* Soft, warm caramel outline halo focused gently behind the letters */
+    text-shadow: 0 0 10px rgba(203, 181, 161, 0.3),
+                 0 0 4px rgba(203, 181, 161, 0.1);
+  }
+  100% {
+    color: #F7F3EE; /* Subtle shift to an illuminated cream silk */
+    /* Deepens and expands to create a soft, breathing gold-leaf aura */
+    text-shadow: 0 0 20px rgba(203, 181, 161, 0.55),
+                 0 0 8px rgba(203, 181, 161, 0.25);
+  }
+}
+
+</style>
+
+      <p class="section-subtitle-description">
+        From grand milestone galas to private intimate tastings, we bring architectural pastry craftsmanship straight to your venue canvas.
+      </p>
+    </div>
+
+    <!-- DYNAMIC 4-COLUMN PHOTO GRID GALLERY -->
+    <div class="services-interactive-grid fade-trigger-block">
+      
+      <!-- SERVICE CARD 1 -->
+      <div class="service-experience-card delay-1">
+        <div class="service-photo-wrapper">
+          <img src="./Assests/wedding.webp" alt="Bespoke Wedding Cake Framing" class="service-gallery-img">
+          <div class="service-photo-shimmer"></div>
+        </div>
+        <div class="service-content-frame">
+          <span class="service-numerical-index">01 /</span>
+          <h3 class="service-title-serif">Bespoke Wedding Commissions</h3>
+          <p class="service-body-text">Collaborate with our head pastry architects to sculpt a multi-tiered piece that complements your wedding design parameters.</p>
+        </div>
+      </div>
+
+      <!-- SERVICE CARD 2 -->
+      <div class="service-experience-card delay-2">
+        <div class="service-photo-wrapper">
+          <img src="./Assests/catering.webp" alt="Luxury Gala Dessert Bar Setup" class="service-gallery-img">
+          <div class="service-photo-shimmer"></div>
+        </div>
+        <div class="service-content-frame">
+          <span class="service-numerical-index">02 /</span>
+          <h3 class="service-title-serif">High-End Event Catering</h3>
+          <p class="service-body-text">Elevate corporate product rollouts, art galas, and luxury soirées with a curated grazing array of miniature mirror-glaze entremets.</p>
+        </div>
+      </div>
+
+      <!-- SERVICE CARD 3 -->
+      <div class="service-experience-card delay-3">
+        <div class="service-photo-wrapper">
+          <img src="./Assests/tasting.webp" alt="Private Atelier Tasting Session" class="service-gallery-img">
+          <div class="service-photo-shimmer"></div>
+        </div>
+        <div class="service-content-frame">
+          <span class="service-numerical-index">03 /</span>
+          <h3 class="service-title-serif">Private Tasting &amp; Consultation</h3>
+          <p class="service-body-text">Book an exclusive tasting session inside our private salon to test customized sponge foundations, textures, and custom flavor builds.</p>
+        </div>
+      </div>
+
+      <!-- SERVICE CARD 4 -->
+      <div class="service-experience-card delay-4">
+        <div class="service-photo-wrapper">
+          <img src="./Assests/corporate.webp" alt="Premium Gift Box Arrangements" class="service-gallery-img">
+          <div class="service-photo-shimmer"></div>
+        </div>
+        <div class="service-content-frame">
+          <span class="service-numerical-index">04 /</span>
+          <h3 class="service-title-serif">Corporate Concierge Gifting</h3>
+          <p class="service-body-text">Impress priority clientele and executives with luxury, velvet-coated gift boxes containing hand-piped macarons and fine confectionery arts.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CORE INTERACTION CALL TO ACTION GATE -->
+    <div class="services-action-gate fade-trigger-btn">
+      <a href="contact.html" class="services-luxury-portal-btn">
+        Schedule A Consultation 
+        <span class="portal-thread-arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   1. BASE SECTION WITH SUBDUED BACKDROP IMMERSION
+   ========================================================================== */
+.atelier-services-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 80px 0;
+  background-color: #170E08; /* Premium deep roasted dark cocoa baseline */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.services-background-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.services-backdrop-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92; /* Subtle background footprint keeps attention on product photos */
+  filter: grayscale(40%) brightness(70%);
+}
+
+.services-smoky-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #170E08 0%, rgba(23, 14, 8, 0.8) 50%, #170E08 100%);
+  z-index: 2;
+}
+
+.services-main-container {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. RE-USED PREMIUM LINKED TYPOGRAPHY CONTRAST RESET
+   ========================================================================== */
+.services-section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+/* ==========================================================================
+   3. STYLISH 4-COLUMN PHOTO GRID FRAMEWORK
+   ========================================================================== */
+/* ==========================================================================
+   1. CORE GRID WITH PERSPECTIVE DEPTH
+   ========================================================================== */
+.services-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  width: 100%;
+  margin-bottom: 50px;
+  
+  /* CRITICAL: Enables true 3D spatial separation depth for all child cards */
+  perspective: 1200px; 
+}
+
+/* ==========================================================================
+   2. RE-DESIGNED EXPERIENCE CARD FRAME WITH CONTINUOUS FLOAT
+   ========================================================================== */
+.service-experience-card {
+  background: linear-gradient(145deg, rgba(38, 24, 15, 0.5) 0%, rgba(23, 14, 8, 0.75) 100%);
+  border: 1px solid rgba(203, 181, 161, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  
+  /* Forces hardware acceleration to keep continuous loops lag-free */
+  transform-style: preserve-3d;
+  will-change: transform, opacity, border-color;
+  
+  /* Smooth transitions for interactive pointer movements */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   3. HIGH-END CINEMATIC STAGGERED ENTRANCE (SCROLL-TRIGGERED)
+   ========================================================================== */
+.fade-trigger-block .service-experience-card {
+  opacity: 0;
+  /* Card starts pitched back in 3D space, scaled down, and pushed lower */
+  transform: translateY(60px) scale(0.9) rotateX(-25deg);
+  transform-origin: top center;
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-trigger-btn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Staggered delay pipelines assigned dynamically on intersection scroll reveal */
+.services-main-container.revealed-view .delay-1 { transition-delay: 0.1s; }
+.services-main-container.revealed-view .delay-2 { transition-delay: 0.25s; }
+.services-main-container.revealed-view .delay-3 { transition-delay: 0.4s; }
+.services-main-container.revealed-view .delay-4 { transition-delay: 0.55s; }
+.services-main-container.revealed-view .fade-trigger-btn { transition-delay: 0.75s; }
+
+/* The moment the Javascript mounts the view-class, elements flip open forward */
+.services-main-container.revealed-view .service-experience-card {
+  opacity: 1;
+  
+  /* 
+     Combines the completed opening position with an elegant, infinite 
+     un-synchronized floating cycle to make the cards feel suspended in air
+  */
+  animation: continuousAtelierFloat 6s ease-in-out infinite alternate;
+}
+
+/* Offsets floating wave cycles so cards do not bob up and down in a rigid block */
+.services-main-container.revealed-view .delay-1 { animation-delay: 0s; }
+.services-main-container.revealed-view .delay-2 { animation-delay: -1.5s; }
+.services-main-container.revealed-view .delay-3 { animation-delay: -3s; }
+.services-main-container.revealed-view .delay-4 { animation-delay: -4.5s; }
+
+.services-main-container.revealed-view .fade-trigger-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   4. DETAILED IMAGE WRAPPER WITH GLANCE LASER REFLECTION
+   ========================================================================== */
+.service-photo-wrapper {
+  position: relative;
+  width: 100%;
+  height: 235px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(203, 181, 161, 0.1);
+}
+
+.service-gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Re-engineered diagonal shimmer beam overlay */
+.service-photo-shimmer {
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent 0%, 
+    rgba(253, 251, 247, 0.15) 50%, 
+    transparent 100%
+  );
+  transform: skewX(-30deg);
+  pointer-events: none;
+}
+
+.service-content-frame {
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-numerical-index {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  margin-bottom: 12px;
+  letter-spacing: 1.5px;
+}
+
+.service-title-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #F7F3EE;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  transition: color 0.4s ease;
+}
+
+.service-body-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #C1B4AA;
+}
+
+/* ==========================================================================
+   5. HOVER SELECTION MICRO-INTERACTIONS (SUPERCHARGED)
+   ========================================================================== */
+.service-experience-card:hover {
+  /* Suspends the base float loop and locks into an intentional focus position */
+  animation-play-state: paused; 
+  transform: translateY(-14px) scale(1.02) !important;
+  border-color: rgba(203, 181, 161, 0.45);
+  
+  /* Deep multi-layered shadow box creates crisp contrast over dark wallpaper backgrounds */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6),
+              0 0 30px rgba(203, 181, 161, 0.04);
+}
+
+.service-experience-card:hover .service-gallery-img {
+  transform: scale(1.08); /* Cinematic camera pull scale zoom */
+}
+
+.service-experience-card:hover .service-photo-shimmer {
+  left: 250%;
+  transition: left 0.9s cubic-bezier(0.4, 0, 0.2, 1); /* Sweeps lighting ray flawlessly across image bounds */
+}
+
+.service-experience-card:hover .service-title-serif {
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   6. ACTIONS GATEWAY CTA BUTTON
+   ========================================================================== */
+.services-action-gate {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.services-luxury-portal-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #CBB5A1;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.services-luxury-portal-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 1px;
+  background-color: #CBB5A1;
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.services-luxury-portal-btn .portal-thread-arrow {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.services-luxury-portal-btn:hover::after {
+  width: 100%;
+}
+
+.services-luxury-portal-btn:hover .portal-thread-arrow {
+  transform: translateX(6px);
+}
+
+/* ==========================================================================
+   7. KEYFRAME MOTION MATRIX PIPELINES (3D HARDWARE OPTIMIZED)
+   ========================================================================== */
+@keyframes continuousAtelierFloat {
+  0% {
+    transform: translateY(0px) rotateX(0deg);
+  }
+  100% {
+    /* Subtle vertical drift paired with micro tilt coordinates */
+    transform: translateY(-8px) rotateX(2deg); 
+  }
+}
+
+/* ==========================================================================
+   8. RESPONSIVE COMPATIBILITY BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .services-interactive-grid {
+    grid-template-columns: repeat(2, 1fr); /* Snaps to clean 2x2 grids on tablet layers */
+    gap: 28px;
+  }
+}
+
+@media (max-width: 650px) {
+  .atelier-services-section {
+    padding: 80px 0;
+  }
+  
+  .services-interactive-grid {
+    grid-template-columns: 1fr; /* Stacks vertically on standard phone screens */
+    gap: 24px;
+    perspective: none; /* Disables deep 3D perspective to preserve standard mobile layout flow */
+  }
+  
+  .fade-trigger-block .service-experience-card {
+    /* Reverts to standard vertical slide on mobile to ensure lightning-fast rendering speeds */
+    transform: translateY(30px); 
+    animation: none !important; /* Disables background floating cycles to conserve phone battery */
+    opacity: 0;
+  }
+  
+  .services-main-container.revealed-view .service-experience-card {
+    opacity: 1;
+    transform: translateY(0) !important;
+  }
+  
+  .service-photo-wrapper {
+    height: 210px;
+  }
+}
+
+</style>
+
+<script>
+    // Append this initialization function directly inside your main DOMContentLoaded script block
+(function initializeServicesScrollReveal() {
+  const servicesContainer = document.querySelector('.services-main-container');
+
+  if (servicesContainer) {
+    const servicesObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Mounts the display class to fire off your staggered transition delay card animations
+          servicesContainer.classList.add('revealed-view');
+          observer.unobserve(entry.target); // Unmount tracker loop right after execution
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1 // Fires right when 10% of the services grid container enters user viewpoint parameters
+    });
+
+    servicesObserver.observe(servicesContainer);
+  }
+})();
+
+</script>
+
+<!-- RE-ENGINEERED LUXURY CTA BANNER -->
+<section class="atelier-cta-banner-section">
+  <div class="cta-banner-main-container">
+    
+    <!-- PURE VECTOR GEOMETRIC ABSTRACT FLOATING TOKENS -->
+    <span class="cta-vector-token token-diamond-gold"></span>
+    <span class="cta-vector-token token-circle-espresso"></span>
+    <span class="cta-vector-token token-cross-caramel"></span>
+    <span class="cta-vector-token token-ring-gold"></span>
+
+    <div class="cta-editorial-layout-box">
+      <!-- MICRO TAG -->
+      <span class="cta-micro-badge">Bespoke Bookings</span>
+      
+      <!-- COMPACT HIGH-END HEADING -->
+      <h2 class="cta-display-heading">
+        Translate Your Imagination Into a <em class="running-shimmer-text">Confectionary Sculpture</em>
+      </h2>
+      
+      <!-- MINIMAL SINGLE-LINE PARAGRAPH CONTENT -->
+      <p class="cta-narrative-paragraph">
+        Reservations for custom multi-tiered commissions are now open for the upcoming season.
+      </p>
+
+      <!-- BRAND THEMED CAPULE CTA -->
+      <div class="cta-button-activation-hub">
+        <a href="contact.html" class="cta-premium-vogue-btn">
+          Secure Your Date 
+          <span class="cta-vector-arrow">→</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   CTA DESCRIPTION PARAGRAPH HOVER MECHANICS
+   ========================================================================== */
+.cta-narrative-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #54473E; /* Muted roasted cocoa base tone */
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+  
+  /* Hardware optimization setup for fluid transformations */
+  display: block;
+  cursor: default;
+  letter-spacing: 0px;
+  transform: translateY(0) translateZ(0);
+  
+  /* High-end easing curves manage the movement smoothly */
+  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              text-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   ACTIVE INTERACTIVE HOVER STATE 
+   ========================================================================== */
+.cta-narrative-paragraph:hover {
+  color: #170E08; /* Illuminates sharply to deep rich espresso black */
+  letter-spacing: 0.2px; /* Soft, airy typographic character expansion stretch */
+  transform: translateY(-2px) scale(1.01); /* Gently lifts and breathes forward in space */
+  
+  /* Adds an ultra-subtle ambient shadow profile for text depth sharpening */
+  text-shadow: 0 2px 4px rgba(23, 14, 8, 0.05);
+}
+
+    /* ==========================================================================
+   1. VANILLA BAKERY BACKDROP CANVAS
+   ========================================================================== */
+.atelier-cta-banner-section {
+  position: relative;
+  width: 100%;
+  padding: 80px 0; /* Reduced padding for a more compact footprint */
+  background: radial-gradient(circle at center, #FDFBF7 0%, #F5EFE9 100%);
+  border-top: 1px solid rgba(43, 31, 23, 0.05);
+  border-bottom: 1px solid rgba(43, 31, 23, 0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-banner-main-container {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cta-editorial-layout-box {
+  position: relative;
+  z-index: 5;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. SHARP EDITORIAL TYPOGRAPHY
+   ========================================================================== */
+.cta-micro-badge {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8C6D53; /* Warm brand caramel */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+}
+
+.cta-display-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem); /* Scaled down for sleek execution */
+  font-weight: 700;
+  line-height: 1.25;
+  color: #170E08; /* Deep rich brand espresso */
+  margin-bottom: 14px;
+}
+
+
+/* Continuous text shadow glow wave for "Confectionary Sculpture" */
+.cta-display-heading em {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #8C6D53 !important;
+  animation: elegantCtaWave 3s ease-in-out infinite alternate;
+}
+
+.cta-narrative-paragraph {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #54473E;
+  max-width: 600px;
+  margin: 0 auto 32px auto;
+}
+
+/* ==========================================================================
+   3. ABSTRACT GEOMETRIC VECTOR TOKENS (REPLACED CRINGE EMOJIS)
+   ========================================================================== */
+.cta-vector-token {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.35;
+  will-change: transform;
+}
+
+/* Left Top: Gold Diamond Sparkle Node */
+.token-diamond-gold {
+  top: -10px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  background-color: #CBB5A1;
+  transform: rotate(45deg);
+  animation: vectorDriftVertical 5s ease-in-out infinite alternate;
+}
+
+/* Right Top: Deep Espresso Accent Circle */
+.token-circle-espresso {
+  top: 10px;
+  right: 40px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #170E08;
+  animation: vectorDriftVertical 4s ease-in-out infinite alternate;
+  animation-delay: -1s;
+}
+
+/* Left Bottom: Subtle Plus Cross Anchor */
+.token-cross-caramel {
+  bottom: 10px;
+  left: 50px;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  animation: vectorDriftHorizontal 6s ease-in-out infinite alternate;
+}
+.token-cross-caramel::before, .token-cross-caramel::after {
+  content: '';
+  position: absolute;
+  background-color: #8C6D53;
+}
+.token-cross-caramel::before { top: 6px; left: 0; width: 100%; height: 2px; }
+.token-cross-caramel::after { top: 0; left: 6px; width: 2px; height: 100%; }
+
+/* Right Bottom: Elegant Gold Ring Outline */
+.token-ring-gold {
+  bottom: -5px;
+  right: 60px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #CBB5A1;
+  border-radius: 50%;
+  animation: vectorDriftHorizontal 5s ease-in-out infinite alternate;
+  animation-delay: -2s;
+}
+
+/* ==========================================================================
+   4. BRAND MATCHED CAPSULED CTA BUTTON
+   ========================================================================== */
+.cta-premium-vogue-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  
+  /* Matches your exact site theme colors */
+  background-color: #170E08; /* Deep Rich Brand Espresso */
+  color: #FDFBF7;             /* Crisp Light Vanilla Text */
+  border: 1px solid #170E08;
+  
+  padding: 16px 38px;
+  border-radius: 50px; /* Capsule pill layout shape */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  
+  box-shadow: 0 4px 15px rgba(23, 14, 8, 0.12);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cta-vector-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* ACTIVE STATE HOVER ENHANCEMENTS */
+.cta-premium-vogue-btn:hover {
+  background-color: #8C6D53; /* Sweeps into brand warm caramel on focus */
+  border-color: #8C6D53;
+  box-shadow: 0 10px 25px rgba(140, 109, 83, 0.3);
+  transform: translateY(-3px);
+}
+
+.cta-premium-vogue-btn:hover .cta-vector-arrow {
+  transform: translateX(5px); /* Arrow glides rightward */
+}
+
+/* Subtle mouse interaction with background vector particles */
+.atelier-cta-banner-section:hover .cta-vector-token {
+  opacity: 0.6;
+}
+
+/* ==========================================================================
+   5. PERFORMANCE DRIVEN HARDWARE ANIMATIONS
+   ========================================================================== */
+@keyframes vectorDriftVertical {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(15deg); }
+}
+
+@keyframes vectorDriftHorizontal {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(12px); }
+}
+
+@keyframes elegantCtaWave {
+  0% { text-shadow: 0 0 0px rgba(140, 109, 83, 0); }
+  100% { text-shadow: 0 0 12px rgba(140, 109, 83, 0.35); color: #170E08; }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS MOBILE SETUP
+   ========================================================================== */
+@media (max-width: 768px) {
+  .atelier-cta-banner-section {
+    padding: 60px 0;
+    text-align: left; /* Flattens cleanly to an editorial left-align framework on phones */
+  }
+  .cta-banner-main-container {
+    width: 86%;
+  }
+  .cta-display-heading {
+    line-height: 1.3;
+  }
+  .cta-narrative-paragraph {
+    margin: 0 0 28px 0;
+  }
+  .cta-premium-vogue-btn {
+    width: 100%;
+    justify-content: center; /* Fluid block stretch layout on touchscreen devices */
+  }
+  .cta-vector-token {
+    display: none !important; /* Strips decorations on mobile screen constraints */
+  }
+}
+
+</style>
+
+<!-- LUXURY ATELIER PHOTO GRID GALLERY LOOKBOOK -->
+<section class="atelier-lookbook-section">
+  
+  <!-- LOW OPACITY PARALLAX BACKGROUND COATING -->
+  <div class="lookbook-bg-holder">
+    <!-- Replace path with your high-end background image asset -->
+    <img src="./Assests/home 3 - 2.webp" alt="Atelier Marble Backdrop" class="lookbook-backdrop-img" onerror="this.style.display='none';">
+    <div class="lookbook-smoky-mask"></div>
+  </div>
+
+  <div class="lookbook-main-container">
+    
+    <!-- MINIMALIST EDITORIAL INTRO HEADER -->
+    <div class="lookbook-section-header">
+      <span class="lookbook-micro-tag">— The Lookbook —</span>
+      <h2 class="lookbook-display-title">Bespoke Flavour <em>Blueprints</em></h2>
+    </div>
+
+    <!-- ASYMMETRICAL PICTURE GALLERY INTERACTIVE PUZZLE GRID -->
+    <div class="lookbook-mosaic-grid scroll-trigger-box">
+      
+      <!-- PHOTO BLOCK 1: GRAND TALL STATEMENT PIECE -->
+      <div class="mosaic-item-card card-tall fade-up-delay-1">
+        <div class="lookbook-mask-box">
+          <img src="./Assests/wed.webp" alt="Tiered Wedding Cake Art" class="lookbook-actual-img">
+          <div class="lookbook-card-veil"></div>
+        </div>
+        <div class="lookbook-minimal-meta">
+          <h3 class="lookbook-item-title">Editorial Tiered</h3>
+          <span class="lookbook-item-category">Wedding Fine Art</span>
+        </div>
+      </div>
+
+      <!-- PHOTO BLOCK 2: WIDE LANDSCAPE CLOSEUP DETAIL -->
+      <div class="mosaic-item-card card-wide fade-up-delay-2">
+        <div class="lookbook-mask-box">
+          <img src="./Assests/mirror.webp" alt="Mirror Glaze Entremet" class="lookbook-actual-img">
+          <div class="lookbook-card-veil"></div>
+        </div>
+        <div class="lookbook-minimal-meta">
+          <h3 class="lookbook-item-title">Gilded Ganache</h3>
+          <span class="lookbook-item-category">Mirror Entremets</span>
+        </div>
+      </div>
+
+      <!-- PHOTO BLOCK 3: SQUARE BOTANICAL ACCENT FRAME -->
+      <div class="mosaic-item-card card-square-left fade-up-delay-3">
+        <div class="lookbook-mask-box">
+          <img src="./Assests/petal.webp" alt="Floral Pressed Sponge Cake" class="lookbook-actual-img">
+          <div class="lookbook-card-veil"></div>
+        </div>
+        <div class="lookbook-minimal-meta">
+          <h3 class="lookbook-item-title">Botanical Press</h3>
+          <span class="lookbook-item-category">Organic Petal Infusions</span>
+        </div>
+      </div>
+
+      <!-- PHOTO BLOCK 4: COMPACT PORTRAIT ACCENT FRAME -->
+      <div class="mosaic-item-card card-square-right fade-up-delay-4">
+        <div class="lookbook-mask-box">
+          <img src="./Assests/fours.webp" alt="Luxury Chocolate Pralines" class="lookbook-actual-img">
+          <div class="lookbook-card-veil"></div>
+        </div>
+        <div class="lookbook-minimal-meta">
+          <h3 class="lookbook-item-title">Noir Truffle</h3>
+          <span class="lookbook-item-category">Bespoke Petit Fours</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   1. SECTION COVERAGE BASE & BACKGROUND IMMERSION
+   ========================================================================== */
+.atelier-lookbook-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 0;
+  background-color: #170E08; /* Matches your exact site theme dark cocoa base */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.lookbook-bg-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.lookbook-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.95; /* Keeps background images incredibly subtle to maintain dark look contrast */
+  filter: grayscale(50%) brightness(50%);
+}
+
+.lookbook-smoky-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #170E08 0%, rgba(23, 14, 8, 0.7) 50%, #170E08 100%);
+  z-index: 2;
+}
+
+.lookbook-main-container {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. MINIMALIST EDITORIAL SECTION HEADERS
+   ========================================================================== */
+.lookbook-section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.lookbook-micro-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #CBB5A1; /* Brand warm caramel gold */
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.lookbook-display-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 700;
+  color: #F7F3EE; /* Ivory silk */
+  letter-spacing: 0.5px;
+}
+
+.lookbook-display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #E6D4C3; /* Soft cream silk tint */
+}
+
+/* ==========================================================================
+   3. ASYMMETRICAL MOSAIC PUZZLE GRID DESIGN
+   ========================================================================== */
+.lookbook-mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* 12 Column system allows custom alignment grid breaks */
+  grid-auto-rows: minmax(140px, auto);
+  gap: 30px;
+  width: 100%;
+  perspective: 1000px; /* Enables true 3D camera layer rotation */
+}
+
+/* Base style rules for all puzzle cards */
+.mosaic-item-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(203, 181, 161, 0.12);
+  background-color: #23160D;
+  display: flex;
+  flex-direction: column;
+  
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+  transition: border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* PHOTO ENCLOSURE MASKS */
+.lookbook-mask-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lookbook-actual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Elegant dark ambient mask overlay inside photo envelopes */
+.lookbook-card-veil {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 40%, rgba(23, 14, 8, 0.85) 100%);
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   4. HOVER AND META DESCRIPTION MATRIX OVERRIDES
+   ========================================================================== */
+.lookbook-minimal-meta {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.lookbook-item-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.lookbook-item-category {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #CBB5A1; /* Warm caramel gold */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ASYMMETRICAL CARD PLACEMENTS ON INTEL MATRIX GRID */
+.card-tall { grid-column: span 4; grid-row: span 4; height: 600px; }
+.card-wide { grid-column: span 8; grid-row: span 2; height: 285px; }
+.card-square-left { grid-column: span 4; grid-row: span 2; height: 285px; }
+.card-square-right { grid-column: span 4; grid-row: span 2; height: 285px; }
+
+/* REACTION MOUSE ENTER INTERACTIONS */
+.mosaic-item-card:hover {
+  border-color: rgba(203, 181, 161, 0.45); /* Illuminates outline wire */
+  transform: translateY(-8px) scale(1.01) rotateY(2deg); /* Interactive 3D micro rotation shift */
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.mosaic-item-card:hover .lookbook-actual-img {
+  transform: scale(1.06); /* Fluid slow cinematic pull zoom on active cake photos */
+}
+
+/* ==========================================================================
+   5. CASCADING TIMELINE ENTRANCE MOTION SEQUENCE (SCROLL OBSERVER)
+   ========================================================================== */
+.lookbook-mosaic-grid .mosaic-item-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Sequence Delay loops fire automatically as you roll down your document screen */
+.lookbook-main-container.lookbook-revealed .fade-up-delay-1 { transition-delay: 0.1s; }
+.lookbook-main-container.lookbook-revealed .fade-up-delay-2 { transition-delay: 0.25s; }
+.lookbook-main-container.lookbook-revealed .fade-up-delay-3 { transition-delay: 0.4s; }
+.lookbook-main-container.lookbook-revealed .fade-up-delay-4 { transition-delay: 0.55s; }
+
+.lookbook-main-container.lookbook-revealed .mosaic-item-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ==========================================================================
+   6. RESPONSIVE COMPATIBILITY BREAKPOINTS TERMINALS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .lookbook-mosaic-grid {
+    gap: 20px;
+  }
+  .card-tall { height: 480px; }
+  .card-wide, .card-square-left, .card-square-right { height: 230px; }
+}
+
+@media (max-width: 768px) {
+  .atelier-lookbook-section {
+    padding: 80px 0;
+  }
+  
+  /* FLATTENS MATRIX GRID INTO 1 RE-FLOW COLUMN STACK ON SMARTPHONES */
+  .lookbook-mosaic-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .mosaic-item-card {
+    width: 100% !important;
+    height: 320px !important; /* Locks balanced portrait profile photo rectangles on touch displays */
+  }
+}
+
+</style>
+<script>
+    // Append this initialization function directly inside your main DOMContentLoaded script block
+(function initializeLookbookScrollReveal() {
+  const lookbookContainer = document.querySelector('.lookbook-main-container');
+
+  if (lookbookContainer) {
+    const lookbookObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Mounts the display class to fire off the staggered photo block entrance sequence
+          lookbookContainer.classList.add('lookbook-revealed');
+          observer.unobserve(entry.target); // Unmount tracker right away to conserve performance
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.1 // Fires smoothly the millisecond 10% of the gallery block crosses into viewport bounds
+    });
+
+    lookbookObserver.observe(lookbookContainer);
+  }
+})();
+
+</script>
+
+<!-- LUXURY ATELIER TESTIMONIAL CAROUSEL SECTION -->
+<section class="atelier-testimonial-section">
+  
+  <!-- BACKDROP IMAGE INJECTION ENGINE -->
+  <div class="testimonial-bg-holder">
+    <!-- Replace path with your high-end background image asset -->
+    <img src="./Assests/catering.webp" alt="Atelier Velvet Backdrop" class="testimonial-backdrop-img" onerror="this.style.display='none';">
+    <div class="testimonial-smoky-mask"></div>
+  </div>
+
+  <div class="testimonial-main-container">
+    
+    <!-- MINIMALIST EDITORIAL HEADER -->
+    <div class="testimonial-section-header">
+      <span class="testimonial-micro-tag">— Salon Chronicles —</span>
+      <h2 class="testimonial-display-title">Client <em>Endorsements</em></h2>
+    </div>
+
+    <!-- CAROUSEL ROTATION HOUSING MATRIX -->
+    <div class="testimonial-carousel-viewport">
+      
+      <!-- QUOTE CARD 1 (ACTIVE BY DEFAULT) -->
+      <div class="confection-quote-capsule active-slide">
+        <div class="quote-shape-envelope">
+          <div class="quote-decorative-glyph">“</div>
+          <p class="quote-narrative-text">
+            The multi-tiered dark cocoa masterpiece sculpted for our anniversary gala was an architectural marvel. Our guests were spellbound by both the design and the rich velvet espresso texture layer flow.
+          </p>
+          <div class="client-signature-block">
+            <h4 class="client-name-serif">Lady Genevieve V.</h4>
+            <span class="client-meta-label">Bespoke Gala Commission</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE CARD 2 -->
+      <div class="confection-quote-capsule">
+        <div class="quote-shape-envelope">
+          <div class="quote-decorative-glyph">“</div>
+          <p class="quote-narrative-text">
+            Bypassing standard bakery models was the best decision we made. The smoked honey lavender layers were perfectly delicate. It felt less like a cake and more like fine haute couture art.
+          </p>
+          <div class="client-signature-block">
+            <h4 class="client-name-serif">Julian Sinclair</h4>
+            <span class="client-meta-label">Editorial Tiered Commission</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE CARD 3 -->
+      <div class="confection-quote-capsule">
+        <div class="quote-shape-envelope">
+          <div class="quote-decorative-glyph">“</div>
+          <p class="quote-narrative-text">
+            The private tasting salon consultation session was breathtaking. Crafting our flavor profile felt incredibly personalized, and the corporate gift boxes left our priority executives amazed.
+          </p>
+          <div class="client-signature-block">
+            <h4 class="client-name-serif">Aria Montgomery</h4>
+            <span class="client-meta-label">Concierge Gifting Partner</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+   
+    <div class="carousel-navigation-threads">
+      <button class="thread-arrow-btn arrow-left" aria-label="Previous Slide">←</button>
+      <div class="carousel-dot-matrix">
+        <span class="nav-dot active-dot" data-slide="0"></span>
+        <span class="nav-dot" data-slide="1"></span>
+        <span class="nav-dot" data-slide="2"></span>
+      </div>
+      <button class="thread-arrow-btn arrow-right" aria-label="Next Slide">→</button>
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   1. SECTION CONTAINER WITH PARALLAX CLIPPING BACKING
+   ========================================================================== */
+.atelier-testimonial-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px 0;
+  background-color: #170E08; /* Theme dark cocoa baseline */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.testimonial-bg-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.testimonial-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.92;
+  background-attachment: fixed;
+  filter: grayscale(30%) brightness(60%);
+}
+
+.testimonial-smoky-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #170E08 0%, rgba(23, 14, 8, 0.78) 50%, #170E08 100%);
+  z-index: 2;
+}
+
+.testimonial-main-container {
+  position: relative;
+  z-index: 3;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header Reset Target */
+.testimonial-section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.testimonial-micro-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #CBB5A1;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.testimonial-display-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.6vw, 3.2rem);
+  font-weight: 700;
+  color: #F7F3EE;
+}
+
+.testimonial-display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #E6D4C3;
+}
+
+/* ==========================================================================
+   2. VIEWPORT WRAPPER & AVANT-GARDE CAROUSEL SHAPE DESIGN
+   ========================================================================== */
+.testimonial-carousel-viewport {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1200px;
+}
+
+.confection-quote-capsule {
+  position: absolute;
+  width: 100%;
+  max-width: 680px;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  
+  /* Staging 3D entry positions for slide swaps */
+  transform: scale(0.9) rotateY(-15deg) translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              visibility 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Dynamic Active Visibility Override State Hook */
+.confection-quote-capsule.active-slide {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+  transform: scale(1) rotateY(0deg) translateY(0);
+}
+
+/* 
+   THE ORGANIC CARD SHAPE: Custom asymmetrical border radii mapping.
+   Bbreaks away from basic squares or rectangles into a fluid dough-dollop tear profile container capsule shape.
+*/
+/* ==========================================================================
+   PREMIUM TESTIMONIAL CONTAINER HOVER SYSTEM
+   ========================================================================== */
+.quote-shape-envelope {
+  background: linear-gradient(135deg, rgba(38, 24, 15, 0.65) 0%, rgba(23, 14, 8, 0.8) 100%);
+  border: 1px solid rgba(203, 181, 161, 0.15);
+  padding: 40px 50px 36px 50px !important; 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  position: relative;
+  border-radius: 120px 30px 140px 40px; 
+  
+  /* Retain continuous background floating breath loops */
+  animation: organicShapeFloat 6s ease-in-out infinite alternate;
+  
+  /* 
+     CRITICAL ENHANCEMENT: Preps paths for 3D spatial transforms 
+     and implements custom easing curves for premium fluid motion.
+  */
+  transform-style: preserve-3d;
+  transform: scale(1) translateZ(0);
+  transition: border-color 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              background 0.5s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   ACTIVE INTERACTIVE CONTAINER HOVER STATE
+   ========================================================================== */
+.quote-shape-envelope:hover {
+  /* Suspends the automatic float bobbing to lock cleanly into a hover focus position */
+  animation-play-state: paused; 
+  
+  /* Lifts the card subtly forward in 3D depth space toward the user display layer */
+  transform: translateY(-4px) scale(1.015) translateZ(20px) !important;
+  
+  /* Deepens backdrop cocoa richness and illuminates custom perimeter wires */
+  background: linear-gradient(135deg, rgba(46, 30, 19, 0.85) 0%, rgba(26, 16, 9, 0.95) 100%);
+  border-color: rgba(203, 181, 161, 0.45); 
+  
+  /* Expands the drop-shadow matrix to map a soft, ambient golden-caramel aura glow */
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.65),
+              0 0 40px rgba(203, 181, 161, 0.05);
+}
+
+/* ==========================================================================
+   INNER COMPONENT STATE TRANSITIONS (OPTIONAL STAGGERED ACCENTS)
+   ========================================================================== */
+.quote-shape-envelope .quote-decorative-glyph {
+  transition: transform 0.5s ease, color 0.5s ease;
+}
+
+/* Slowly rotates and brightens the decorative quote mark symbol on container hover */
+.quote-shape-envelope:hover .quote-decorative-glyph {
+  transform: rotate(-5deg) scale(1.05);
+  color: rgba(203, 181, 161, 0.15); /* Becomes slightly more distinct */
+}
+
+.quote-shape-envelope:hover .client-name-serif {
+  color: #FFFFFF; /* Brightens client signatures to striking pure silk white */
+}
+
+
+.quote-shape-envelope {
+  background: linear-gradient(135deg, rgba(38, 24, 15, 0.65) 0%, rgba(23, 14, 8, 0.8) 100%);
+  border: 1px solid rgba(203, 181, 161, 0.15);
+  padding: 64px 70px 50px 70px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  position: relative;
+  
+  /* Asymmetrical layout anchor radii curves values */
+  border-radius: 120px 30px 140px 40px; 
+  
+  /* Infinite floating breath animation loop */
+  animation: organicShapeFloat 6s ease-in-out infinite alternate;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ==========================================================================
+   3. INNER TYPOGRAPHY CONTENT ELEMENTS
+   ========================================================================== */
+.quote-decorative-glyph {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  font-family: 'Playfair Display', serif;
+  font-size: 7rem;
+  line-height: 1;
+  color: rgba(203, 181, 161, 0.08); /* Giant, elegant faded background quote decoration */
+  user-select: none;
+}
+
+.quote-narrative-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  line-height: 1.75;
+  color: #D6C7BC; /* Soft latte Grey text */
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 2;
+  font-weight: 400;
+  text-align: center;
+}
+
+.client-signature-block {
+  text-align: center;
+}
+
+.client-name-serif {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #F7F3EE; /* Ivory Silk text titles */
+  margin-bottom: 4px;
+}
+
+.client-meta-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #CBB5A1; /* Warm caramel gold */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   4. ACTIVE PORTAL NAVIGATION TRACK CONTROLS
+   ========================================================================== */
+.carousel-navigation-threads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.thread-arrow-btn {
+  background: none;
+  border: 1px solid rgba(203, 181, 161, 0.25);
+  color: #CBB5A1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.thread-arrow-btn:hover {
+  background-color: #CBB5A1;
+  color: #170E08;
+  border-color: #CBB5A1;
+  transform: translateY(-2px);
+}
+
+.carousel-dot-matrix {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(203, 181, 161, 0.25);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.nav-dot.active-dot {
+  background-color: #CBB5A1;
+  transform: scale(1.4); /* Active tracker expands slightly */
+}
+
+/* ==========================================================================
+   5. LOOP MOTION GRAPHICS TIMELINES
+   ========================================================================== */
+@keyframes organicShapeFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    border-radius: 120px 30px 140px 40px;
+  }
+  50% {
+    /* Morphs the boundary radius profiles slightly in air to look fluid and alive */
+    border-radius: 110px 40px 130px 50px; 
+  }
+  100% {
+    transform: translateY(-10px) rotate(1deg);
+    border-radius: 130px 25px 150px 35px;
+  }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE COMPATIBILITY BREAKPOINTS TERMINALS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .atelier-testimonial-section {
+    padding: 80px 0;
+  }
+  .quote-shape-envelope {
+    padding: 50px 36px 40px 36px;
+    border-radius: 80px 20px 90px 30px; /* Compress shapes down tightly to maximize phone viewport grid space */
+    animation-name: easeMobileFloat; /* Simplified loop saves mobile battery processing */
+  }
+  .testimonial-carousel-viewport {
+    min-height: 480px; /* Extends container footprint height as text stretches downward onto phones */
+  }
+  .quote-decorative-glyph {
+    left: 20px;
+    top: 5px;
+    font-size: 5rem;
+  }
+}
+
+@keyframes easeMobileFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+</style>
+<script>
+    // Append this initialization function directly inside your main DOMContentLoaded script block
+(function initializeTestimonialCarousel() {
+  const testimonialSlidesList = document.querySelectorAll('.confection-quote-capsule');
+  const dotMatrixElementsList = document.querySelectorAll('.nav-dot');
+  const buttonLeftArrow = document.querySelector('.arrow-left');
+  const buttonRightArrow = document.querySelector('.arrow-right');
+  
+  let currentActiveIndex = 0;
+
+  if (testimonialSlidesList.length === 0) return;
+
+  /**
+   * Synchronises visibility tracking arrays across the slide viewport
+   */
+  function renderActiveSlide(targetIndex) {
+    // Strip active status from previous nodes
+    testimonialSlidesList[currentActiveIndex].classList.remove('active-slide');
+    dotMatrixElementsList[currentActiveIndex].classList.remove('active-dot');
+    
+    // Assign updated tracking target index pointers
+    currentActiveIndex = targetIndex;
+    
+    // Inject display active tokens onto newly chosen nodes
+    testimonialSlidesList[currentActiveIndex].classList.add('active-slide');
+    dotMatrixElementsList[currentActiveIndex].classList.add('active-dot');
+  }
+
+  // Right Arrow Trigger Loop
+  if (buttonRightArrow) {
+    buttonRightArrow.addEventListener('click', () => {
+      let nextIndex = (currentActiveIndex + 1) % testimonialSlidesList.length;
+      renderActiveSlide(nextIndex);
+    });
+  }
+
+  // Left Arrow Trigger Loop
+  if (buttonLeftArrow) {
+    buttonLeftArrow.addEventListener('click', () => {
+      let previousIndex = (currentActiveIndex - 1 + testimonialSlidesList.length) % testimonialSlidesList.length;
+      renderActiveSlide(previousIndex);
+    });
+  }
+
+  // Dot Matrix Node Indicators Click Loop
+  dotMatrixElementsList.forEach((dot) => {
+    dot.addEventListener('click', (event) => {
+      const explicitTargetIndex = parseInt(event.target.getAttribute('data-slide'), 10);
+      renderActiveSlide(explicitTargetIndex);
+    });
+  });
+})();
+
+</script>
+
+<!-- LUXURY MINIMALIST PORTAL CTA BANNER -->
+<section class="atelier-mini-cta-section">
+  <div class="mini-cta-backdrop-glow"></div>
+  
+  <div class="mini-cta-main-container scroll-reveal-banner">
+    <div class="mini-cta-content-alignment">
+      
+      <!-- LEFT ACCENT: STYLISH SINGLE-LINE COPY WRAPPING -->
+      <div class="mini-cta-text-envelope">
+        <span class="mini-cta-tag-trail">Bespoke Ordering</span>
+        <h2 class="mini-cta-display-title">
+          Ready to design your <em>signature centerpiece?</em>
+        </h2>
+      </div>
+
+      <!-- RIGHT ACCENT: BRAND-MATCHED INTERACTIVE PORTAL BUTTON -->
+      <div class="mini-cta-action-hub">
+        <a href="contact.html" class="mini-cta-vogue-pill-btn">
+          Commission Now
+          <span class="mini-cta-arrow-vector">→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   1. RADIANT VANILLA BREAKOUT CANVAS
+   ========================================================================== */
+.atelier-mini-cta-section {
+  position: relative;
+  width: 100%;
+  padding: 64px 0; /* Tight, compact vertical layout footprint */
+  
+  /* 
+     BRIGHTER COLOR BACKGROUND: Rich buttercream vanilla latte gradient.
+     Breaks up the heavy dark sections with a striking, professional contrast canvas.
+  */
+  background: linear-gradient(135deg, #FDFBF7 0%, #F4ECE3 100%);
+  
+  border-top: 1px solid rgba(23, 14, 8, 0.05);
+  border-bottom: 1px solid rgba(23, 14, 8, 0.05);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Subtle underlying golden backdrop reflection radial aura glow */
+.mini-cta-backdrop-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(203, 181, 161, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mini-cta-main-container {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mini-cta-content-alignment {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ==========================================================================
+   2. SHARP EDITORIAL TYPOGRAPHY (Deep Espresso Brand Inversion)
+   ========================================================================== */
+.mini-cta-text-envelope {
+  text-align: left;
+}
+
+.mini-cta-tag-trail {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #8C6D53; /* Warm brand caramel */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 6px;
+}
+
+.mini-cta-display-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #170E08; /* Deep rich brand espresso text color */
+}
+
+.mini-cta-display-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: #8C6D53; /* Warm caramel accent statement word */
+}
+/* ==========================================================================
+   SIGNATURE CENTERPIECE GLOW & HOVER SYSTEM
+   ========================================================================== */
+.mini-cta-display-title em {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #8C6D53 !important; /* Base warm brand caramel */
+  position: relative;
+  z-index: 2;
+  cursor: default;
+  
+  /* Prep path for smooth hardware-accelerated transforms */
+  transform: scale(1) translateZ(0);
+  letter-spacing: 0px;
+  
+  /* 
+     Combines the infinite ambient glow wave animation with a 
+     high-end, responsive transition curve for mouse hovers
+  */
+  animation: luxuryCtaGlowPulse 4s ease-in-out infinite alternate;
+  transition: color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              letter-spacing 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+              text-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   INTERACTIVE ACTIVE HOVER STATE
+   ========================================================================== */
+/* Fires an elegant expansion when the user hovers anywhere near the text envelope block wrapper */
+.mini-cta-text-envelope:hover .mini-cta-display-title em {
+  color: #170E08 !important; /* Illuminates sharply to deep rich espresso black */
+  letter-spacing: 0.6px; /* Airy typographic letter-spacing expansion layout */
+  transform: scale(1.02) translateY(-1px); /* Gently breathes forward and lifts in space */
+  
+  /* Pauses the background pulsing cycle to lock into a brilliant, high-contrast glow focus */
+  animation-play-state: paused; 
+  
+  /* Custom shadow mask layering bypasses browser background clipping bugs */
+  text-shadow: 0 0 20px rgba(140, 109, 83, 0.45), 
+               0 2px 4px rgba(23, 14, 8, 0.1);
+}
+
+/* ==========================================================================
+   INFINITE GLOW TIMELINE KEYFRAMES (CONTINUOUS BACKGROUND MODE)
+   ========================================================================== */
+@keyframes luxuryCtaGlowPulse {
+  0% {
+    color: #8C6D53;
+    /* Soft, warm caramel outline halo focused gently behind the letters */
+    text-shadow: 0 0 8px rgba(140, 109, 83, 0.2),
+                 0 0 2px rgba(140, 109, 83, 0.1);
+  }
+  100% {
+    color: #A37F62; /* Subtle shift to an illuminated lighter gold-caramel */
+    /* Deepens and expands to create a soft, breathing gold-leaf aura */
+    text-shadow: 0 0 16px rgba(140, 109, 83, 0.5),
+                 0 0 6px rgba(140, 109, 83, 0.25);
+  }
+}
+
+/* ==========================================================================
+   3. BRAND THEMED CAPSULE CTA BUTTON WITH HOVER PULSE
+   ========================================================================== */
+.mini-cta-action-hub {
+  flex-shrink: 0;
+}
+
+.mini-cta-vogue-pill-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  
+  /* Matches your site theme core dark chocolate palette */
+  background-color: #170E08; /* Deep Rich Brand Espresso */
+  color: #FDFBF7;             /* Crisp Light Vanilla Text */
+  border: 1px solid #170E08;
+  
+  padding: 16px 36px;
+  border-radius: 50px; /* Smooth curved capsule shape */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  
+  box-shadow: 0 4px 15px rgba(23, 14, 8, 0.12);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0);
+}
+
+.mini-cta-arrow-vector {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+/* HIGH-END ACTIVE HOVER MECHANICS */
+.mini-cta-vogue-pill-btn:hover {
+  background-color: #8C6D53; /* Sweeps into brand warm caramel on pointer hover */
+  border-color: #8C6D53;
+  box-shadow: 0 10px 25px rgba(140, 109, 83, 0.3);
+  transform: translateY(-3px); /* Vertical elevation zoom snap */
+}
+
+.mini-cta-vogue-pill-btn:hover .mini-cta-arrow-vector {
+  transform: translateX(5px); /* Arrow token slides rightward smoothly */
+}
+
+/* ==========================================================================
+   4. PERFORMANCE DRIVEN SCROLL REVEAL TIMELINES (SCROLL OBSERVATION)
+   ========================================================================== */
+.scroll-reveal-banner .mini-cta-text-envelope {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.scroll-reveal-banner .mini-cta-action-hub {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transition-delay: 0.15s; /* Staggered delays create an organic folding reveal */
+}
+
+/* The moment JS classes mount, elements smoothly fly together horizontally */
+.scroll-reveal-banner.banner-revealed .mini-cta-text-envelope,
+.scroll-reveal-banner.banner-revealed .mini-cta-action-hub {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   5. FLUID MOBILE RESPONSIVE ADAPTABILITY MATRIX TERMINALS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .atelier-mini-cta-section {
+    padding: 50px 0;
+  }
+  
+  /* Restructures layout from horizontal side-by-side to a clean left-aligned stack */
+  .mini-cta-content-alignment {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  
+  .mini-cta-main-container {
+    width: 86%;
+  }
+  
+  .mini-cta-action-hub {
+    width: 100%;
+  }
+  
+  .mini-cta-vogue-pill-btn {
+    width: 100%;
+    justify-content: center; /* Expands to full screen width touch target on mobile viewports */
+  }
+  
+  /* Reverts scroll transitions to a unified vertical glide up to match screen limits */
+  .scroll-reveal-banner .mini-cta-text-envelope,
+  .scroll-reveal-banner .mini-cta-action-hub {
+    transform: translateY(20px);
+    transition-delay: 0s !important;
+  }
+  .scroll-reveal-banner.banner-revealed .mini-cta-text-envelope,
+  .scroll-reveal-banner.banner-revealed .mini-cta-action-hub {
+    transform: translateY(0);
+  }
+}
+
+</style>
+
+<script>
+    // Append this initialization function directly inside your main DOMContentLoaded script block
+(function initializeMiniCtaScrollReveal() {
+  const miniCtaContainer = document.querySelector('.scroll-reveal-banner');
+
+  if (miniCtaContainer) {
+    const miniCtaObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Mounts the display class to fire off the horizontal staggered entrance motion rules
+          miniCtaContainer.classList.add('banner-revealed');
+          observer.unobserve(entry.target); // Unmount tracker right away to conserve performance
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.15 // Fires cleanly when 15% of the banner enters user viewpoint parameters
+    });
+
+    miniCtaObserver.observe(miniCtaContainer);
+  }
+})();
+
+</script>
+
+<!-- LUXURY ATELIER HOMEPAGE FOOTER SECTION -->
+<footer class="global-bakery-footer">
+  <div class="footer-main-container">
+    <div class="footer-split-grid">
+      
+     
+   <!-- UPDATED INTERACTIVE LOGO SCROLL-TO-TOP GATEWAY -->
+<div class="footer-brand-column">
+  <a href="#" class="footer-logo-link" id="footer-logo-top-trigger" style="text-decoration: none; display: inline-block;" aria-label="Scroll back to top of Atelier">
+    <div class="footer-logo-wrapper">
+      <img src="./Assests/Cakeshop.webp" alt="Sugar &amp; Spice Logo" class="footer-logo-asset" onerror="this.src='https://placehold.co'">
+    </div>
+  </a>
+
+
+        <p class="footer-brand-bio">
+          Sculpting high-fashion architectural sugar arts, multi-tiered wedding masterpieces, and premium single-origin chocolate confections for life's most exquisite celebrations.
+        </p>
+        <div class="footer-social-wrapper">
+          <a href="#" class="social-icon-box" aria-label="Instagram">📸</a>
+          <a href="#" class="social-icon-box" aria-label="Pinterest">📌</a>
+          <a href="#" class="social-icon-box" aria-label="Facebook">🌸</a>
+        </div>
+      </div>
+
+   
+      <div class="footer-links-column">
+        <h4 class="footer-menu-title">Collections</h4>
+        <ul class="footer-links-list">
+          <li><a href="menu.html">Wedding Tiered</a></li>
+          <li><a href="menu.html">Mirror Entremets</a></li>
+          <li><a href="menu.html">Bespoke Sculptures</a></li>
+          <li><a href="menu.html">Petit Fours</a></li>
+          <li><a href="menu.html">Seasonal Edits</a></li>
+        </ul>
+      </div>
+
+    
+      <div class="footer-links-column">
+        <h4 class="footer-menu-title">Atelier</h4>
+        <ul class="footer-links-list">
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="blog.html">Sweet Blog</a></li>
+          <li><a href="orders.html">Order Tracker</a></li>
+          <li><a href="contact.html">Find Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+    
+      <div class="footer-newsletter-column">
+        <h4 class="footer-menu-title">The Atelier Newsletter</h4>
+        <p class="newsletter-descriptor-text">
+          Receive exclusive invitations to seasonal flavor tastings, recipe secrets, and priority calendar opening alerts.
+        </p>
+        <form class="footer-subscribe-form">
+  <div class="input-field-envelope">
+    <input type="email" placeholder="Your elegant email..." class="footer-email-input" required>
+  </div>
+  <button type="submit" class="footer-subscribe-submit-btn">
+    Subscribe <span class="submit-arrow-vector">→</span>
+  </button>
+</form>
+      </div>
+
+    </div>
+
+   
+    <div class="footer-baseline-split">
+      <p class="footer-copyright-text">&copy; 2026 Sugar &amp; Spice Atelier. All rights reserved.</p>
+      <div class="footer-policy-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Cookie Policy</a>
+      </div>
+    </div>
+
+  </div>
+
+
+</footer>
+<style>
+    /* ==========================================================================
+   1. GLOBAL FOOTER COAT WALL (Deep Dark Cocoa Baseline Theme)
+   ========================================================================== */
+/* ==========================================================================
+   GLOBAL FOOTER COAT WALL (FIXED SCROLL CLIPPING OVERRIDE)
+   ========================================================================== */
+.global-bakery-footer {
+  position: relative;
+  width: 100%;
+  background-color: #0F0905; /* Extra deep rich roasted espresso core black */
+  padding: 90px 0 40px 0;
+  border-top: 1px solid rgba(203, 181, 161, 0.1); /* Subtle caramel dividing perimeter */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
+  
+  /* 
+     CRITICAL SCROLL RE-ACTIVATOR: Replaced rigid global 'overflow: hidden' 
+     with a safer horizontal clipping rule. This prevents side-shifting gaps 
+     while allowing your fixed circular button to project and function properly.
+  */
+  overflow-x: hidden; 
+  overflow-y: visible !important;
+}
+
+
+.footer-main-container {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. FOUR-COLUMN LAYOUT ASYMMETRICAL INTERACTIVE SPLIT GRID
+   ========================================================================== */
+.footer-split-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.7fr 0.7fr 1.4fr; /* Expanded outer columns optimize form placement padding */
+  gap: 50px;
+  margin-bottom: 70px;
+}
+
+/* Column 1 Content Fields */
+.footer-brand-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-wrapper {
+  margin-bottom: 24px;
+}
+
+.footer-logo-asset {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-brand-bio {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #B5A89E; /* Soft latte cream text */
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+
+/* Luxury Social Pill Box Configurations */
+.footer-social-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icon-box {
+  text-decoration: none;
+  width: 38px;
+  height: 38px;
+  background-color: rgba(203, 181, 161, 0.05);
+  border: 1px solid rgba(203, 181, 161, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(0);
+}
+
+.social-icon-box:hover {
+  background-color: #CBB5A1; /* Slurs into gold caramel fill */
+  border-color: #CBB5A1;
+  transform: translateY(-4px); /* Vertical elevation bounce */
+  box-shadow: 0 10px 20px rgba(203, 181, 161, 0.2);
+}
+
+/* ==========================================================================
+   3. MIDDLE ROUTING MENUS (Ivory Links & Italic Serif Title Nodes)
+   ========================================================================== */
+.footer-menu-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  font-style: italic; /* Signature luxury touch matches headers style formatting templates */
+  color: #F7F3EE;      /* Ivory Silk title header face */
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+  text-transform: capitalize;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-list a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  color: #A3968C; /* Muted coffee grey */
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #CBB5A1; /* Warm caramel gild highlight focus token */
+  transform: translateX(4px); /* Gentle side sliding tracking reveal motion */
+}
+
+/* ==========================================================================
+   4. PREMIUM NEWSLETTER SUBSCRIPTION FORM CONTAINER
+   ========================================================================== */
+.newsletter-descriptor-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #B5A89E;
+  margin-bottom: 20px;
+}
+
+.footer-subscribe-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.input-field-envelope {
+  position: relative;
+  width: 100%;
+}
+
+.footer-email-input {
+  width: 100%;
+  height: 52px;
+  background-color: #170E08; /* Embedded dark cocoa field envelope */
+  border: 1px solid rgba(203, 181, 161, 0.15);
+  border-radius: 30px; /* Aligns seamlessly with header capsule design geometry */
+  padding: 0 24px;
+  font-size: 0.9rem;
+  color: #F7F3EE;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.footer-email-input:focus {
+  border-color: #CBB5A1; /* Glowing gold wire track focus states */
+  box-shadow: 0 0 15px rgba(203, 181, 161, 0.08);
+}
+
+/* Re-skinned High-Contrast Brand Submit Callout Button */
+.footer-subscribe-submit-btn {
+  width: 100%;
+  height: 52px;
+  background-color: #CBB5A1; /* Warm Caramel Fill Base */
+  color: #170E08;             /* Espresso Black Text Contrast */
+  border: 1px solid #CBB5A1;
+  border-radius: 30px;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.submit-arrow-vector {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.footer-subscribe-submit-btn:hover {
+  background-color: #E2D2C3; /* Radiant Vanilla Gold bloom on pointer hover */
+  border-color: #E2D2C3;
+  box-shadow: 0 10px 25px rgba(203, 181, 161, 0.25);
+}
+
+.footer-subscribe-submit-btn:hover .submit-arrow-vector {
+  transform: translateX(4px); /* Arrow drifts forward */
+}
+
+/* ==========================================================================
+   5. LOWER ACCENT COPYRIGHT BASELINE DIVIDER
+   ========================================================================== */
+.footer-baseline-split {
+  border-top: 1px solid rgba(203, 181, 161, 0.06);
+  padding-top: 36px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copyright-text {
+  font-size: 0.82rem;
+  color: #7A6F66;
+}
+
+.footer-policy-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-policy-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: #7A6F66;
+  transition: color 0.3s ease;
+}
+
+.footer-policy-links a:hover {
+  color: #CBB5A1;
+}
+
+
+/* ==========================================================================
+   7. FLUID RESPONSIVE BREAKPOINTS TERMINALS MATRIX
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-split-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid column split on layout tablets */
+    gap: 40px;
+  }
+}
+
+@media (max-width: 650px) {
+  .global-bakery-footer {
+    padding: 70px 0 30px 0;
+  }
+  
+  .footer-split-grid {
+    grid-template-columns: 1fr; /* Flattens to 1 single full-width vertical stack column flow on mobile smartphones */
+    gap: 36px;
+    margin-bottom: 50px;
+  }
+  
+  .footer-baseline-split {
+    flex-direction: column;
+    align-items: flex-start; /* Left aligns all lower copy content tags on touchscreen constraints */
+    gap: 20px;
+    padding-top: 30px;
+  }
+  
+  .footer-policy-links {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+}
+
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    // ==========================================================================
+    // 1. BRAND LOGO SCROLL-TO-TOP TRIGGER
+    // ==========================================================================
+   // Add or replace this block inside your existing DOMContentLoaded listener loop
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.getElementById("footer-logo-top-trigger");
+
+  if (logo) {
+    logo.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  }
+});
+
+    // ==========================================================================
+    // 2. FORM SUBSCRIPTION VALIDATION AND ALERTS SYSTEM
+    // ==========================================================================
+    const newsletterForm = document.querySelector('.footer-subscribe-form');
+    const newsletterInput = document.querySelector('.footer-email-input');
+
+    if (newsletterForm && newsletterInput) {
+      newsletterForm.addEventListener('submit', function (event) {
+        event.preventDefault(); // Completely stops native browser page refreshes
+
+        const trimmedEmail = newsletterInput.value.trim();
+        // Regular Expression validating standard email name, host, and tld structures
+        const strictEmailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (trimmedEmail === "") {
+          alert("Please fill in the field and enter a correct email address.");
+        } else if (!strictEmailRegex.test(trimmedEmail)) {
+          alert("Please enter a correct email address.");
+        } else {
+          // Success Event path
+          alert("Successfully subscribed to the Atelier Newsletter!");
+          newsletterForm.reset(); // Flushes out fields cleanly for user confirmation
+        }
+      });
+    }
+  });
+</script>
