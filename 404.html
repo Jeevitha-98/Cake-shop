@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Melted — Sugar &amp; Spice Atelier</title>
+
+  <!-- Premium Typography Integration Pipeline Links -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link component directly to the clean external sheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- CORE BREAKOUT DISPLAY CANVAS SECTION -->
+  <section class="error-canvas-section">
+    <!-- BACKGROUND CONTAINER IMAGE HOOK -->
+    <div class="error-bg-holder">
+      <!-- Replace the url path below with your high-quality backdrop image asset -->
+      <img src="./Assests/corporate.webp" alt="Atelier Melted Backdrop" class="error-backdrop-img" onerror="this.style.display='none';">
+      <div class="error-smoky-mask"></div>
+    </div>
+
+    <div class="error-ambient-aurora"></div>
+
+    <!-- ABSTRACT GEOMETRIC VECTOR PARTICLES ACCENTS -->
+    <span class="error-vector-token token-diamond"></span>
+    <span class="error-vector-token token-ring"></span>
+    <span class="error-vector-token token-dot"></span>
+
+    <div class="error-main-container">
+      
+      <!-- SLEEK BRAND WATERMARK DIGIT -->
+      <span class="error-giant-digits">404</span>
+
+      <!-- MICRO LABEL METRICS -->
+      <span class="error-micro-tag">Baking Interrupted</span>
+      
+      <!-- STYLISH HEADING DISPLAY WITH EM ACCENT -->
+      <h1 class="error-display-title">
+        The Soufflé Has <br>
+        <em>Collapsed.</em>
+      </h1>
+
+      <!-- MINIMAL CONCISE VALUE PROP DESCRIPTION -->
+      <p class="error-narrative-paragraph">
+        The recipe layer or custom creation branch layout path you are trying to view has been moved, dissolved, or consumed entirely. Let's return to the salon blueprint.
+      </p>
+
+      <!-- UPDATED BRAND PALETTE MATCHED BUTTON PORTALS -->
+      <div class="error-action-buttons">
+        <button onclick="window.history.back();" class="error-btn btn-secondary-translucent">
+          <span class="back-arrow-vector">←</span> Back
+        </button>
+        <a href="index.html" class="error-btn btn-primary-caramel">
+          Return To Home
+        </a>
+      </div>
+
+    </div>
+  </section>
+<style>
+    /* ==========================================================================
+   1. GLOBAL SYSTEM BASE RESET
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #170E08; /* Deep roasted dark cocoa fallback base */
+  color: #F7F3EE;            /* Crisp ivory silk text contrast face */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+/* ==========================================================================
+   2. CORE CONTAINER WRAPPING & BACKGROUND PARALLAX IMAGE
+   ========================================================================== */
+.error-canvas-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.error-bg-holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+
+.error-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.98; /* Keeps background footprint incredibly subtle to lock contrast */
+  filter: grayscale(40%) brightness(50%);
+}
+
+/* Dense dark chocolate gradient wash keeps background patterns from bleeding into text */
+.error-smoky-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg, 
+    #170E08 0%, 
+    rgba(23, 14, 8, 0.85) 50%, 
+    #170E08 100%
+  );
+  z-index: 2;
+}
+
+/* Ambient radial glow under-shield structures spatial depth layer dimensions */
+.error-ambient-aurora {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(80vw, 700px);
+  height: min(80vw, 700px);
+  background: radial-gradient(circle, rgba(203, 181, 161, 0.06) 0%, transparent 70%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.error-main-container {
+  position: relative;
+  z-index: 5; /* Pushes content elements clear above all background masks */
+  width: 90%;
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. ABSTRACT GEOMETRIC VECTOR ACCENT PARTICLES
+   ========================================================================== */
+.error-vector-token {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.3;
+  will-change: transform;
+}
+
+.token-diamond {
+  top: 10%;
+  left: 5%;
+  width: 14px;
+  height: 14px;
+  background-color: #CBB5A1;
+  transform: rotate(45deg);
+  animation: vectorDrift 6s ease-in-out infinite alternate;
+}
+
+.token-ring {
+  top: 15%;
+  right: 8%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #CBB5A1;
+  border-radius: 50%;
+  animation: vectorDrift 5s ease-in-out infinite alternate -1s;
+}
+
+.token-dot {
+  bottom: 20%;
+  left: 8%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #CBB5A1;
+  animation: vectorDrift 7s ease-in-out infinite alternate -2s;
+}
+
+/* ==========================================================================
+   4. STAGGERED REVEAL SEQUENCE & LUXURY TYPOGRAPHY
+   ========================================================================== */
+.error-giant-digits {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(6rem, 15vw, 10.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(203, 181, 161, 0.12);
+  letter-spacing: -4px;
+  margin-bottom: -20px;
+  display: block;
+  
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: errorGlideUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.1s;
+}
+
+.error-micro-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #CBB5A1;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  
+  opacity: 0;
+  transform: translateY(15px);
+  animation: errorGlideUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.3s;
+}
+
+.error-display-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #F7F3EE;
+  margin-bottom: 20px;
+  
+  opacity: 0;
+  transform: translateY(15px);
+  animation: errorGlideUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.5s;
+}
+
+.error-display-title em {
+  font-style: italic;
+  font-weight: 400;
+  display: inline-block;
+  color: #E6D4C3 !important;
+  animation: errorGlowPulse 3s ease-in-out infinite alternate;
+}
+
+.error-narrative-paragraph {
+  font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+  line-height: 1.65;
+  color: #C1B4AA;
+  max-width: 540px;
+  margin: 0 auto 44px auto;
+  
+  opacity: 0;
+  transform: translateY(15px);
+  animation: errorGlideUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.7s;
+}
+
+/* ==========================================================================
+   5. PAIRED RE-ORDERED BUTTON PORTALS
+   ========================================================================== */
+.error-action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+  opacity: 0;
+  transform: translateY(15px);
+  animation: errorGlideUp 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards 0.9s;
+}
+
+.error-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  padding: 18px 38px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Translucent Smoked Glass Back Button Style Rules */
+.btn-secondary-translucent {
+  background-color: rgba(247, 243, 238, 0.02);
+  color: #F7F3EE;
+  border: 1px solid rgba(247, 243, 238, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.btn-secondary-translucent .back-arrow-vector {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.btn-secondary-translucent:hover {
+  background-color: #F7F3EE;
+  color: #170E08;
+  border-color: #F7F3EE;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(247, 243, 238, 0.15);
+}
+
+.btn-secondary-translucent:hover .back-arrow-vector {
+  transform: translateX(-4px);
+}
+
+/* Brighter Contrast Caramel Button Style Rules */
+.btn-primary-caramel {
+  background-color: #CBB5A1;
+  color: #170E08;
+  border: 1px solid #CBB5A1;
+  box-shadow: 0 4px 15px rgba(203, 181, 161, 0.15);
+}
+
+.btn-primary-caramel:hover {
+  background-color: #E2D2C3;
+  border-color: #E2D2C3;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(203, 181, 161, 0.35);
+}
+
+/* ==========================================================================
+   6. MOTION MATRIX TIMELINE PIPELINES
+   ========================================================================== */
+@keyframes errorGlideUp {
+  0% { opacity: 0; transform: translateY(25px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vectorDrift {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(10deg); }
+}
+
+@keyframes errorGlowPulse {
+  0% { text-shadow: 0 0 4px rgba(203, 181, 161, 0.2); }
+  100% { text-shadow: 0 0 15px rgba(203, 181, 161, 0.55), 0 0 4px rgba(203, 181, 161, 0.2); color: #FFFFFF; }
+}
+
+/* ==========================================================================
+   7. FLUID RESPONSIVE ADAPTABILITY BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .error-canvas-section { padding: 40px 0; }
+  
+  .error-action-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 14px;
+  }
+  .error-btn { width: 100%; }
+  .error-vector-token { display: none !important; } 
+}
+
+</style>
+</body>
+</html>

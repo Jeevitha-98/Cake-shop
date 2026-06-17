@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- FIXED: Removed absolute leading slash to prevent hard drive local origin errors -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STACKLY — Cake Shop</title>
+    
+    <!-- FIXED: Restored Complete Google Fonts Infrastructure Links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+<link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    
+    <!-- FIXED: Restored Secure Production FontAwesome Vector Icon Engine Link -->
+    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+<!-- SWEET DELIGHTS PASTEL SYSTEM LOADING MODULE -->
+<!-- BAKERY MODERN PRELOADER CONTAINER -->
+<div id="bakery-preloader-shroud">
+  <div class="modern-loader-container">
+    
+    <!-- MINIMALIST BOUNCING VISUAL ELEMENT -->
+   <div class="cake-bounce-wrapper">
+  <!-- Update the src path to point directly to your brand asset file -->
+  <img src="./Assests/Loader.webp" alt="Bakery Logo" class="bakery-custom-logo-icon" />
+</div>
+
+
+    <!-- CLEAN BRAND TYPOGRAPHY -->
+    <div class="bakery-brand-title">Sugar &amp; Spice</div>
+    <div class="bakery-brand-subtitle">Artisanal Cake Atelier</div>
+    
+    <!-- MINIMAL LINEAR STRETCH PROGRESS BAR -->
+    <div class="linear-progress-track">
+      <div class="linear-progress-fill-bar"></div>
+    </div>
+
+    <!-- SUBTLE STATUS METRIC -->
+    <div class="bakery-oven-status">Baking in progress...</div>
+
+  </div>
+</div>
+<script>
+    (function() {
+  /**
+   * Smoothly fades and unloads the modern stone/mocha preloader
+   */
+  function liftModernPreloader() {
+    const preloader = document.getElementById('bakery-preloader-shroud');
+    
+    if (preloader) {
+      // 1. Adds the clear class to trigger the 0.5s CSS opacity fade-out
+      preloader.classList.add('shroud-clear');
+      
+      // 2. Safely removes the element from the page markup after the fade finishes
+      setTimeout(function() {
+        preloader.remove();
+      }, 500); // 500ms perfectly matches your CSS transition timeline
+    }
+  }
+
+  /**
+   * Queues the fade-out to align with the linear loading bar animation
+   */
+  function queuePreloaderLift() {
+    // 1800ms gives your linear-progress-fill-bar time to expand fully across the screen
+    setTimeout(liftModernPreloader, 1800);
+  }
+
+  // Runs immediately if the page markup is ready, or hooks into the load listener
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    queuePreloaderLift();
+  } else {
+    document.addEventListener('DOMContentLoaded', queuePreloaderLift);
+  }
+})();
+
+</script>
+
+<header class="global-header floating-transparent-header">
+  <div class="nav-container">
+      
+    <!-- BRAND IDENTITY LOGO TARGET -->
+    <a href="index.html" class="logo-container">
+      <div class="logo-wrapper">
+        <img 
+          src="./Assests/Cakeshop.webp" 
+          alt="Sugar &amp; Spice Logo"
+          class="nav-logo-icon"
+          onerror="this.src='https://placehold.co'"
+        />
+      </div>
+    </a>
+
+    <!-- BAKERY OVERLAY NAVIGATION MENU -->
+    <nav class="nav-menu" id="mobile-nav-overlay">
+      <ul class="nav-links">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="ourmenu.html" >Our Menu</a></li>
+        <li><a href="orders.html" class="active">Custom Orders</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Find Us</a></li>
+        
+        <!-- PAIRED PREMIUM AUTHENTICATION GROUP -->
+        <li class="auth-action-group">
+          <a href="login.html" class="auth-btn btn-login">Log In</a>
+          <a href="signup.html" class="auth-btn btn-signup">Sign Up</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- HAMBURGER MENU ICON FOR MOBILE RESPONSIVENESS -->
+    <button id="menu-toggle-trigger" class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    
+  </div>
+</header>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const menuToggleButton = document.getElementById("menu-toggle-trigger");
+  const navigationMenuOverlay = document.getElementById("mobile-nav-overlay");
+  const overlayLinksList = document.querySelectorAll(".nav-links a");
+  const mainHeaderElement = document.querySelector(".global-header");
+
+  // 1. MOBILE HAMBURGER NAVIGATION SYSTEM
+  if (menuToggleButton && navigationMenuOverlay) {
+    // Open/Close menu overlay view on click
+    menuToggleButton.addEventListener("click", function (event) {
+      event.stopPropagation();
+      navigationMenuOverlay.classList.toggle("mobile-menu-active");
+    });
+
+    // Close panel drawer automatically upon choosing a routing option
+    overlayLinksList.forEach(function (link) {
+      link.addEventListener("click", function () {
+        navigationMenuOverlay.classList.remove("mobile-menu-active");
+      });
+    });
+
+    // Close panel menu immediately if user clicks background area outside elements
+    document.addEventListener("click", function (event) {
+      if (!navigationMenuOverlay.contains(event.target) && !menuToggleButton.contains(event.target)) {
+        navigationMenuOverlay.classList.remove("mobile-menu-active");
+      }
+    });
+  }
+
+  // 2. DYNAMIC SCROLL CAPSULE CONVERSION CONTROLLER
+  if (mainHeaderElement) {
+    window.addEventListener("scroll", function () {
+      // Flattens out floating capsule design to sticky top bar after 40px scroll depth
+      if (window.scrollY > 40) {
+        mainHeaderElement.classList.add("scrolled-state");
+      } else {
+        mainHeaderElement.classList.remove("scrolled-state");
+      }
+    });
+  }
+});
+
+</script>
