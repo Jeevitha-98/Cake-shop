@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <!-- FIXED: Removed absolute leading slash to prevent hard drive local origin errors -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STACKLY — Cake Shop</title>
     
@@ -15,7 +15,9 @@
 
     
     <!-- FIXED: Restored Secure Production FontAwesome Vector Icon Engine Link -->
-    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Example of a correct, working icons link -->
+<link rel="stylesheet" href="https://cloudflare.com">
+
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -27,7 +29,7 @@
     <!-- MINIMALIST BOUNCING VISUAL ELEMENT -->
    <div class="cake-bounce-wrapper">
   <!-- Update the src path to point directly to your brand asset file -->
-  <img src="./Assests/Loader.webp" alt="Bakery Logo" class="bakery-custom-logo-icon" />
+  <img src="./Assests/stackly-icon-only.webp" alt="Bakery Logo" class="bakery-custom-logo-icon" />
 </div>
 
 
@@ -911,20 +913,8 @@
 
 
 </style>
-<script>
-    // Add this execution routine inside your main page DOMContentLoaded event handler script loop
-try {
-  const heroResponse = await fetch('./components/cakeshop/hero.html');
-  if (heroResponse.ok) {
-    const heroHtml = await heroResponse.text();
-    // Injects the hero structure directly inside your index page's main layout container element
-    document.getElementById('main-content-wrapper').innerHTML = heroHtml;
-  }
-} catch (err) {
-  console.error("Failed to load modular cakeshop hero banner canvas:", err);
-}
 
-</script>
+
 
 
 <!-- RECONSTRUCTED SIGNATURE SECTION -->
@@ -1037,37 +1027,108 @@ try {
     <div class="collections-interactive-grid">
       
       <!-- CARD 1 -->
-      <a href="404.html" class="collection-card-frame">
-        <span class="card-icon-badge">✨</span>
-        <span class="card-meta-tag">Signature Trend</span>
-        <h3 class="card-title-serif">Velvet Espresso Cocoa</h3>
-        <p class="card-body-description">Layered single-origin dark chocolate cake infused with freshly roasted espresso cream.</p>
-        <div class="card-action-vector-link">Commission <span>→</span></div>
-      </a>
+    <!-- CARD 1 -->
+<a href="404.html" class="collection-card-frame">
+  <!-- CUSTOM SINGLE-ORIGIN CACAO BEAN CREST SVG -->
+  <div class="card-icon-badge-envelope">
+    <svg class="collection-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M12 2C6.48 2 2 12 12 22C22 12 17.52 2 12 2ZM12 18C9.79 18 8 14.42 8 10C8 5.58 9.79 2 12 2C14.21 2 16 5.58 16 10C16 14.42 14.21 18 12 18Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <span class="card-meta-tag">Signature Trend</span>
+  <h3 class="card-title-serif">Velvet Espresso Cocoa</h3>
+  <p class="card-body-description">Layered single-origin dark chocolate cake infused with freshly roasted espresso cream.</p>
+  <div class="card-action-vector-link">Commission <span>→</span></div>
+</a>
 
-      <!-- CARD 2 -->
-      <a href="404.html" class="collection-card-frame">
-        <span class="card-icon-badge">🌸</span>
-        <span class="card-meta-tag">Bespoke Editorial</span>
-        <h3 class="card-title-serif">Gilded Vanilla Bean</h3>
-        <p class="card-body-description">Tahitian vanilla bean sponge with organic raspberry reduction and 24k gold leaf accents.</p>
-        <div class="card-action-vector-link">Commission <span>→</span></div>
-      </a>
+<!-- CARD 2 -->
+<a href="404.html" class="collection-card-frame">
+  <!-- CUSTOM EDITORIAL BOTANICAL FLOWER CREST SVG -->
+  <div class="card-icon-badge-envelope">
+    <svg class="collection-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12Z" stroke="#FDFBF7" stroke-width="1.5"/>
+      <path d="M12 12C12 15.31 9.31 18 6 18M12 12C12 15.31 14.69 18 18 18" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <span class="card-meta-tag">Bespoke Editorial</span>
+  <h3 class="card-title-serif">Gilded Vanilla Bean</h3>
+  <p class="card-body-description">Tahitian vanilla bean sponge with organic raspberry reduction and 24k gold leaf accents.</p>
+  <div class="card-action-vector-link">Commission <span>→</span></div>
+</a>
 
-      <!-- CARD 3 -->
-      <a href="404.html" class="collection-card-frame">
-        <span class="card-icon-badge">🍬</span>
-        <span class="card-meta-tag">Botanical Series</span>
-        <h3 class="card-title-serif">Smoked Honey Lavender</h3>
-        <p class="card-body-description">Delicate almond cake layered with wildflower honey buttercream and smoked lavender notes.</p>
-        <div class="card-action-vector-link">Commission <span>→</span></div>
-      </a>
+<!-- CARD 3 -->
+<a href="404.html" class="collection-card-frame">
+  <!-- CUSTOM GEOMETRIC ARCHITECTURAL CAKE CREST SVG -->
+  <div class="card-icon-badge-envelope">
+    <svg class="collection-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M4 18H20M6 14H18M9 10H15M12 6V10M12 10V14M12 14V18" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <span class="card-meta-tag">Botanical Series</span>
+  <h3 class="card-title-serif">Smoked Honey Lavender</h3>
+  <p class="card-body-description">Delicate almond cake layered with wildflower honey buttercream and smoked lavender notes.</p>
+  <div class="card-action-vector-link">Commission <span>→</span></div>
+</a>
+
 
     </div>
 
   </div>
 </section>
 <style>
+  /* ==========================================================================
+   MINIMALIST SVG LINE CRESTS CONFIGURATION (WIPES TEXT EMOJIS)
+   ========================================================================== */
+.card-icon-badge-envelope {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50% !important;
+  background-color: rgba(247, 243, 238, 0.02) !important; /* Smoked translucent base */
+  border: 1px solid rgba(247, 243, 238, 0.1) !important;  /* Soft framing border wire */
+  margin-bottom: 20px !important;
+  
+  /* Prep hardware path tracking acceleration */
+  transform: scale(1) rotate(0deg) translateZ(0) !important;
+  will-change: transform, border-color, background-color;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              background-color 0.4s ease !important;
+}
+
+/* Scaling constraints for the inline vector line paths */
+.collection-crest-svg {
+  width: 22px !important;
+  height: 22px !important;
+  display: block !important;
+}
+
+.collection-crest-svg path {
+  stroke: #FDFBF7 !important; /* Locks baseline vectors to a clean white ivory silk */
+  transition: stroke 0.35s ease !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED CARD HOVER CALIBRATION CONTROLLERS
+   ========================================================================== */
+
+/* 
+   When your user hovers over the main card link block, the inner 
+   minimalist line vector transforms flawlessly into brand gold!
+*/
+.collection-card-frame:hover .card-icon-badge-envelope {
+  background-color: rgba(203, 181, 161, 0.06) !important;
+  border-color: #CBB5A1 !important; /* Shines loop boundary to Pastry Gold */
+  transform: scale(1.08) rotate(8deg) translateZ(0) !important; /* Soft spring pop-tilt */
+  box-shadow: 0 0 15px rgba(203, 181, 161, 0.2) !important;
+}
+
+.collection-card-frame:hover .collection-crest-svg path {
+  stroke: #CBB5A1 !important; /* Converts all path lines cleanly to signature gold */
+}
+
     /* ==========================================================================
    SIGNATURE COLLECTIONS CORE LAYOUT & CONTRAST FIX
    ========================================================================== */
@@ -1478,22 +1539,38 @@ try {
         </p>
 
         <!-- LUXURY TIMELINE KEYPOINTS LIST -->
-        <div class="heritage-hallmarks-list">
-          <div class="hallmark-item-card">
-            <div class="hallmark-icon">⚜️</div>
-            <div class="hallmark-content">
-              <h4>Bespoke Blueprinting</h4>
-              <p>Every cake begins as a custom hand-drawn sketch coordinated to your event theme guidelines.</p>
-            </div>
-          </div>
-          <div class="hallmark-item-card">
-            <div class="hallmark-icon">🌱</div>
-            <div class="hallmark-content">
-              <h4>Pure Organic Integrity</h4>
-              <p>Zero artificial preservatives or cheap stabilizers. Only authentic, luxury ingredients enter our ovens.</p>
-            </div>
-          </div>
-        </div>
+       <div class="heritage-hallmarks-list">
+  
+  <!-- HALLMARK ITEM CARD 1 -->
+  <div class="hallmark-item-card">
+    <!-- CUSTOM CUSTOM HAND-DRAFTED SKETCH CREST SVG -->
+    <div class="hallmark-icon-badge-envelope">
+      <svg class="hallmark-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 20H21M3 20L15 8L16.5 9.5L4.5 21.5H3V20ZM16 7L17 6L18 7L17 8L16 7Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="hallmark-content">
+      <h4>Bespoke Blueprinting</h4>
+      <p>Every cake begins as a custom hand-drawn sketch coordinated to your event theme guidelines.</p>
+    </div>
+  </div>
+
+  <!-- HALLMARK ITEM CARD 2 -->
+  <div class="hallmark-item-card">
+    <!-- CUSTOM ORGANIC BOTANICAL LEAF CREST SVG -->
+    <div class="hallmark-icon-badge-envelope">
+      <svg class="hallmark-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M2 22C2 22 6 18 12 18C18 18 22 22 22 22M12 2C12 2 7 7 7 12C7 17 12 19 12 19M12 2C12 2 17 7 17 12C17 17 12 19 12 19M12 2V19" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="hallmark-content">
+      <h4>Pure Organic Integrity</h4>
+      <p>Zero artificial preservatives or cheap stabilizers. Only authentic, luxury ingredients enter our ovens.</p>
+    </div>
+  </div>
+
+</div>
+
 
         <div class="heritage-action-gate">
           <a href="story.html" class="heritage-luxury-btn">
@@ -1507,6 +1584,76 @@ try {
   </div>
 </section>
 <style>
+  /* ==========================================================================
+   HERITAGE HALLMARKS MINIMALIST SVG LINE CRESTS (WIPES TEXT EMOJIS)
+   ========================================================================== */
+.hallmark-icon-badge-envelope {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background-color: rgba(247, 243, 238, 0.02) !important; /* Smoked translucent glass base */
+  border: 1px solid rgba(247, 243, 238, 0.08) !important;  /* Soft framing perimeter wire */
+  flex-shrink: 0 !important; /* Prevents icon distortion when adjacent paragraph rows wrap text */
+  margin-bottom: 0 !important;
+  
+  /* Prep paths for high-performance graphic transforms */
+  transform: scale(1) rotate(0deg) translateZ(0) !important;
+  will-change: transform, border-color, background-color;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              background-color 0.4s ease !important;
+}
+
+/* Scaling constraints for the inline hallmark vector lines */
+.hallmark-crest-svg {
+  width: 24px !important;
+  height: 24px !important;
+  display: block !important;
+}
+
+.hallmark-crest-svg path {
+  stroke: #FDFBF7 !important; /* Locks baseline lines to clean ivory silk */
+  transition: stroke 0.35s ease !important;
+}
+
+/* Aligning items inside the vertical row card flexbox */
+.hallmark-item-card {
+  display: flex !important;
+  align-items: flex-start !important; /* Aligns vectors perfectly with item headers */
+  gap: 20px !important;
+  width: 100% !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  transition: transform 0.4s ease !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED HALLMARK ITEM ACTIVE HOVER MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* 
+   When your user hovers over an individual hallmark element card, the inner 
+   minimalist line vector transforms flawlessly into brand gold!
+*/
+.hallmark-item-card:hover .hallmark-icon-badge-envelope {
+  background-color: rgba(203, 181, 161, 0.06) !important;
+  border-color: #CBB5A1 !important; /* Shines boundary wire to Pastry Gold */
+  transform: scale(1.08) rotate(-8deg) translateZ(0) !important; /* Elegant inverse pop-tilt */
+  box-shadow: 0 0 15px rgba(203, 181, 161, 0.2) !important;
+}
+
+.hallmark-item-card:hover .hallmark-crest-svg path {
+  stroke: #CBB5A1 !important; /* Converts all vector stroke lines to signature gold */
+}
+
+.hallmark-item-card:hover .hallmark-content h4 {
+  color: #CBB5A1 !important; /* Shifts text header string to gold concurrently on focus */
+  transition: color 0.3s ease !important;
+}
+
     /* ==========================================================================
    1. SECTION COVERAGE BASE LAYER & BACKGROUND PARALLAX
    ========================================================================== */
@@ -3420,46 +3567,339 @@ try {
     <div class="testimonial-carousel-viewport">
       
       <!-- QUOTE CARD 1 (ACTIVE BY DEFAULT) -->
-      <div class="confection-quote-capsule active-slide">
-        <div class="quote-shape-envelope">
-          <div class="quote-decorative-glyph">“</div>
-          <p class="quote-narrative-text">
-            The multi-tiered dark cocoa masterpiece sculpted for our anniversary gala was an architectural marvel. Our guests were spellbound by both the design and the rich velvet espresso texture layer flow.
-          </p>
-          <div class="client-signature-block">
-            <h4 class="client-name-serif">Lady Genevieve V.</h4>
-            <span class="client-meta-label">Bespoke Gala Commission</span>
+    <div class="confection-quote-capsule active-slide">
+  <div class="quote-shape-envelope">
+    <div class="quote-decorative-glyph">“</div>
+    
+    <p class="quote-narrative-text">
+      The multi-tiered dark cocoa masterpiece sculpted for our anniversary gala was an architectural marvel. Our guests were spellbound by both the design and the rich velvet espresso texture layer flow.
+    </p>
+    
+    <div class="client-signature-block">
+      
+      <div class="client-avatar-frame">
+        <img src="./Assests/testimonial 1.webp" alt="Lady Genevieve V." class="client-profile-pic" onerror="this.style.opacity='0';">
+      </div>
+      
+      <div class="client-meta-details">
+        <!-- Full width flex container row -->
+        <div class="client-name-rating-row">
+          <h4 class="client-name-serif">Lady Genevieve V.</h4>
+          <div class="inline-star-rating">
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
         </div>
+        <span class="client-meta-label">California</span>
       </div>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Signature row stretches completely across the quote card layout */
+.client-signature-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  width: 100%; 
+}
+
+/* Force metadata block to take up remaining card space available */
+.client-meta-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex-grow: 1; 
+}
+
+/* Push elements to polar opposites of the row container */
+.client-name-rating-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%; 
+}
+
+.inline-star-rating {
+  display: flex;
+  gap: 3px;
+  color: #d9cac4;
+  margin-left: auto; /* Push anchor explicitly into the far-right margin zone */
+}
+
+.inline-star-rating svg {
+  width: 14px;
+  height: 14px;
+}
+
+.client-name-serif {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.client-meta-label {
+  margin-top: 2px;
+}
+
+
+  /* Align image and text side-by-side */
+.client-signature-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* Circular frame layout for the profile image */
+.client-avatar-frame {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(217, 202, 196, 0.25); /* Subtle border matching your layout */
+  background-color: #261c1b; /* Soft dark fallback color if the image is missing */
+  flex-shrink: 0;
+}
+
+/* Make sure the image fills the circular housing perfectly */
+.client-profile-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.2s ease;
+}
+
+/* Vertical structural stack for text metadata */
+.client-meta-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left; /* Keeps text cleanly aligned to the left of the image */
+}
+
+.client-name-serif {
+  margin: 0;
+}
+
+.client-meta-label {
+  margin-top: 2px;
+}
+
+/* ========================================================
+   RESPONSIVE DESIGN PATCH FOR MOBILE DEVICES
+   ======================================================== */
+
+@media (max-width: 480px) {
+  /* Increase padding slightly on small screens to give text breathing room */
+  .confection-quote-capsule {
+    padding: 24px 16px;
+  }
+
+  /* Make sure the container holding the text elements takes full width */
+  .client-meta-details {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Break layout into a vertical stack instead of breaking the box edge */
+  .client-name-rating-row {
+    flex-direction: column;
+    align-items: flex-start; /* Aligns both name and stars to the left */
+    gap: 6px; /* Spacing between the name and stars */
+  }
+
+  /* Force star block to sit flat without clipping */
+  .inline-star-rating {
+    margin-left: 0; /* Clear previous far-right margin push */
+    margin-top: 4px;
+  }
+
+  /* Scale font slightly so long titles fit beautifully */
+  .client-name-serif {
+    font-size: 16px; 
+    white-space: normal; /* Allows long names to wrap cleanly if needed */
+    line-height: 1.3;
+  }
+
+  .quote-narrative-text {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  /* 1. POSITION & ACTIVATE ARROWS */
+  .carousel-navigation-threads {
+    position: relative;
+    z-index: 99; /* Forces the navigation layer to the absolute top so it can be clicked */
+    margin-top: 30px; /* Pushes the entire navigation element lower and down */
+  }
+
+  @media (max-width: 480px) {
+
+  /* 1. Reset parent constraints so content can push downwards */
+  .testimonial-main-container,
+  .testimonial-carousel-viewport {
+    height: auto !important;
+    max-height: none !important;
+    padding-bottom: 80px; /* Creates empty space at the bottom for the arrows to sit in */
+    position: relative;
+  }
+
+  /* 2. Absolute position the navigation row at the very bottom */
+  .carousel-navigation-threads {
+    position: absolute;
+    bottom: 10px; /* Controls how far down the arrows go */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the navigation row horizontally */
+    width: 100%;
+    max-width: 220px; /* Keeps arrows nicely grouped on mobile */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* CRITICAL LAYER FIXES */
+    margin-top: 0 !important; /* Clears old margin bugs */
+    z-index: 999 !important; /* Forces row to stay on top of all images/overlays */
+  }
+
+  /* 3. Ensure buttons are fully accessible to touch events */
+  .thread-arrow-btn {
+    position: relative;
+    z-index: 1000 !important;
+    pointer-events: auto !important;
+    background: rgba(217, 202, 196, 0.1); /* Adds a subtle touch background visibility */
+  }
+}
+
+
+  .thread-arrow-btn {
+    position: relative;
+    z-index: 100; /* Guarantees arrows receive the tap/click events */
+    pointer-events: auto; /* Overrides any blocking touch behaviors */
+  }
+
+  /* 2. RE-ALIGN CARD ELEMENTS CONTENT */
+  .client-signature-block {
+    flex-direction: column; /* Stacks image above the text contents */
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .client-meta-details {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .client-name-rating-row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .client-name-serif {
+    white-space: normal; /* Safe wrapping for mobile displays */
+    font-size: 18px;
+  }
+
+  /* 3. ALIGN STARS ABOVE LOCATION TAG */
+  .inline-star-rating {
+    margin: 4px 0 2px 0; /* Centers stars between name and text label */
+    justify-content: center;
+  }
+
+  .client-meta-label {
+    letter-spacing: 2px;
+    font-size: 11px;
+  }
+}
+
+</style>
 
       <!-- QUOTE CARD 2 -->
-      <div class="confection-quote-capsule">
-        <div class="quote-shape-envelope">
-          <div class="quote-decorative-glyph">“</div>
-          <p class="quote-narrative-text">
-            Bypassing standard bakery models was the best decision we made. The smoked honey lavender layers were perfectly delicate. It felt less like a cake and more like fine haute couture art.
-          </p>
-          <div class="client-signature-block">
-            <h4 class="client-name-serif">Julian Sinclair</h4>
-            <span class="client-meta-label">Editorial Tiered Commission</span>
+    <div class="confection-quote-capsule">
+  <div class="quote-shape-envelope">
+    <div class="quote-decorative-glyph">“</div>
+    
+    <p class="quote-narrative-text">
+      Bypassing standard bakery models was the best decision we made. The smoked honey lavender layers were perfectly delicate. It felt less like a cake and more like fine haute couture art.
+    </p>
+    
+    <!-- Updated Signature Block with Profile Image Layout -->
+    <div class="client-signature-block">
+      
+      <!-- New Profile Image Wrapper -->
+      <div class="client-avatar-frame">
+        <img src="./Assests/testimonial 2.webp" alt="Julian Sinclair" class="client-profile-pic" onerror="this.style.opacity='0';">
+      </div>
+      
+      <div class="client-meta-details">
+        <!-- Full width flex container row -->
+        <div class="client-name-rating-row">
+          <h4 class="client-name-serif">Julian Sinclair</h4>
+          <!-- 4 Star Rating Block -->
+          <div class="inline-star-rating">
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
         </div>
+        <span class="client-meta-label">New Jersey</span>
       </div>
+      
+    </div>
+  </div>
+</div>
+
+
 
       <!-- QUOTE CARD 3 -->
       <div class="confection-quote-capsule">
-        <div class="quote-shape-envelope">
-          <div class="quote-decorative-glyph">“</div>
-          <p class="quote-narrative-text">
-            The private tasting salon consultation session was breathtaking. Crafting our flavor profile felt incredibly personalized, and the corporate gift boxes left our priority executives amazed.
-          </p>
-          <div class="client-signature-block">
-            <h4 class="client-name-serif">Aria Montgomery</h4>
-            <span class="client-meta-label">Concierge Gifting Partner</span>
+  <div class="quote-shape-envelope">
+    <div class="quote-decorative-glyph">“</div>
+    
+    <p class="quote-narrative-text">
+      The private tasting salon consultation session was breathtaking. Crafting our flavor profile felt incredibly personalized, and the corporate gift boxes left our priority executives amazed.
+    </p>
+    
+    <div class="client-signature-block">
+      
+      <div class="client-avatar-frame">
+        <img src="./Assests/testimonial 3.webp" alt="Aria Montgomery" class="client-profile-pic" onerror="this.style.opacity='0';">
+      </div>
+      
+      <div class="client-meta-details">
+        <!-- Full width flex container row -->
+        <div class="client-name-rating-row">
+          <h4 class="client-name-serif">Aria Montgomery</h4>
+          <!-- 5 Star Rating Block -->
+          <div class="inline-star-rating">
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg xmlns="http://w3.org" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
         </div>
+        <span class="client-meta-label">Florida</span>
       </div>
+      
+    </div>
+  </div>
+</div>
+
 
     </div>
 
@@ -4210,22 +4650,45 @@ try {
         <p class="footer-brand-bio">
           Sculpting high-fashion architectural sugar arts, multi-tiered wedding masterpieces, and premium single-origin chocolate confections for life's most exquisite celebrations.
         </p>
-        <div class="footer-social-wrapper">
-          <a href="#" class="social-icon-box" aria-label="Instagram">📸</a>
-          <a href="#" class="social-icon-box" aria-label="Pinterest">📌</a>
-          <a href="#" class="social-icon-box" aria-label="Facebook">🌸</a>
-        </div>
+      <!-- SEO-OPTIMIZED MINIMALIST SOCIAL CONNECTIONS HUB -->
+<div class="footer-social-wrapper" aria-label="Atelier Social Media Connections Grid">
+  
+  <!-- INSTAGRAM CREST LINK -->
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Explore Our Instagram Lookbook Feed">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 11.37C16.1234 12.7122 15.6171 14.0206 14.5916 14.9915C13.566 15.9624 12.1804 16.4716 10.7417 16.4018C9.303 16.332 8.01426 15.688 7.15545 14.6111C6.29665 13.5342 5.918 12.1822 6.10177 10.8504C6.28555 9.51855 7.00632 8.31114 8.10648 7.49841C9.20664 6.68567 10.5393 6.37128 11.8105 6.62358C13.0817 6.87588 14.1166 7.66258 14.6908 8.81016C15.265 9.95773 15.3013 11.2721 15.79 11.37Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#FDFBF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <!-- PINTEREST CREST LINK -->
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Pin Our Custom Cake Blueprints on Pinterest">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M12 2C6.48 2 2 6.48 2 12C2 16.23 4.63 19.84 8.35 21.31C8.26 20.48 8.24 19.16 8.45 18.25C8.64 17.43 9.68 12.98 9.68 12.98C9.68 12.98 9.36 12.33 9.36 11.38C9.36 9.88 10.23 8.76 11.32 8.76C12.25 8.76 12.7 9.46 12.7 10.3C12.7 11.23 12.11 12.63 11.8 13.93C11.54 15.01 12.34 15.89 13.41 15.89C15.35 15.89 16.67 13.56 16.67 10.43C16.67 7.73 14.88 5.75 11.96 5.75C8.57 5.75 5.86 8.28 5.86 11.83C5.86 12.85 6.22 13.84 6.78 14.51C6.88 14.63 6.89 14.71 6.86 14.84L6.57 15.99C6.52 16.18 6.4 16.23 6.22 16.15C5.03 15.61 4.38 13.96 4.38 11.78C4.38 7.9 7.42 3.63 12.38 3.63C16.34 3.63 19.34 6.48 19.34 10.3C19.34 14.36 17 17.5 13.55 17.5C12.39 17.5 11.3 16.86 10.93 16.14L10.3 18.57C10.07 19.45 9.49 20.57 9.07 21.25C10.03 21.54 11.04 21.7 12 21.7C17.52 21.7 22 17.22 22 11.7C22 6.18 17.52 1.7 12 1.7V2Z" fill="#FDFBF7"/>
+    </svg>
+  </a>
+
+  <!-- FACEBOOK CREST LINK -->
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Visit Our FaceBook Community Salon Page">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M18 2H15C12.24 2 10 4.24 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.45 14.45 6 15 6H18V2Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+</div>
+
       </div>
 
    
       <div class="footer-links-column">
         <h4 class="footer-menu-title">Collections</h4>
         <ul class="footer-links-list">
-          <li><a href="404.html">Wedding Tiered</a></li>
-          <li><a href="404.html">Mirror Entremets</a></li>
-          <li><a href="404.html">Bespoke Sculptures</a></li>
-          <li><a href="404.html">Petit Fours</a></li>
-          <li><a href="404.html">Seasonal Edits</a></li>
+         <li><a href="story.html">Wedding Tiered</a></li>
+          <li><a href="ourmenu.html">Mirror Entremets</a></li>
+          <li><a href="orders.html">Bespoke Sculptures</a></li>
+          <li><a href="story.html">Petit Fours</a></li>
+          <li><a href="orders.html">Seasonal Edits</a></li>
         </ul>
       </div>
 
@@ -4233,7 +4696,7 @@ try {
       <div class="footer-links-column">
         <h4 class="footer-menu-title">Atelier</h4>
         <ul class="footer-links-list">
-          <li><a href="menu.html">Menu</a></li>
+          <li><a href="ourmenu.html">Menu</a></li>
           <li><a href="orders.html">Custom Orders</a></li>
           <li><a href="story.html">Our Story</a></li>
           <li><a href="contact.html">Find Us</a></li>
@@ -4274,6 +4737,85 @@ try {
 
 </footer>
 <style>
+  /* ==========================================================================
+   MINIMALIST SOCIAL CRESTS OVERRIDES (ELIMINATES EMBEDDED TEXT EMOJIS)
+   ========================================================================== */
+.footer-social-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  justify-content: flex-start !important; /* Adjust cleanly to match your grid row alignments */
+}
+
+.social-icon-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: rgba(247, 243, 238, 0.02) !important; /* Smoked translucent dark base UI */
+  border: 1px solid rgba(247, 243, 238, 0.08) !important;  /* Ultra thin framing perimeter wire */
+  text-decoration: none !important; /* Strips any basic browser underline link defaults */
+  
+  /* Prep paths for high-performance graphic transforms */
+  transform: translateY(0) scale(1) translateZ(0) !important;
+  will-change: transform, border-color, background-color;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              background-color 0.4s ease !important;
+}
+
+/* Scaling constraints for the inline vector line paths */
+.social-media-crest-svg {
+  width: 18px !important;  /* Snug, elegant design profile thickness balances */
+  height: 18px !important;
+  display: block !important;
+}
+
+/* Direct path controls handle color values accurately */
+.social-media-crest-svg path,
+.social-media-crest-svg rect,
+.social-media-crest-svg line {
+  stroke: #FDFBF7 !important; /* Locks baseline vectors to crisp ivory silk */
+  transition: stroke 0.35s ease, fill 0.35s ease !important;
+}
+
+/* Specific filler patch to balance the solid background design of the Pinterest crest */
+.social-media-crest-svg[viewBox="0 0 24 24"] path[fill="#FDFBF7"] {
+  fill: #FDFBF7 !important;
+  stroke: none !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED SOCIAL CONTROLS ACTIVE HOVER MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* 
+   When your user hovers over an individual social capsule, the inner 
+   minimalist line vector transforms flawlessly into brand gold!
+*/
+.social-icon-box:hover {
+  background-color: rgba(203, 181, 161, 0.06) !important;
+  border-color: #CBB5A1 !important; /* Shines boundary wire to Pastry Gold */
+  
+  /* Smooth upward vertical card lift elevation snap pop */
+  transform: translateY(-4px) scale(1.05) translateZ(0) !important; 
+  box-shadow: 0 8px 20px rgba(203, 181, 161, 0.25) !important;
+}
+
+.social-icon-box:hover .social-media-crest-svg path,
+.social-icon-box:hover .social-media-crest-svg rect,
+.social-icon-box:hover .social-media-crest-svg line {
+  stroke: #CBB5A1 !important; /* Converts all stroke paths to signature gold leaf */
+}
+
+/* Secondary filling patch locks Pinterest's solid path hover coloration concurrently */
+.social-icon-box:hover .social-media-crest-svg[viewBox="0 0 24 24"] path[fill="#FDFBF7"] {
+  fill: #CBB5A1 !important;
+  stroke: none !important;
+}
+
     /* ==========================================================================
    1. GLOBAL FOOTER COAT WALL (Deep Dark Cocoa Baseline Theme)
    ========================================================================== */

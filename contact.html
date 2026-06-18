@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <!-- FIXED: Removed absolute leading slash to prevent hard drive local origin errors -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>STACKLY — Cake Shop</title>
     
@@ -15,7 +15,7 @@
 
     
     <!-- FIXED: Restored Secure Production FontAwesome Vector Icon Engine Link -->
-    <link rel="stylesheet" href="https://cloudflare.com" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
@@ -27,7 +27,7 @@
     <!-- MINIMALIST BOUNCING VISUAL ELEMENT -->
    <div class="cake-bounce-wrapper">
   <!-- Update the src path to point directly to your brand asset file -->
-  <img src="./Assests/Loader.webp" alt="Bakery Logo" class="bakery-custom-logo-icon" />
+  <img src="./Assests/stackly-icon-only.webp" alt="Bakery Logo" class="bakery-custom-logo-icon" />
 </div>
 
 
@@ -542,44 +542,77 @@ html, body {
         <div class="coordinates-info-stack">
           
           <!-- ADDRESS CELL (FUNCTIONAL MAP LINK) -->
-          <div class="coordinate-capsule-row" id="cta-map-link">
-            <div class="coordinate-icon-slot">📍</div>
-            <div class="coordinate-text-slot">
-              <h5>Visit Our Studio</h5>
-              <address>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</address>
-            </div>
-          </div>
+          <!-- VISIT STUDIO CELL -->
+<div class="coordinate-capsule-row" id="cta-map-link">
+  <div class="coordinate-icon-slot">
+    <!-- Vector Map Pin Icon -->
+    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+  </div>
+  <div class="coordinate-text-slot">
+    <h5>Visit Our Studio</h5>
+    <address>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</address>
+  </div>
+</div>
 
-          <!-- PHONE CALL CELL (FUNCTIONAL TEL LINK) -->
-          <div class="coordinate-capsule-row" id="cta-phone-link">
-            <div class="coordinate-icon-slot">📞</div>
-            <div class="coordinate-text-slot">
-              <h5>Direct Hotlines</h5>
-              <p>+91 7010792745</p>
-            </div>
-          </div>
+<!-- PHONE CALL CELL -->
+<div class="coordinate-capsule-row" id="cta-phone-link">
+  <div class="coordinate-icon-slot">
+    <!-- Vector Phone Icon -->
+    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </div>
+  <div class="coordinate-text-slot">
+    <h5>Direct Hotlines</h5>
+    <p>+91 7010792745</p>
+  </div>
+</div>
 
-          <!-- ELECTRONIC MAIL CELL (FUNCTIONAL MAILTO LINK) -->
-          <div class="coordinate-capsule-row" id="cta-email-link">
-            <div class="coordinate-icon-slot">✉️</div>
-            <div class="coordinate-text-slot">
-              <h5>Electronic Mail</h5>
-              <p>design@stacklystudio.com</p>
-            </div>
-          </div>
+<!-- ELECTRONIC MAIL CELL -->
+<div class="coordinate-capsule-row" id="cta-email-link">
+  <div class="coordinate-icon-slot">
+    <!-- Vector Mail Icon -->
+    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect width="20" height="16" x="2" y="4" rx="2"/>
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+    </svg>
+  </div>
+  <div class="coordinate-text-slot">
+    <h5>Electronic Mail</h5>
+    <p>design@stacklystudio.com</p>
+  </div>
+</div>
 
-          <!-- OPERATION AVAILABILITY CELL -->
-          <div class="coordinate-capsule-row">
-            <div class="coordinate-icon-slot">⏰</div>
-            <div class="coordinate-text-slot">
-              <h5>Atelier Availability</h5>
-              <p>Mon - Sun: 9:00 AM - 7:00 PM </p>
-            </div>
-          </div>
+<!-- OPERATION AVAILABILITY CELL -->
+<div class="coordinate-capsule-row">
+  <div class="coordinate-icon-slot">
+    <!-- Vector Clock Icon -->
+    <svg xmlns="http://w3.org" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </svg>
+  </div>
+  <div class="coordinate-text-slot">
+    <h5>Atelier Availability</h5>
+    <p>Mon - Sun: 9:00 AM - 7:00 PM </p>
+  </div>
+</div>
+
 
         </div>
       </div>
+<style>
+    .coordinate-icon-slot svg {
+  width: 24px;         /* Adjust width */
+  height: 24px;        /* Adjust height */
+  color: whitesmoke;      /* Swap with your brand accent color */
+  vertical-align: middle;
+}
 
+</style>
       <!-- RIGHT COLUMN: HIGH-END EDITORIAL DESIGN CONDUIT CONSULTATION FORM -->
       <div class="gateway-questionnaire-column">
         <div class="questionnaire-card-inner-box">
@@ -1022,7 +1055,7 @@ color: #170E08 !important;}
 
       <!-- FLOATING GLASSMORPHIC ROUTE NAVIGATOR PORTAL INTERACTION BUTTON -->
       <div class="map-floating-portal-badge">
-        <span class="map-compass-icon">🧭</span>
+        <span class="map-compass-icon"></span>
         <div class="map-badge-text-envelope">
           <h4>Open Live Navigation</h4>
           <p>Launches Google Maps Route</p>
@@ -1993,22 +2026,45 @@ justify-content: space-between !important;}.map-badge-text-envelope h4 { font-si
         <p class="footer-brand-bio">
           Sculpting high-fashion architectural sugar arts, multi-tiered wedding masterpieces, and premium single-origin chocolate confections for life's most exquisite celebrations.
         </p>
-        <div class="footer-social-wrapper">
-          <a href="#" class="social-icon-box" aria-label="Instagram">📸</a>
-          <a href="#" class="social-icon-box" aria-label="Pinterest">📌</a>
-          <a href="#" class="social-icon-box" aria-label="Facebook">🌸</a>
-        </div>
+      <!-- SEO-OPTIMIZED MINIMALIST SOCIAL CONNECTIONS HUB -->
+<div class="footer-social-wrapper" aria-label="Atelier Social Media Connections Grid">
+  
+  <!-- INSTAGRAM CREST LINK -->
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Explore Our Instagram Lookbook Feed">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M16 11.37C16.1234 12.7122 15.6171 14.0206 14.5916 14.9915C13.566 15.9624 12.1804 16.4716 10.7417 16.4018C9.303 16.332 8.01426 15.688 7.15545 14.6111C6.29665 13.5342 5.918 12.1822 6.10177 10.8504C6.28555 9.51855 7.00632 8.31114 8.10648 7.49841C9.20664 6.68567 10.5393 6.37128 11.8105 6.62358C13.0817 6.87588 14.1166 7.66258 14.6908 8.81016C15.265 9.95773 15.3013 11.2721 15.79 11.37Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#FDFBF7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <!-- PINTEREST CREST LINK -->
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Pin Our Custom Cake Blueprints on Pinterest">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M12 2C6.48 2 2 6.48 2 12C2 16.23 4.63 19.84 8.35 21.31C8.26 20.48 8.24 19.16 8.45 18.25C8.64 17.43 9.68 12.98 9.68 12.98C9.68 12.98 9.36 12.33 9.36 11.38C9.36 9.88 10.23 8.76 11.32 8.76C12.25 8.76 12.7 9.46 12.7 10.3C12.7 11.23 12.11 12.63 11.8 13.93C11.54 15.01 12.34 15.89 13.41 15.89C15.35 15.89 16.67 13.56 16.67 10.43C16.67 7.73 14.88 5.75 11.96 5.75C8.57 5.75 5.86 8.28 5.86 11.83C5.86 12.85 6.22 13.84 6.78 14.51C6.88 14.63 6.89 14.71 6.86 14.84L6.57 15.99C6.52 16.18 6.4 16.23 6.22 16.15C5.03 15.61 4.38 13.96 4.38 11.78C4.38 7.9 7.42 3.63 12.38 3.63C16.34 3.63 19.34 6.48 19.34 10.3C19.34 14.36 17 17.5 13.55 17.5C12.39 17.5 11.3 16.86 10.93 16.14L10.3 18.57C10.07 19.45 9.49 20.57 9.07 21.25C10.03 21.54 11.04 21.7 12 21.7C17.52 21.7 22 17.22 22 11.7C22 6.18 17.52 1.7 12 1.7V2Z" fill="#FDFBF7"/>
+    </svg>
+  </a>
+
+  <!-- FACEBOOK CREST LINK -->
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Visit Our FaceBook Community Salon Page">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M18 2H15C12.24 2 10 4.24 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.45 14.45 6 15 6H18V2Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+</div>
+
       </div>
 
    
       <div class="footer-links-column">
         <h4 class="footer-menu-title">Collections</h4>
         <ul class="footer-links-list">
-          <li><a href="404.html">Wedding Tiered</a></li>
-          <li><a href="404.html">Mirror Entremets</a></li>
-          <li><a href="404.html">Bespoke Sculptures</a></li>
-          <li><a href="404.html">Petit Fours</a></li>
-          <li><a href="404.html">Seasonal Edits</a></li>
+          <li><a href="story.html">Wedding Tiered</a></li>
+          <li><a href="ourmenu.html">Mirror Entremets</a></li>
+          <li><a href="orders.html">Bespoke Sculptures</a></li>
+          <li><a href="story.html">Petit Fours</a></li>
+          <li><a href="orders.html">Seasonal Edits</a></li>
         </ul>
       </div>
 
@@ -2016,10 +2072,11 @@ justify-content: space-between !important;}.map-badge-text-envelope h4 { font-si
       <div class="footer-links-column">
         <h4 class="footer-menu-title">Atelier</h4>
         <ul class="footer-links-list">
-         <li><a href="menu.html">Menu</a></li>
+          <li><a href="ourmenu.html">Menu</a></li>
           <li><a href="orders.html">Custom Orders</a></li>
           <li><a href="story.html">Our Story</a></li>
           <li><a href="contact.html">Find Us</a></li>
+         
         </ul>
       </div>
 
@@ -2056,6 +2113,85 @@ justify-content: space-between !important;}.map-badge-text-envelope h4 { font-si
 
 </footer>
 <style>
+  /* ==========================================================================
+   MINIMALIST SOCIAL CRESTS OVERRIDES (ELIMINATES EMBEDDED TEXT EMOJIS)
+   ========================================================================== */
+.footer-social-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  justify-content: flex-start !important; /* Adjust cleanly to match your grid row alignments */
+}
+
+.social-icon-box {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  background-color: rgba(247, 243, 238, 0.02) !important; /* Smoked translucent dark base UI */
+  border: 1px solid rgba(247, 243, 238, 0.08) !important;  /* Ultra thin framing perimeter wire */
+  text-decoration: none !important; /* Strips any basic browser underline link defaults */
+  
+  /* Prep paths for high-performance graphic transforms */
+  transform: translateY(0) scale(1) translateZ(0) !important;
+  will-change: transform, border-color, background-color;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              background-color 0.4s ease !important;
+}
+
+/* Scaling constraints for the inline vector line paths */
+.social-media-crest-svg {
+  width: 18px !important;  /* Snug, elegant design profile thickness balances */
+  height: 18px !important;
+  display: block !important;
+}
+
+/* Direct path controls handle color values accurately */
+.social-media-crest-svg path,
+.social-media-crest-svg rect,
+.social-media-crest-svg line {
+  stroke: #FDFBF7 !important; /* Locks baseline vectors to crisp ivory silk */
+  transition: stroke 0.35s ease, fill 0.35s ease !important;
+}
+
+/* Specific filler patch to balance the solid background design of the Pinterest crest */
+.social-media-crest-svg[viewBox="0 0 24 24"] path[fill="#FDFBF7"] {
+  fill: #FDFBF7 !important;
+  stroke: none !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED SOCIAL CONTROLS ACTIVE HOVER MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* 
+   When your user hovers over an individual social capsule, the inner 
+   minimalist line vector transforms flawlessly into brand gold!
+*/
+.social-icon-box:hover {
+  background-color: rgba(203, 181, 161, 0.06) !important;
+  border-color: #CBB5A1 !important; /* Shines boundary wire to Pastry Gold */
+  
+  /* Smooth upward vertical card lift elevation snap pop */
+  transform: translateY(-4px) scale(1.05) translateZ(0) !important; 
+  box-shadow: 0 8px 20px rgba(203, 181, 161, 0.25) !important;
+}
+
+.social-icon-box:hover .social-media-crest-svg path,
+.social-icon-box:hover .social-media-crest-svg rect,
+.social-icon-box:hover .social-media-crest-svg line {
+  stroke: #CBB5A1 !important; /* Converts all stroke paths to signature gold leaf */
+}
+
+/* Secondary filling patch locks Pinterest's solid path hover coloration concurrently */
+.social-icon-box:hover .social-media-crest-svg[viewBox="0 0 24 24"] path[fill="#FDFBF7"] {
+  fill: #CBB5A1 !important;
+  stroke: none !important;
+}
+
     /* ==========================================================================
    1. GLOBAL FOOTER COAT WALL (Deep Dark Cocoa Baseline Theme)
    ========================================================================== */

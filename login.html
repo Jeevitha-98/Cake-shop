@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Atelier Portal Vault — Sugar &amp; Spice Atelier</title>
+  <title>Stackly Portal Vault — Sugar &amp; Spice Atelier</title>
 
   <!-- Premium Typography Integration Pipeline -->
   <link rel="preconnect" href="https://googleapis.com">
@@ -48,22 +48,57 @@
           <div class="role-selection-split-grid">
             
             <!-- OWNER SLOT CODE CONDUIT -->
-            <div class="role-selector-pill active-role" data-role="owner" onclick="assignActivePortalRole(this)">
-              <div class="role-icon-spark">👑</div>
-              <div class="role-text-meta">
-                <h4>Atelier Owner</h4>
-                <p>Studio Dashboard</p>
-              </div>
-            </div>
+            <!-- OWNER SLOT CODE CONDUIT -->
+<div class="role-selector-pill active-role" data-role="owner" onclick="assignActivePortalRole(this)">
+  <div class="role-icon-spark">
+    <!-- Vector Crown Icon -->
+    <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7z"/>
+      <path d="M3 20h18"/>
+    </svg>
+  </div>
+  <div class="role-text-meta">
+    <h4>Atelier Owner</h4>
+    <p>Studio Dashboard</p>
+  </div>
+</div>
 
-            <!-- CLIENT SLOT CODE CONDUIT -->
-            <div class="role-selector-pill" data-role="client" onclick="assignActivePortalRole(this)">
-              <div class="role-icon-spark">🥂</div>
-              <div class="role-text-meta">
-                <h4>Private Client</h4>
-                <p>Registry Deck</p>
-              </div>
-            </div>
+<!-- CLIENT SLOT CODE CONDUIT -->
+<!-- CLIENT SLOT CODE CONDUIT -->
+<div class="role-selector-pill" data-role="client" onclick="assignActivePortalRole(this)">
+  <div class="role-icon-spark">
+    <!-- Vector VIP Security Key Icon -->
+    <svg xmlns="http://w3.org" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3M15.5 7.5L14 9"/>
+    </svg>
+  </div>
+  <div class="role-text-meta">
+    <h4>Private Client</h4>
+    <p>Registry Deck</p>
+  </div>
+</div>
+
+<style>
+    .role-icon-spark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-icon-spark svg {
+  width: 20px;
+  height: 20px;
+  color: #a39592; /* Dimmed state for unselected pills */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Brighten the vector color automatically when the pill has the active class */
+.role-selector-pill.active-role .role-icon-spark svg {
+  color: #d9cac4; /* Bright beige tone to match your custom border highlighted state */
+  transform: scale(1.05);
+}
+
+</style>
 
           </div>
           <!-- Internal tracking element caches your selected profile data states natively -->
@@ -85,10 +120,98 @@
           </div>
         </div>
 
-        <!-- FORGOT PASSWORD LINK BLOCK -->
-        <div class="auth-auxiliary-links-row">
-          <a href="404.html" class="auth-card-forgot-link" onclick="triggerForgotPasswordRecovery()">Forgot Password?</a>
-        </div>
+      <!-- Flexbox Options Row -->
+<div class="login-meta-actions">
+  
+  <!-- Remember Me Block -->
+  <label class="remember-me-container">
+    <input type="checkbox" id="remember-me" name="rememberme">
+    <span class="custom-checkbox">
+      <svg xmlns="http://w3.org" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </span>
+    <span class="checkbox-label-text">Remember me</span>
+  </label>
+
+  <!-- Forgot Password Link -->
+  <a href="404.html" class="forgot-password-link">Forgot Password?</a>
+
+</div>
+<style>
+    .login-meta-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0 24px 0; /* Adjust vertical spacing within your form */
+  width: 100%;
+}
+
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hide native browser checkbox input */
+.remember-me-container input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Styled checkbox container matching your UI */
+.custom-checkbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #4a3e3d; /* Soft dark border color */
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox svg {
+  color: #1a1514; /* Dark checkmark inside active box */
+  display: none;
+}
+
+.checkbox-label-text {
+  color: #a39592; /* Gray-brown font color matching your UI */
+  font-size: 14px;
+}
+
+/* Forgot Password Text Styling */
+.forgot-password-link {
+  color: #a39592;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Checked state activation using your theme's beige color */
+.remember-me-container input:checked ~ .custom-checkbox {
+  background-color: #d9cac4; 
+  border-color: #d9cac4;
+}
+
+.remember-me-container input:checked ~ .custom-checkbox svg {
+  display: block;
+}
+
+/* Hover effects */
+.remember-me-container:hover .checkbox-label-text,
+.forgot-password-link:hover {
+  color: #d9cac4; /* Highlighting text on hover */
+}
+
+</style>
+
 
         <!-- SUBMIT ACTION ENTRY MODULE PILL CTA BUTTON -->
         <div class="auth-action-submit-hub">
