@@ -172,12 +172,13 @@
 <!-- ENHANCED HERO BANNER WRAPPER WITH SEAMLESS ANIMATION STATES -->
 <section class="hero-video-section">
   
-  <div class="video-background-container">
-    <video autoplay loop muted playsinline class="hero-bg-video">
-      <source src="./Assests/0_Food_Bakery_3840x2160.mp4" type="video/mp4">
-    </video>
-    <div class="video-darkness-overlay"></div>
-  </div>
+  <!-- LUXURY BRAND HIGH-DENSITY IMAGE BACKDROP LAYER -->
+<div class="image-background-container">
+  <!-- IMAGE BACKGROUND OPTION: Replace path safely below with your luxury cake showroom texture artwork -->
+  <img src="./Assests/Home - hero.webp" alt="Atelier Showroom Flagship Backdrop" class="hero-bg-actual-img" onerror="this.src='https://placehold.co'">
+  <div class="image-darkness-overlay"></div>
+</div>
+
 
   <!-- STAGGERED ENTRANCE CONTAINER -->
   <div class="hero-content-container animate-fade-up">
@@ -405,6 +406,109 @@
   height: 100%;
   background: linear-gradient(135deg, rgba(23, 14, 8, 0.85) 0%, rgba(35, 27, 21, 0.65) 100%);
   z-index: 2;
+}
+/* ==========================================================================
+   TRUE FULL SCREEN STATICS BACKGROUND CANVAS PROFILE (CONVERTED FROM VIDEO)
+   ========================================================================== */
+/* ==========================================================================
+   1. VISIBLE INTERACTIVE BACKGROUND ENVELOPE (RESTORES MOUSE DETECTION)
+   ========================================================================== */
+.image-background-container {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 3 !important; /* Holds backdrop underneath your foreground textual title fields safely */
+  overflow: hidden !important; /* Clips wide expanding image boundaries within card borders */
+  
+  /* 
+     CRITICAL VISUAL FIX: Restores text mouse coordinates capture.
+     Allows the browser style rendering engine to listen to hover actions.
+  */
+  pointer-events: auto !important; 
+  cursor: pointer !important;
+  
+  /* Prep hardware acceleration layers to protect fluid transitions frame rates */
+  transform: scale(1) translate3d(0,0,0) !important;
+  will-change: transform, border-color, box-shadow;
+  transition: border-color 0.5s ease, box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* ==========================================================================
+   2. RE-ENGINEERED LENS BACKGROUND IMAGE SYSTEM
+   ========================================================================== */
+.hero-bg-actual-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Spreads image canvas end-to-end flawlessly without distortion bugs */
+  object-position: center center !important;
+  opacity: 0.98 !important; /* High contrast visibility */
+  filter: grayscale(15%) brightness(40%) contrast(105%) !important;
+
+  /* Baseline hardware acceleration constraints hide backface layers glitches */
+  transform: scale(1) translate3d(0, 0, 0) !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+  will-change: transform, filter;
+  
+  /* Retains the continuous, quiet 24s slow ambient breathing movement as a baseline track */
+  animation: continuousCoutureLensBreathe 24s ease-in-out infinite alternate !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              filter 0.5s ease !important;
+}
+
+/* ==========================================================================
+   3. SUPERCHARGED TARGET HOVER STATE (COMBINES BOTH MOTIONS PERFECTLY)
+   ========================================================================== */
+
+/* 
+   When your mouse hovers over the container canvas block tracking loops, 
+   we momentarily pause the infinite slide to inject a bold, deep 
+   cinematic focus zoom pull and clear up brightness levels instantly!
+*/
+.image-background-container:hover .hero-bg-actual-img {
+  animation-play-state: paused !important; /* Prevents frame fights with the keyframe loops */
+  
+  /* Extra camera pop zoom depth scale and pulls brightness forward inside image envelope */
+  transform: scale(1.08) translate3d(0, -5px, 0) !important; 
+  filter: grayscale(0%) brightness(55%) contrast(100%) !important; /* Restores realistic color saturation on focus */
+}
+
+/* Adds a soft, luxury gold leaf neon halo aura outline indicator behind your image borders */
+.image-background-container:hover {
+  box-shadow: inset 0 0 40px rgba(203, 181, 161, 0.15) !important;
+}
+
+/* ==========================================================================
+   4. PERFORMANCE MOVEMENT MOVEMENT TIMELINE KEYFRAMES
+   ========================================================================== */
+@keyframes continuousCoutureLensBreathe {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0) !important;
+  }
+  100% {
+    transform: scale(1.04) translate3d(0, -10px, 0) !important;
+  }
+}
+
+
+
+
+/* Dense smoke cocoa mask wash integrates layout files downpage */
+.image-darkness-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    180deg, 
+    rgba(23, 14, 8, 0.82) 0%, 
+    rgba(23, 14, 8, 0.45) 60%, 
+    #170E08 100%
+  ) !important; /* Brand core dark chocolate espresso palette blend */
+  z-index: 2 !important;
 }
 
 .hero-content-container {
@@ -1392,7 +1496,7 @@ try {
         </div>
 
         <div class="heritage-action-gate">
-          <a href="about.html" class="heritage-luxury-btn">
+          <a href="story.html" class="heritage-luxury-btn">
             Read Our Full Story 
             <span class="btn-thread-arrow">→</span>
           </a>
@@ -3795,7 +3899,7 @@ try {
 
       <!-- RIGHT ACCENT: BRAND-MATCHED INTERACTIVE PORTAL BUTTON -->
       <div class="mini-cta-action-hub">
-        <a href="contact.html" class="mini-cta-vogue-pill-btn">
+        <a href="404.html" class="mini-cta-vogue-pill-btn">
           Commission Now
           <span class="mini-cta-arrow-vector">→</span>
         </a>
@@ -4129,11 +4233,11 @@ try {
       <div class="footer-links-column">
         <h4 class="footer-menu-title">Atelier</h4>
         <ul class="footer-links-list">
-          <li><a href="about.html">Our Story</a></li>
-          <li><a href="blog.html">Sweet Blog</a></li>
-          <li><a href="orders.html">Order Tracker</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="orders.html">Custom Orders</a></li>
+          <li><a href="story.html">Our Story</a></li>
           <li><a href="contact.html">Find Us</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+         
         </ul>
       </div>
 
