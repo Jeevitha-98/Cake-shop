@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join The Council — Sugar &amp; Spice Atelier</title>
+
+  <!-- Premium Typography Integration Pipeline -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/signup.css">
+</head>
+<body class="auth-page-body">
+
+  <!-- CINEMATIC BACKDROP IMMERSION HOOK (TRUE FULL VIEWPORT FIXED COVER) -->
+  <div class="auth-bg-holder">
+    <!-- BACKGROUND IMAGE OPTION: Replace path below safely with your choice boutique workspace asset -->
+    <img src="./Assests/catering.webp" alt="Atelier Whimsical Baking Canvas Background" class="auth-backdrop-img">
+    <div class="auth-smoky-mask"></div>
+  </div>
+
+  <!-- CENTRAL AUTHENTICATION CANVAS -->
+  <main class="auth-main-container">
+    <div class="auth-card-inner-box signup-stagger-frame">
+      
+      <!-- FIXED FLOATING BACK PORTAL MOVED INSIDE THE CARD CHASSIS -->
+      <div class="auth-inner-card-navigation">
+        <a href="login.html" class="auth-back-portal-btn">
+          <span class="portal-arrow-vector">←</span> Back to Log In
+        </a>
+      </div>
+      
+      <!-- EDITORIAL HEADER BLOCK -->
+      <div class="auth-card-header">
+        <span class="auth-micro-tag">— Atelier Register —</span>
+        <h1 class="auth-main-display-title">Create <em>Account.</em></h1>
+        <p class="auth-descriptor-text">Register your artisan profile to open your customized cake project registry deck.</p>
+      </div>
+
+      <!-- THE CORE INPUT VALIDATION ENGINE FORM -->
+      <form id="atelier-signup-form" class="auth-form-engine">
+        
+        <!-- INPUT 1: FULL NAME -->
+        <div class="auth-input-envelope-field">
+          <label class="auth-editorial-label">Full Name</label>
+          <input type="text" id="signup-fullname" placeholder="Enter your full name..." class="auth-luxury-text-input" required autocomplete="name">
+        </div>
+
+        <!-- INPUT 2: EMAIL ADDRESS -->
+        <div class="auth-input-envelope-field">
+          <label class="auth-editorial-label">Email Address</label>
+          <input type="email" id="signup-email" placeholder="you@example.com" class="auth-luxury-text-input" required autocomplete="email">
+        </div>
+
+        <!-- INPUT 3: PASSWORD -->
+        <div class="auth-input-envelope-field">
+          <label class="auth-editorial-label">Password</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="signup-password" placeholder="••••••••" class="auth-luxury-text-input" required autocomplete="new-password">
+            <span class="password-toggle-eye-icon" onclick="togglePasswordVisibility('signup-password', this)">🙈</span>
+          </div>
+        </div>
+
+        <!-- INPUT 4: CONFIRM PASSWORD -->
+        <div class="auth-input-envelope-field">
+          <label class="auth-editorial-label">Confirm Password</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="signup-confirm-password" placeholder="••••••••" class="auth-luxury-text-input" required autocomplete="new-password">
+            <span class="password-toggle-eye-icon" onclick="togglePasswordVisibility('signup-confirm-password', this)">🙈</span>
+          </div>
+        </div>
+
+        <!-- SUBMIT ACTION ENTRY PILL CTA BUTTON -->
+        <div class="auth-action-submit-hub">
+          <button type="submit" class="auth-submit-vogue-pill-btn">
+            Sign Up
+            <span class="submit-arrow-vector">→</span>
+          </button>
+        </div>
+
+      </form>
+
+      <!-- BASE LINK ATELIER SWITCHING INVERSION FOOTER -->
+      <div class="auth-card-footer-redirect">
+        <p>Already have an account? <a href="login.html" class="footer-inversion-link">Log In</a></p>
+      </div>
+
+    </div>
+  </main>
+<style>
+    /* ==========================================================================
+   1. TRUE FULL SCREEN BACKGROUND FIX (ELIMINATES EMBEDDED MARGIN SHIFTS)
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #170E08; 
+  color: #F7F3EE;            
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.auth-page-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 
+   FIXED LAYER CONTROLLER: 
+   Locks background to true full viewport widths and heights.
+*/
+.auth-bg-holder {
+  position: fixed; /* Holds background static while form panels scroll */
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.auth-backdrop-img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* Spreads image end-to-end flawlessly across all screen types */
+  opacity: 0.15; 
+  filter: grayscale(15%) brightness(40%) contrast(105%);
+  animation: continuousAuthZoom 24s ease-in-out infinite alternate;
+}
+
+.auth-smoky-mask {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(23, 14, 8, 0.85) 0%, rgba(23, 14, 8, 0.5) 60%, #170E08 100__);
+  z-index: 2;
+}
+
+/* ==========================================================================
+   2. RE-POSITIONED BACK TO LOGIN BUTTON (INSIDE THE CARD CHASSIS)
+   ========================================================================== */
+.auth-inner-card-navigation {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important; /* Pushes button neatly to the inner top-right corner */
+  margin-bottom: 24px !important;       /* Separates button from form header text below */
+}
+
+.auth-back-portal-btn {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-decoration: none !important;
+  background-color: rgba(247, 243, 238, 0.08) !important; /* Clean smoked glass style harmonizes inside dark card */
+  border: 1px solid rgba(247, 243, 238, 0.15) !important;
+  color: #ECE5DF !important;
+  padding: 10px 18px !important;
+  border-radius: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.auth-back-portal-btn .portal-arrow-vector {
+  display: inline-block !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* Hover effects look clean inside card boundaries */
+.auth-back-portal-btn:hover {
+  background-color: #CBB5A1 !important; /* Brand caramel gold highlight on cursor focus */
+  border-color: #CBB5A1 !important;
+  color: #170E08 !important; /* Inverts text color to espresso for supreme contrast */
+  box-shadow: 0 4px 12px rgba(203, 181, 161, 0.2) !important;
+}
+.auth-back-portal-btn:hover .portal-arrow-vector { transform: translateX(-3px) !important; }
+
+/* ==========================================================================
+   3. CENTRAL AUTHENTICATION CARD CHASSIS
+   ========================================================================== */
+.auth-main-container {
+  position: relative;
+  z-index: 5; /* Pushes form elements cleanly forward above the fixed background image */
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0 !important; /* Balanced uniform top/bottom buffer space */
+}
+
+.auth-card-inner-box {
+  background: linear-gradient(145deg, rgba(23, 14, 8, 0.65) 0%, rgba(15, 9, 5, 0.85) 100%) !important;
+  border: 1px solid rgba(203, 181, 161, 0.1) !important;
+  border-radius: 24px !important;
+  padding: 44px 40px !important;
+  width: 90% !important;
+  max-width: 480px !important; 
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  animation: authCardUnfold 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.1s;
+}
+
+.auth-card-header { margin-bottom: 28px; text-align: left; }
+
+.auth-micro-tag {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #CBB5A1; 
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.auth-main-display-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: #F7F3EE;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.auth-main-display-title em { font-style: italic; font-weight: 400; color: #E6D4C3; }
+
+.auth-descriptor-text {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #A39387; 
+}
+
+/* ==========================================================================
+   4. INTERACTIVE INPUT FIELDS TRANSITIONS
+   ========================================================================== */
+.auth-form-engine {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.auth-input-envelope-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.auth-editorial-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #7A6F66;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.password-field-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.auth-luxury-text-input {
+  width: 100%;
+  background-color: #120B06 !important; 
+  border: 1px solid rgba(203, 181, 161, 0.15) !important;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #F7F3EE;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.password-field-wrapper .auth-luxury-text-input {
+  padding-right: 50px;
+}
+
+.password-toggle-eye-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.05rem;
+  opacity: 0.35;
+  user-select: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.password-toggle-eye-icon:hover { opacity: 0.85; transform: translateY(-50%) scale(1.1); }
+
+.auth-luxury-text-input:focus {
+  border-color: #CBB5A1 !important; 
+  background-color: #170E08 !important;
+  box-shadow: 0 0 15px rgba(203, 181, 161, 0.08) !important;
+}
+
+.auth-input-envelope-field:focus-within .auth-editorial-label {
+  color: #CBB5A1 !important;
+}
+
+/* ==========================================================================
+   5. BRAND CAPSULE PILL ACTION BUTTON
+   ========================================================================== */
+.auth-action-submit-hub {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.auth-submit-vogue-pill-btn {
+  width: 100%;
+  height: 52px;
+  background-color: #CBB5A1; 
+  color: #170E08;             
+  border: 1px solid #CBB5A1;
+  border-radius: 50px; 
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(203, 181, 161, 0.12);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.submit-arrow-vector { display: inline-block; transition: transform 0.3s ease; }
+
+.auth-submit-vogue-pill-btn:hover {
+  background-color: #E2D2C3; 
+  border-color: #E2D2C3;
+  transform: translateY(-2px); 
+  box-shadow: 0 10px 24px rgba(203, 181, 161, 0.25);
+}
+.auth-submit-vogue-pill-btn:hover .submit-arrow-vector { transform: translateX(5px); }
+
+.auth-card-footer-redirect {
+  margin-top: 24px;
+  text-align: center;
+}
+.auth-card-footer-redirect p { font-size: 0.85rem; color: #7A6F66; }
+
+.footer-inversion-link {
+  color: #CBB5A1;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.footer-inversion-link:hover { color: #E2D2C3; text-decoration: underline; }
+
+/* ==========================================================================
+   6. GRAPHICS REVEALS MOTION KEYFRAMES
+   ========================================================================== */
+@keyframes continuousAuthZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+@keyframes authCardUnfold {
+  0% { opacity: 0; transform: translateY(20px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ==========================================================================
+   7. FLUID RESPONSIVE VIEWPORT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 500px) {
+  .auth-main-container { padding: 40px 0 !important; }
+  .auth-card-inner-box { padding: 36px 20px !important; border-radius: 20px; }
+  .auth-inner-card-navigation { margin-bottom: 16px !important; }
+  .auth-back-portal-btn { padding: 8px 14px !important; font-size: 0.68rem !important; }
+}
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  
+  const signupFormEngine = document.getElementById('atelier-signup-form');
+  const fullnameInput = document.getElementById('signup-fullname');
+  const emailInput = document.getElementById('signup-email');
+  const passwordInput = document.getElementById('signup-password');
+  const confirmPasswordInput = document.getElementById('signup-confirm-password');
+
+  // 1. PASSWORD VISIBILITY TOGGLE TOGGLE FUNCTION
+  window.togglePasswordVisibility = function (inputFieldId, iconElement) {
+    const targetInput = document.getElementById(inputFieldId);
+    if (targetInput && iconElement) {
+      if (targetInput.type === "password") {
+        targetInput.type = "text";
+        iconElement.textContent = "👁️"; // Shifts icon tag to blind view
+      } else {
+        targetInput.type = "password";
+        iconElement.textContent = "🙈";
+      }
+    }
+  };
+
+  // 2. REGISTRATION INPUT PROCESS LISTENERS LOOP
+  if (signupFormEngine) {
+    signupFormEngine.addEventListener('submit', function (event) {
+      event.preventDefault(); // Securely blocks default browser page re-loads execution loops
+
+      const fullnameValue = fullnameInput.value.trim();
+      const emailValue = emailInput.value.trim();
+      const passwordValue = passwordInput.value;
+      const confirmPasswordValue = confirmPasswordInput.value;
+
+      // Password logic check parameters
+      if (passwordValue !== confirmPasswordValue) {
+        alert("Blueprint Registration Error: Password parameters do not align. Please verify your data entry layers match.");
+        confirmPasswordInput.focus();
+        return;
+      }
+
+      /* 
+         FUNCTIONAL SPECIFICATION METRIC REALIZED:
+         Pops up confirmation box displaying user details and directions safely.
+      */
+      alert(`Successfully signing up!\n\nWelcome to the Council, ${fullnameValue}.\n\nUse this credential to login:\nEmail: ${emailValue}`);
+
+      signupFormEngine.reset(); // Safely wipes layout fields clean post-transmission
+      window.location.href = "login.html"; // Redirection route takes them directly to log in workspace page panel
+    });
+  }
+});
+
+</script>
+</body>
+</html>

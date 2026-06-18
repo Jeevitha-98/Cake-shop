@@ -1,0 +1,2434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partner Dashboard — Sugar &amp; Spice Atelier</title>
+
+  <!-- Premium Typography Integration Pipeline -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body class="dashboard-root-body">
+
+  <!-- ==========================================================================
+     1. GLOBAL FLOATING BACKGROUND MASK COATING
+     ========================================================================== -->
+  <div class="dash-bg-holder">
+    <img src="./Assests/2026.webp" alt="Atelier Canvas Background" class="dash-backdrop-img">
+    <div class="dash-smoky-mask"></div>
+  </div>
+
+  <!-- MOBILE SIDEBAR TOGGLE MECHANISM ACTION HEADER BAR -->
+  <header class="mobile-menu-trigger-bar">
+    <span class="mobile-studio-logo">✨ Atelier Matrix</span>
+    <button class="mobile-hamburger-btn" onclick="toggleMobileSidebarChassis()">☰</button>
+  </header>
+
+  <!-- ==========================================================================
+     2. FLOATING GLASSMORPHIC LEFT SIDEBAR MODULE
+     ========================================================================== -->
+  <aside class="dash-sidebar-chassis">
+   <!-- ENHANCED INTERACTIVE BRAND REFRESH HUB AXIS -->
+<div class="sidebar-brand-axis" onclick="executeStudioWorkspaceRefresh(this)">
+  <div class="brand-sparkle-spin-wrapper">
+    <span class="brand-logo-spark">✨</span>
+  </div>
+  <div class="brand-text-block">
+    <h3>Stackly Studio</h3>
+    <p>Partner Matrix</p>
+  </div>
+</div>
+
+
+
+    <!-- SIDEBAR ACTION MENU OPTIONS ROUTING PANEL STACK -->
+    <nav class="sidebar-navigation-menu" aria-label="Studio Executive Console">
+      
+      <button class="sidebar-menu-item active-menu-item" data-target="panel-blueprint" onclick="switchDashboardActivePanel(this)">
+        <span class="menu-icon-token">📐</span>
+        <span class="menu-text-label">Design Blueprints</span>
+        <div class="menu-active-laser-indicator"></div>
+      </button>
+
+      <button class="sidebar-menu-item" data-target="panel-orders" onclick="switchDashboardActivePanel(this)">
+        <span class="menu-icon-token">🎂</span>
+        <span class="menu-text-label">Active Commissions</span>
+        <div class="menu-active-laser-indicator"></div>
+      </button>
+
+      <button class="sidebar-menu-item" data-target="panel-tastings" onclick="switchDashboardActivePanel(this)">
+        <span class="menu-icon-token">🥂</span>
+        <span class="menu-text-label">Salon Tastings</span>
+        <div class="menu-active-laser-indicator"></div>
+      </button>
+
+      <button class="sidebar-menu-item" data-target="panel-analytics" onclick="switchDashboardActivePanel(this)">
+        <span class="menu-icon-token">📊</span>
+        <span class="menu-text-label">Revenue Metrics</span>
+        <div class="menu-active-laser-indicator"></div>
+      </button>
+
+      <button class="sidebar-menu-item" data-target="panel-settings" onclick="switchDashboardActivePanel(this)">
+        <span class="menu-icon-token">⚙️</span>
+        <span class="menu-text-label">Vault Settings</span>
+        <div class="menu-active-laser-indicator"></div>
+      </button>
+
+    </nav>
+
+    <!-- LOGOUT ACTION BUTTON LINK PIPELINE -->
+    <div class="sidebar-lower-footer">
+      <button class="sidebar-logout-pill-btn" onclick="triggerPartnerLogoutSequence()">
+        <span class="logout-icon-token">🚪</span>
+        <span class="logout-text-label">Exit Vault</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+     3. CENTRAL MAIN WORKSPACE GRID RUNWAY (CONTAINING THE TOP NAV BAR)
+     ========================================================================== -->
+  <div class="dash-central-runway-wrapper">
+    
+    <!-- TOP NAVIGATION INTERACTIVE BAR BAR -->
+    <header class="dash-top-navigation-bar">
+      <div class="topnav-left-breadcrumbs">
+        <span class="breadcrumb-root">Console</span>
+        <span class="breadcrumb-divider">/</span>
+        <span id="breadcrumb-active-node" class="breadcrumb-node-active">Design Blueprints</span>
+      </div>
+
+      <!-- RIGHT CONTROLS: BELL ALERTS BUTTON & PROFILE NODES -->
+      <div class="topnav-right-controls-hub">
+        
+        <!-- BELL ALERTS INDICATOR CELL -->
+        <!-- BELL ALERTS INDICATOR CELL WITH PURE WHITE VECTOR ICON -->
+<button class="topnav-utility-btn" aria-label="Alert Notification Logs" onclick="alert('Notification Logs Crunched: Zero pending security warnings inside your baking calendar sequence.')">
+  <!-- PURE WHITE VECTOR PATH BELL -->
+  <svg class="utility-white-bell-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+    <path d="M12 22C13.1 22 14 21.1 14 20H10C10 21.1 10.89 22 12 22ZM18 16V11C18 7.93 16.36 5.36 13.5 4.68V4C13.5 3.17 12.83 2.5 12 2.5C11.17 2.5 10.5 3.17 10.5 4V4.68C7.63 5.36 6 7.92 6 11V16L4 18V19H20V18L18 16ZM16 17H8V11C8 8.52 9.51 6.5 12 6.5C14.49 6.5 16 8.52 16 11V17Z" fill="#FDFBF7"/>
+  </svg>
+  <span class="alert-pulse-beacon-dot"></span>
+</button>
+
+
+        <!-- PROFILE MANAGER CONTAINER AVATAR -->
+        <div class="topnav-profile-avatar-node" onclick="alert('Profile Configuration Registry Matrix Locked: Access credentials in Vault Setting.')">
+          <img src="./Assests/dashboard profile.webp" alt="Master Sugar Architect Profile Avatar Face" class="profile-actual-avatar-img">
+          <div class="profile-online-ring-glow"></div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+       4. MULTI-PANEL VIEWPORT DASHBOARD CONTENT MODULE CHASSIS
+       ========================================================================== -->
+    <main class="dash-content-viewport-canvas">
+      
+      <!-- PANEL 1: DESIGN BLUEPRINTS (ACTIVE BY DEFAULT) -->
+     <!-- ENHANCED DESIGN BLUEPRINTS WORKSPACE CANVAS PANEL -->
+<section id="panel-blueprint" class="dash-view-panel active-panel-view" aria-label="Design Blueprints Space">
+  
+  <!-- INTERACTIVE SECTION INTRO EDITORIAL HEADER -->
+  <div class="panel-header-editorial-block">
+    <div class="panel-header-meta-trail">
+      <span class="panel-status-beacon-dot"></span>
+      <span class="panel-micro-tag">Operational Diagnostic Core</span>
+    </div>
+    <h1 class="panel-display-title">Hand-Drafted <em>Blueprints Grid</em></h1>
+    <p class="panel-descriptor">Review structural parameters, load distributions, and botanical palette swatches submitted by private cake commissions.</p>
+  </div>
+
+  <!-- ASYMMETRICAL 3-COLUMN INTUITIVE BLUEPRINT CARDS GRID HUB -->
+  <div class="blueprint-analytics-cards-grid">
+    
+    <!-- BLUEPRINT SYSTEM DATA MODEL CARD 1 -->
+    <article class="blueprint-diagnostic-card status-approved">
+      <div class="blueprint-card-laser-glow"></div>
+      <div class="blueprint-card-inner">
+        <div class="blueprint-meta-header-row">
+          <span class="blueprint-index-id">BPR // 2026.01</span>
+          <span class="blueprint-status-pills status-pill-validated">Validated</span>
+        </div>
+        <h2 class="blueprint-serif-title">The Grand Ivory Wedding Monolith</h2>
+        
+        <!-- TECHNICAL DATA SPECIFICATION MATRIX ROWS -->
+        <div class="blueprint-spec-metrics-matrix">
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Structural Volume</span>
+            <span class="metric-value-output">5 Tiers Stacked</span>
+          </div>
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Moisture Boundaries</span>
+            <span class="metric-value-output">94.8% Gradient Lock</span>
+          </div>
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Botanical Accent</span>
+            <span class="metric-value-output">Pressed Lavender Honey</span>
+          </div>
+        </div>
+
+        <!-- ACTION CONTROLS BUTTON MODULE HUBS -->
+        <div class="blueprint-card-action-gateway">
+          <button type="button" class="blueprint-btn-portal secondary-outline" onclick="alert('Launching Interactive Sugar CAD Blueprint Modeling Canvas...')">View CAD Sketch</button>
+          <button type="button" class="blueprint-btn-portal primary-gold" onclick="alert('Blueprint Matrix Authorized! Commission routed to active production ovens.')">Approve Design</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- BLUEPRINT SYSTEM DATA MODEL CARD 2 -->
+    <article class="blueprint-diagnostic-card status-pending">
+      <div class="blueprint-card-laser-glow"></div>
+      <div class="blueprint-card-inner">
+        <div class="blueprint-meta-header-row">
+          <span class="blueprint-index-id">BPR // 2026.02</span>
+          <span class="blueprint-status-pills status-pill-pending">Review Pending</span>
+        </div>
+        <h2 class="blueprint-serif-title">Bespoke Mirror Glaze Geometry</h2>
+        
+        <div class="blueprint-spec-metrics-matrix">
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Structural Volume</span>
+            <span class="metric-value-output">1 Layer (Dome Sphere)</span>
+          </div>
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Mirror Lacquer Sheen</span>
+            <span class="metric-value-output">94.2% Refraction Sheen</span>
+          </div>
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Finishing Gilt Accents</span>
+            <span class="metric-value-output">24k Fine Gold Leaf Sheets</span>
+          </div>
+        </div>
+
+        <div class="blueprint-card-action-gateway">
+          <button type="button" class="blueprint-btn-portal secondary-outline" onclick="alert('Launching Interactive Sugar CAD Blueprint Modeling Canvas...')">View CAD Sketch</button>
+          <button type="button" class="blueprint-btn-portal primary-gold" onclick="alert('Blueprint Matrix Authorized! Commission routed to active production ovens.')">Approve Design</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- BLUEPRINT SYSTEM DATA MODEL CARD 3 -->
+    <article class="blueprint-diagnostic-card status-review">
+      <div class="blueprint-card-laser-glow"></div>
+      <div class="blueprint-card-inner">
+        <div class="blueprint-meta-header-row">
+          <span class="blueprint-index-id">BPR // 2026.03</span>
+          <span class="blueprint-status-pills status-pill-validated">Validated</span>
+        </div>
+        <h2 class="blueprint-serif-title">Artisanal Wafer Paper Botanical</h2>
+        
+        <div class="blueprint-spec-metrics-matrix">
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Structural Volume</span>
+            <span class="metric-value-output">3 Tiers Offset</span>
+          </div>
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Dowel Stress Variance</span>
+            <span class="metric-value-output">0.02mm Balanced Span</span>
+          </div>
+          <div class="spec-metric-row-strip">
+            <span class="metric-key-label">Core Flavor Profile</span>
+            <span class="metric-value-output">Tahitian Vanilla Orchid</span>
+          </div>
+        </div>
+
+        <div class="blueprint-card-action-gateway">
+          <button type="button" class="blueprint-btn-portal secondary-outline" onclick="alert('Launching Interactive Sugar CAD Blueprint Modeling Canvas...')">View CAD Sketch</button>
+          <button type="button" class="blueprint-btn-portal primary-gold" onclick="alert('Blueprint Matrix Authorized! Commission routed to active production ovens.')">Approve Design</button>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   ENHANCED DESIGN BLUEPRINTS WORKSPACE CANVAS STYLES
+   ========================================================================== */
+.panel-header-meta-trail {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 12px !important;
+}
+
+.panel-status-beacon-dot {
+  width: 8px !important; height: 8px !important;
+  background-color: #CBB5A1 !important; /* Caramel gold brand tone */
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px #CBB5A1 !important;
+  animation: gatewayPulseBeacon 2s infinite alternate !important;
+}
+
+.panel-micro-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #CBB5A1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+}
+
+/* ==========================================================================
+   3-COLUMN ASYMMETRICAL INTERLOCKING GEOMETRIC GRID CHASSIS
+   ========================================================================== */
+.blueprint-analytics-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 horizontal columns side-by-side on desktop layouts window viewports */
+  gap: 30px !important;
+  width: 100% !important;
+  margin-top: 14px !important;
+}
+
+.blueprint-diagnostic-card {
+  position: relative !important;
+  /* Semi-translucent glass UI base profile lets background details bleed through softly */
+  background: linear-gradient(145deg, rgba(38, 24, 15, 0.45) 0%, rgba(23, 14, 8, 0.6) 100__) !important;
+  border: 1px solid rgba(203, 181, 161, 0.08) !important; /* Faint framework wire perimeter line wire */
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  
+  /* Forces hardware acceleration layer to protect rendering speed frames */
+  transform: translateY(0) translateZ(0) !important;
+  will-change: transform, border-color, box-shadow;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              box-shadow 0.5s cubic-bezier(0.25, 1, 0.3, 1) !important;
+}
+
+/* Underlying expanding laser-line light draw edge overlay background */
+.blueprint-card-laser-glow {
+  position: absolute !important;
+  top: 0 !important; left: 0 !important; width: 4px !important; height: 100% !important;
+  background-color: #CBB5A1 !important; /* Brand caramel gold laser bar indicator track */
+  opacity: 0 !important;
+  transform: scaleY(0) !important;
+  transform-origin: bottom center !important;
+  transition: opacity 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important, transform 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important;
+  z-index: 2 !important;
+}
+
+.blueprint-card-inner {
+  padding: 36px 30px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+/* ==========================================================================
+   CARD METADATA HEADERS & STATUS BADGES MAPPING
+   ========================================================================== */
+.blueprint-meta-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+}
+
+.blueprint-index-id {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  letter-spacing: 1px !important;
+}
+
+/* Luxury status tags config */
+.blueprint-status-pills {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 5px 12px !important;
+  border-radius: 20px !important;
+}
+
+.status-pill-validated {
+  background-color: rgba(82, 196, 26, 0.06) !important;
+  border: 1px solid rgba(82, 196, 26, 0.3) !important;
+  color: #52C41A !important; /* Clean emerald green token */
+}
+
+.status-pill-pending {
+  background-color: rgba(212, 175, 55, 0.06) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  color: #D4AF37 !important; /* Bright luxury gold token */
+}
+
+.blueprint-card-serif-title,
+h2.blueprint-serif-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  font-style: italic !important; /* Signature luxury touch matches headers */
+  color: #F7F3EE !important;
+  line-height: 1.35 !important;
+  margin-bottom: 24px !important;
+  text-align: left !important;
+  transition: color 0.3s ease !important;
+}
+
+/* ==========================================================================
+   TECHNICAL PARAMETERS METRICS GRID STRIPS
+   ========================================================================== */
+.blueprint-spec-metrics-matrix {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  border-top: 1px solid rgba(203, 181, 161, 0.08) !important;
+  border-bottom: 1px solid rgba(203, 181, 161, 0.08) !important;
+  padding: 16px 0 !important;
+  margin-bottom: 28px !important;
+}
+
+.spec-metric-row-strip {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.spec-metric-row-strip .metric-key-label {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.spec-metric-row-strip .metric-value-output {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  color: #C1B4AA !important; /* Soft latte gray descriptions */
+  transition: color 0.3s ease !important;
+}
+
+/* ==========================================================================
+   PORTAL ACTION CONTROLS CAPSULE PILL BUTTONS (DELETES THE COLD BLUE UNDERLINES)
+   ========================================================================== */
+.blueprint-card-action-gateway {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.blueprint-btn-portal {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-decoration: none !important; /* Strips standard anchor lines defaults */
+  height: 40px !important;
+  border-radius: 40px !important; /* Curved pill contours coordinates nav bar button systems */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Secondary Translucent Gold Outline Button */
+.blueprint-btn-portal.secondary-outline {
+  background-color: transparent !important;
+  border: 1px solid rgba(247, 243, 238, 0.15) !important;
+  color: #ECE5DF !important;
+}
+.blueprint-btn-portal.secondary-outline:hover {
+  background-color: rgba(247, 243, 238, 0.05) !important;
+  border-color: rgba(203, 181, 161, 0.3) !important;
+  color: #F7F3EE !important;
+}
+
+/* Primary Solid Gold Caramel Button Fill */
+.blueprint-btn-portal.primary-gold {
+  background-color: #CBB5A1 !important;
+  border: 1px solid #CBB5A1 !important;
+  color: #170E08 !important; /* Espresso Black text contrast face */
+}
+.blueprint-btn-portal.primary-gold:hover {
+  background-color: #E2D2C3 !important; /* Vanilla gold bloom on active hover focus */
+  border-color: #E2D2C3 !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED ACTIVE POINTER CARD HOVER INTERACTION TRIGGERS
+   ========================================================================== */
+.blueprint-diagnostic-card:hover {
+  transform: translateY(-6px) !important; /* Clean upward vertical card lift */
+  border-color: rgba(203, 181, 161, 0.35) !important; /* Illuminates framework wire outline */
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Releases vertical caramel laser light line edge draw indicator */
+.blueprint-diagnostic-card:hover .blueprint-card-laser-glow {
+  opacity: 1 !important;
+  transform: scaleY(1) !important;
+}
+
+.blueprint-diagnostic-card:hover .blueprint-serif-title {
+  color: #CBB5A1 !important; /* Converts card title header string into brand caramel gold */
+}
+
+.blueprint-diagnostic-card:hover .spec-metric-row-strip .metric-value-output {
+  color: #F7F3EE !important; /* Brightens index sub-label markers */
+}
+
+/* ==========================================================================
+   FLUID MOBILE RESPONSIVE RESET BREAKPOINTS (992PX BREAKPOINTS LIMITS)
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .blueprint-analytics-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Splits into a 2-column layout on smaller desktop screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .blueprint-analytics-cards-grid {
+    grid-template-columns: 1fr !important; /* smartphone screen constraints flattens directly to 1 single full-width vertical stack column flow */
+    gap: 20px !important;
+  }
+  
+  .blueprint-card-inner {
+    padding: 30px 24px !important;
+  }
+}
+
+</style>
+
+      <!-- PANEL 2: ACTIVE COMMISSIONS -->
+     <!-- MINIMALIST ACTIVE COMMISSIONS PRODUCTION VAULT PANEL -->
+<section id="panel-orders" class="dash-view-panel" aria-label="Active Commissions Space">
+  
+  <!-- STANDARDIZED SLIM INTRO HEADER CONSTRUCT -->
+  <div class="panel-header-editorial-block">
+    <div class="panel-header-meta-trail">
+      <span class="panel-status-beacon-dot beacon-baking-pulse"></span>
+      <span class="panel-micro-tag">Active Studio Monitor</span>
+    </div>
+    <h1 class="panel-display-title">Active Confectionery <em>Commissions</em></h1>
+    <p class="panel-descriptor">Current high-end commissions inside the atelier ovens. Review core order coordinates below.</p>
+  </div>
+
+  <!-- MINIMAL 2-COLUMN LUXURY CARDS GRID HUB -->
+  <div class="commissions-minimal-cards-grid">
+    
+    <!-- MINIMAL CARD 01 -->
+    <article class="minimal-commission-card">
+      <div class="mini-card-inner">
+        
+        <div class="mini-card-header-row">
+          <span class="mini-order-id">ID // 9042-M</span>
+          <span class="mini-status-tag status-baking">Baking</span>
+        </div>
+
+        <h2 class="mini-card-title">Lady Eleanor</h2>
+        <p class="mini-card-subtitle">Elite Wedding Tier Monolith</p>
+
+        <div class="mini-spec-list">
+          <div class="mini-spec-row">
+            <span class="mini-key">Volume Scale</span>
+            <span class="mini-val">5 Tiers Stacked</span>
+          </div>
+          <div class="mini-spec-row">
+            <span class="mini-key">Flavor Notes</span>
+            <span class="mini-val">Madagascar Dark Cocoa</span>
+          </div>
+          <div class="mini-spec-row">
+            <span class="mini-key">Time Left</span>
+            <span class="mini-val text-countdown">00:24:12</span>
+          </div>
+        </div>
+
+        <div class="mini-card-actions">
+          <button type="button" class="mini-btn-link text-link" onclick="alert('Opening core design files...')">View Blueprints</button>
+          <button type="button" class="mini-btn-pill solid-gold" onclick="alert('Moving order to next baking phase.')">Advance Phase</button>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- MINIMAL CARD 02 -->
+    <article class="minimal-commission-card">
+      <div class="mini-card-inner">
+        
+        <div class="mini-card-header-row">
+          <span class="mini-order-id">ID // 7021-G</span>
+          <span class="mini-status-tag status-gilding">Gilding</span>
+        </div>
+
+        <h2 class="mini-card-title">Viscount Arjan</h2>
+        <p class="mini-card-subtitle">Bespoke Mirror Glaze Sphere</p>
+
+        <div class="mini-spec-list">
+          <div class="mini-spec-row">
+            <span class="mini-key">Volume Scale</span>
+            <span class="mini-val">1 Mousse Layer</span>
+          </div>
+          <div class="mini-spec-row">
+            <span class="mini-key">Flavor Notes</span>
+            <span class="mini-val">Tahitian Orchid Vanilla</span>
+          </div>
+          <div class="mini-spec-row">
+            <span class="mini-key">Time Left</span>
+            <span class="mini-val text-countdown">01:10:44</span>
+          </div>
+        </div>
+
+        <div class="mini-card-actions">
+          <button type="button" class="mini-btn-link text-link" onclick="alert('Opening core design files...')">View Blueprints</button>
+          <button type="button" class="mini-btn-pill solid-gold" onclick="alert('Moving order to next baking phase.')">Advance Phase</button>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   MINIMALIST ACTIVE COMMISSIONS COMPACT CARDS SCHEME
+   ========================================================================== */
+.beacon-baking-pulse {
+  background-color: #CBB5A1 !important;
+  box-shadow: 0 0 10px #CBB5A1 !important;
+}
+
+/* Responsive side-by-side split grid config */
+.commissions-minimal-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 side-by-side cards */
+  gap: 24px !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+}
+
+.minimal-commission-card {
+  position: relative !important;
+  background-color: rgba(23, 14, 8, 0.4) !important; /* Smoked translucent dark charcoal backing */
+  border: 1px solid rgba(247, 243, 238, 0.08) !important; /* Ultra-thin minimalist wire border line */
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+  
+  transform: translateY(0) scale(1) translateZ(0) !important;
+  will-change: transform, border-color, box-shadow;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mini-card-inner {
+  padding: 32px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+/* HEADER ROW DESIGN PROFILE */
+.mini-card-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+  width: 100% !important;
+}
+
+.mini-order-id {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  letter-spacing: 1px !important;
+}
+
+/* Slim status tokens labels config */
+.mini-status-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 4px 10px !important;
+  border-radius: 30px !important;
+  background-color: rgba(247, 243, 238, 0.03) !important;
+}
+
+.mini-status-tag.status-baking { color: #D4AF37 !important; border: 1px solid rgba(212, 175, 55, 0.2) !important; }
+.mini-status-tag.status-gilding { color: #CBB5A1 !important; border: 1px solid rgba(203, 181, 161, 0.2) !important; }
+
+/* TYPOGRAPHY SETUPS CONFIG */
+.mini-card-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #F7F3EE !important;
+  text-align: left !important;
+  margin-bottom: 4px !important;
+}
+
+.mini-card-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: #A39387 !important; /* Soft muted latte gray narrative descriptions text copy */
+  text-align: left !important;
+  margin-bottom: 24px !important;
+}
+
+/* DATA ROW STRIPS MATRIX */
+.mini-spec-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  border-top: 1px solid rgba(247, 243, 238, 0.05) !important;
+  border-bottom: 1px solid rgba(247, 243, 238, 0.05) !important;
+  padding: 16px 0 !important;
+  margin-bottom: 28px !important;
+  width: 100% !important;
+}
+
+.mini-spec-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.mini-key {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.mini-val {
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #C1B4AA !important;
+}
+.mini-val.text-countdown { font-variant-numeric: tabular-nums !important; color: #ECE5DF !important; }
+
+/* RE-BALANCED FOOTER ACTION COUPLING LINKS */
+.mini-card-actions {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: auto !important;
+}
+
+.mini-btn-link {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-family: inherit !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #7A6F66 !important;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+}
+.mini-btn-link:hover { color: #CBB5A1 !important; text-decoration: underline !important; }
+
+.mini-btn-pill {
+  font-family: inherit !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  height: 38px !important;
+  padding: 0 20px !important;
+  border-radius: 40px !important; /* Smooth curved pill geometry coordinates header nav */
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  background-color: #CBB5A1 !important; /* Synced to match your solid gold caramel branding */
+  border: 1px solid #CBB5A1 !important;
+  color: #170E08 !important; /* Espresso Core Black text face contrast face color */
+  transition: all 0.4s ease !important;
+}
+.mini-btn-pill:hover { background-color: #E2D2C3 !important; border-color: #E2D2C3 !important; transform: translateY(-2px); }
+
+/* ==========================================================================
+   MINIMALIST ACTIVE CARD HOVER METRICS OVERRIDES
+   ========================================================================== */
+.minimal-commission-card:hover {
+  transform: translateY(-5px) !important; /* Clean upward vertical card lift */
+  border-color: rgba(203, 181, 161, 0.3) !important; /* Neon golden perimeter illumination outline */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45) !important;
+}
+
+.minimal-commission-card:hover .mini-card-title {
+  color: #CBB5A1 !important; /* Shifts text question to caramel gold on hover focus tracking */
+}
+
+/* ==========================================================================
+   FLUID PHONE VIEWPORT RESPONSIVE RESET BREAKPOINTS OVERRIDES
+   ========================================================================== */
+@media (max-width: 860px) {
+  /* Flattens dual side-by-side columns into a single column vertical stack flow layout on phones */
+  .commissions-minimal-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .mini-card-inner { padding: 24px 20px !important; }
+}
+
+</style>
+<script>
+    // ==========================================================================
+// AUTOMATIC COUNTDOWN ENGINE MODULE (MAKES TIME TICK IN REAL TIME)
+// ==========================================================================
+(function initializeDashboardCountdownEngine() {
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    // Select all the countdown elements on the active workspace panel
+    const countdownTimerNodes = document.querySelectorAll('.text-countdown');
+    
+    if (countdownTimerNodes.length === 0) return;
+
+    // Map initial text string formats ("HH:MM:SS") straight into calculated seconds arrays
+    const cachedTimerObjects = Array.from(countdownTimerNodes).map(nodeElement => {
+      const initialTimeString = nodeElement.textContent.trim();
+      const stringTimeFragments = initialTimeString.split(':');
+      
+      // Parse elements into total seconds integers
+      let calculatedTotalSeconds = 0;
+      if (stringTimeFragments.length === 3) {
+        calculatedTotalSeconds += parseInt(stringTimeFragments[0], 10) * 3600; // Hours conversion
+        calculatedTotalSeconds += parseInt(stringTimeFragments[1], 10) * 60;   // Minutes conversion
+        calculatedTotalSeconds += parseInt(stringTimeFragments[2], 10);        // Seconds conversion
+      }
+
+      return {
+        domTarget: nodeElement,
+        remainingSeconds: calculatedTotalSeconds
+      };
+    });
+
+    // START THE 1-SECOND METRIC INTERVAL ENGINE TICK LOOP
+    const coreClockIntervalInstance = setInterval(() => {
+      let activeTimersCount = 0;
+
+      cachedTimerObjects.forEach(timerObject => {
+        if (timerObject.remainingSeconds > 0) {
+          timerObject.remainingSeconds--; // Deduct 1 second every interval cycle pass
+          activeTimersCount++;
+
+          // Parse calculations back to digital typography layers strings
+          const hoursInteger = Math.floor(timerObject.remainingSeconds / 3600);
+          const minutesInteger = Math.floor((timerObject.remainingSeconds % 3600) / 60);
+          const secondsInteger = timerObject.remainingSeconds % 60;
+
+          // Pad single digits with leading zeros for high-end cosmetic balance formatting
+          const formattedHours = String(hoursInteger).padStart(2, '0');
+          const formattedMinutes = String(minutesInteger).padStart(2, '0');
+          const formattedSeconds = String(secondsInteger).padStart(2, '0');
+
+          // Update text nodes on your screen view panel concurrently
+          timerObject.domTarget.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+        } else {
+          // Fallback message tag once clock hits absolute baseline zero limit bounds
+          timerObject.domTarget.textContent = "00:00:00 — Complete";
+          timerObject.domTarget.style.color = "#52C41A"; /* Shines emerald green when finished */
+        }
+      });
+
+      // Safe clean framework override: clear memory intervals if all clocks hit zero bounds
+      if (activeTimersCount === 0) {
+        clearInterval(coreClockIntervalInstance);
+      }
+    }, 1000); // Triggers execution loop accurately every 1000 milliseconds (1 second)
+
+  });
+})();
+
+</script>
+
+      <!-- PANEL 3: SALON TASTINGS -->
+     <!-- MINIMALIST SALON TASTING RESERVATIONS CONCIERGE PANEL -->
+<section id="panel-tastings" class="dash-view-panel" aria-label="Salon Tastings Space">
+  
+  <!-- STANDARDIZED SLIM INTRO HEADER CONSTRUCT -->
+  <div class="panel-header-editorial-block">
+    <div class="panel-header-meta-trail">
+      <span class="panel-status-beacon-dot beacon-salon-pulse"></span>
+      <span class="panel-micro-tag">Salon Registry Matrix</span>
+    </div>
+    <h1 class="panel-display-title">Salon Tasting <em>Reservations</em></h1>
+    <p class="panel-descriptor">Manage exclusive guest tasting slots for private profile matches and wildflower essence infusions.</p>
+  </div>
+
+  <!-- MINIMAL 2-COLUMN LUXURY CARDS GRID HUB -->
+  <div class="tastings-minimal-cards-grid">
+    
+    <!-- MINIMAL RESERVATION CARD 01 -->
+    <article class="minimal-tasting-card">
+      <div class="mini-tasting-inner">
+        
+        <div class="mini-tasting-header-row">
+          <span class="mini-tasting-time">⏳ Today // 02:30 PM</span>
+          <span class="mini-tasting-status-tag status-confirmed">
+            <span class="mini-status-pulse"></span>Confirmed
+          </span>
+        </div>
+
+        <h2 class="mini-tasting-title">Lady Eleanor</h2>
+        <p class="mini-tasting-subtitle">Private Suite A — Wedding Tier Consultation</p>
+
+        <div class="mini-tasting-spec-list">
+          <div class="mini-tasting-spec-row">
+            <span class="mini-tasting-key">Cocoa Profile</span>
+            <span class="mini-tasting-val text-gold-shimmer">Madagascar 70% Single-Origin</span>
+          </div>
+          <div class="mini-tasting-spec-row">
+            <span class="mini-tasting-key">Infusion Notes</span>
+            <span class="mini-tasting-val">Smoked Lavender Honey</span>
+          </div>
+        </div>
+
+        <div class="mini-tasting-actions">
+          <button type="button" class="mini-tasting-btn-link text-link" onclick="alert('Opening client palette files...')">Client Brief</button>
+          <button type="button" class="mini-tasting-btn-pill solid-gold" onclick="alert('Initializing tasting salon suite parameters.')">Open Salon</button>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- MINIMAL RESERVATION CARD 02 -->
+    <article class="minimal-tasting-card">
+      <div class="mini-tasting-inner">
+        
+        <div class="mini-tasting-header-row">
+          <span class="mini-tasting-time">⏳ Tomorrow // 11:00 AM</span>
+          <span class="mini-tasting-status-tag status-review">
+            <span class="mini-status-pulse"></span>Pending Review
+          </span>
+        </div>
+
+        <h2 class="mini-tasting-title">Viscount Arjan</h2>
+        <p class="mini-tasting-subtitle">Private Suite B — Geometric Sculpture Review</p>
+
+        <div class="mini-tasting-spec-list">
+          <div class="mini-tasting-spec-row">
+            <span class="mini-tasting-key">Cocoa Profile</span>
+            <span class="mini-tasting-val text-gold-shimmer">Ecuadorian 85% Dark Fragment</span>
+          </div>
+          <div class="mini-tasting-spec-row">
+            <span class="mini-tasting-key">Infusion Notes</span>
+            <span class="mini-tasting-val">Tahitian Orchid Vanilla</span>
+          </div>
+        </div>
+
+        <div class="mini-tasting-actions">
+          <button type="button" class="mini-tasting-btn-link text-link" onclick="alert('Opening client palette files...')">Client Brief</button>
+          <button type="button" class="mini-tasting-btn-pill solid-gold" onclick="alert('Initializing tasting salon suite parameters.')">Open Salon</button>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   MINIMALIST SALON TASTINGS COUTURE CARD SCHEME
+   ========================================================================== */
+.beacon-salon-pulse {
+  background-color: #CBB5A1 !important;
+  box-shadow: 0 0 10px #CBB5A1 !important;
+}
+
+/* Responsive side-by-side split grid layout */
+.tastings-minimal-cards-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 clean layout columns */
+  gap: 24px !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+}
+
+.minimal-tasting-card {
+  position: relative !important;
+  background-color: rgba(23, 14, 8, 0.4) !important; /* Translucent smoked glass backing UI */
+  border: 1px solid rgba(247, 243, 238, 0.08) !important; /* Thin border wire */
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+  
+  transform: translateY(0) scale(1) translateZ(0) !important;
+  will-change: transform, border-color, box-shadow;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mini-tasting-inner {
+  padding: 32px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+/* HEADER METADATA TRACK ROW */
+.mini-tasting-header-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 20px !important;
+  width: 100% !important;
+}
+
+.mini-tasting-time {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  letter-spacing: 1px !important;
+}
+
+/* Status capsule tags config */
+.mini-tasting-status-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  padding: 4px 10px !important;
+  border-radius: 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.mini-tasting-status-tag.status-confirmed { 
+  color: #52C41A !important; 
+  border: 1px solid rgba(82, 196, 38, 0.2) !important; 
+}
+.mini-tasting-status-tag.status-review { 
+  color: #D4AF37 !important; 
+  border: 1px solid rgba(212, 175, 55, 0.2) !important; 
+}
+
+/* Mini pulsing status dots indicators hooks */
+.mini-status-pulse {
+  width: 5px !important; height: 5px !important;
+  border-radius: 50% !important;
+  background-color: currentColor !important;
+}
+
+/* TYPOGRAPHY SETUPS COUTURE FORMS */
+.mini-tasting-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #F7F3EE !important;
+  text-align: left !important;
+  margin-bottom: 4px !important;
+}
+
+.mini-tasting-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.88rem !important;
+  color: #A39387 !important; /* Soft coffee grey body copy description text */
+  text-align: left !important;
+  margin-bottom: 24px !important;
+}
+
+/* PARAMETERS METRICS DATA ROWS STRIPS */
+.mini-tasting-spec-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  border-top: 1px solid rgba(247, 243, 238, 0.05) !important;
+  border-bottom: 1px solid rgba(247, 243, 238, 0.05) !important;
+  padding: 16px 0 !important;
+  margin-bottom: 28px !important;
+  width: 100% !important;
+}
+
+.mini-tasting-spec-row {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.mini-tasting-key {
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.mini-tasting-val {
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  color: #C1B4AA !important;
+}
+.mini-tasting-val.text-gold-shimmer { color: #CBB5A1 !important; }
+
+/* ACTION BUTTON HUBS PORTS TERMINALS */
+.mini-tasting-actions {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  margin-top: auto !important;
+}
+
+.mini-tasting-btn-link {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-family: inherit !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #7A6F66 !important;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+}
+.mini-tasting-btn-link:hover { color: #CBB5A1 !important; text-decoration: underline !important; }
+
+.mini-tasting-btn-pill {
+  font-family: inherit !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  height: 38px !important;
+  padding: 0 20px !important;
+  border-radius: 40px !important; /* Curved capsule pill curves geometry */
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  background-color: #CBB5A1 !important; /* Brand caramel gold fill button */
+  border: 1px solid #CBB5A1 !important;
+  color: #170E08 !important; /* Espresso Core Black contrast font color */
+  transition: all 0.4s ease !important;
+}
+.mini-tasting-btn-pill:hover { background-color: #E2D2C3 !important; border-color: #E2D2C3 !important; transform: translateY(-2px); }
+
+/* ==========================================================================
+   SUPERCHARGED HOVER INTERACTION TRIGGERS (SOFT AMBIENT CARAMEL GLOW)
+   ========================================================================== */
+.minimal-tasting-card:hover {
+  transform: translateY(-5px) !important; /* Clean upward vertical card lift */
+  border-color: rgba(203, 181, 161, 0.3) !important; /* Illuminates outline wire framework outline frame */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45) !important;
+}
+
+.minimal-tasting-card:hover .mini-tasting-title {
+  color: #CBB5A1 !important; /* Shifts text question to caramel gold on hover focus tracking */
+}
+
+/* ==========================================================================
+   FLUID MOBILE RESPONSIVE RESET BREAKPOINTS OVERRIDES
+   ========================================================================== */
+@media (max-width: 860px) {
+  /* Flattens dual side-by-side columns into a single column vertical stack flow layout on phones */
+  .tastings-minimal-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .mini-tasting-inner { padding: 24px 20px !important; }
+}
+
+</style>
+
+      <!-- PANEL 4: REVENUE ANALYTICS -->
+     <!-- ENHANCED REVENUE ANALYTICS MINIMAL LEDGER PANEL -->
+<section id="panel-analytics" class="dash-view-panel" aria-label="Revenue Metrics Space">
+  
+  <!-- STANDARDIZED SLIM INTRO HEADER CONSTRUCT -->
+  <div class="panel-header-editorial-block">
+    <div class="panel-header-meta-trail">
+      <span class="panel-status-beacon-dot beacon-revenue-pulse"></span>
+      <span class="panel-micro-tag">Financial Ledger Data</span>
+    </div>
+    <h1 class="panel-display-title">Financial Revenue <em>Metrics Matrix</em></h1>
+    <p class="panel-descriptor">Realtime financial turnover diagnostics balancing organic material cost scales with active couture commissions invoice records.</p>
+  </div>
+
+  <!-- RESPONSIVE HORIZONTAL SCROLL ENVELOPE FOR SMARTPHONES -->
+  <div class="ledger-table-horizontal-scroller">
+    <table class="atelier-minimal-ledger-table">
+      
+      <!-- TABULAR FIELD HEADERS ROW -->
+      <thead>
+        <tr>
+          <th scope="col">Commission Cycle</th>
+          <th scope="col">Client Profile</th>
+          <th scope="col">Material Outlay</th>
+          <th scope="col">Gross Invoice Valuation</th>
+          <th scope="col" style="text-align: right;">Net Profit Yield</th>
+        </tr>
+      </thead>
+
+      <!-- TABULAR BODY DATA INLINE LOGS TRACK -->
+      <tbody>
+        
+        <!-- LEDGER ROW 01 -->
+        <tr>
+          <td><span class="ledger-cycle-token">JUN // 2026.A</span></td>
+          <td>
+            <div class="ledger-client-envelope">
+              <strong>Lady Eleanor</strong>
+              <span>5-Tier Wedding Monolith</span>
+            </div>
+          </td>
+          <td><span class="ledger-cost-pill">₹24,500</span></td>
+          <td><span class="ledger-gross-pill">₹1,85,000</span></td>
+          <td style="text-align: right;">
+            <span class="ledger-profit-glow yield-positive">+₹1,60,500</span>
+          </td>
+        </tr>
+
+        <!-- LEDGER ROW 02 -->
+        <tr>
+          <td><span class="ledger-cycle-token">JUN // 2026.B</span></td>
+          <td>
+            <div class="ledger-client-envelope">
+              <strong>Viscount Arjan</strong>
+              <span>Bespoke Isomalt Sculpture</span>
+            </div>
+          </td>
+          <td><span class="ledger-cost-pill">₹12,800</span></td>
+          <td><span class="ledger-gross-pill">₹95,000</span></td>
+          <td style="text-align: right;">
+            <span class="ledger-profit-glow yield-positive">+₹82,200</span>
+          </td>
+        </tr>
+
+        <!-- LEDGER ROW 03 -->
+        <tr>
+          <td><span class="ledger-cycle-token">JUN // 2026.C</span></td>
+          <td>
+            <div class="ledger-client-envelope">
+              <strong>Countess Dev</strong>
+              <span>Ruby Mirror Glaze Sphere</span>
+            </div>
+          </td>
+          <td><span class="ledger-cost-pill">₹8,400</span></td>
+          <td><span class="ledger-gross-pill">₹68,000</span></td>
+          <td style="text-align: right;">
+            <span class="ledger-profit-glow yield-positive">+₹59,600</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SUMMARY INSIGHT BAR RUNWAY (CTA CUSHION) -->
+  <!-- SUMMARY INSIGHT BAR RUNWAY WITH HIGH-PRIORITY EXCEL EXPORTER CLICK TRIGGER -->
+<div class="ledger-summary-insight-runway">
+  <div class="insight-meta-left">
+    <span>Operational Margin Constant</span>
+    <h3>84.6% Core Efficiency Ratio</h3>
+  </div>
+  <div class="insight-action-right">
+    <!-- RE-ENGINEERED BUTTON INTERFACE TRIGGER PIPELINE -->
+    <button type="button" 
+            class="ledger-action-pill-btn" 
+            id="export-ledger-csv-trigger"
+            aria-label="Generate and Download Excel Spreadsheet Ledger File">
+      Export Complete Ledger CSV
+    </button>
+  </div>
+</div>
+
+
+</section>
+<script>
+    // ==========================================================================
+// CLIENT-SIDE REAL-TIME EXCEL CSV EXPORTER ENGINE (TRUE FILE DOWNLOADS)
+// ==========================================================================
+(function injectStudioExcelExportEngine() {
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    // Select the button handle hook inside your financial panel container
+    const downloadCsvButtonBtn = document.getElementById('export-ledger-csv-trigger');
+
+    if (!downloadCsvButtonBtn) return;
+
+    downloadCsvButtonBtn.addEventListener('click', function (event) {
+      event.preventDefault(); // Securely blocks default browser action bubble lines
+
+      // Locate your minimalist table element matrix grid bounds
+      const ledgerTableSelector = document.querySelector('.atelier-minimal-ledger-table');
+      if (!ledgerTableSelector) {
+        alert("Export Operation Aborted: Target data grid ledger matrix not detected inside active workspace panel view.");
+        return;
+      }
+
+      // Initialize storage matrix row arrays to track text tokens characters
+      let calculatedCsvContentString = "";
+      const tableRowsArray = ledgerTableSelector.querySelectorAll('tr');
+
+      tableRowsArray.forEach((rowNodeElement) => {
+        let extractedCellStringsArray = [];
+        
+        // Scan concurrently for all table headers (th) and row data cells (td)
+        const cellDataNodesList = rowNodeElement.querySelectorAll('th, td');
+        
+        cellDataNodesList.forEach((cellNode) => {
+          /* 
+             DATA CLEANING PIPELINE: 
+             Strips unnecessary line breaks and multiple whitespace tabs. 
+             If a client name contains sub-descriptions text, it replaces spaces cleanly.
+          */
+          let textDataValue = cellNode.innerText || cellNode.textContent || "";
+          textDataValue = textDataValue.replace(/\r?\n|\r/g, " ").trim();
+          textDataValue = textDataValue.replace(/\s+/g, " ");
+
+          /* 
+             EXCEL UNBREAKABLE BOUNDARY SAFETY ESCAPE: 
+             If data tokens contain literal commas, encapsulate the string inside 
+             double quotation marks ("") so Excel splits the columns correctly.
+          */
+          if (textDataValue.includes(",") || textDataValue.includes('"')) {
+            textDataValue = '"' + textDataValue.replace(/"/g, '""') + '"';
+          }
+          
+          extractedCellStringsArray.push(textDataValue);
+        });
+
+        // Assemble line strings divided cleanly by comma character boundaries
+        calculatedCsvContentString += extractedCellStringsArray.join(",") + "\r\n";
+      });
+
+      /* 
+         CRITICAL VISUAL RE-ENGINEERING CORE (THE EXCEL CHARACTERS UNCLASH MATRIX):
+         We inject a UTF-8 Byte-Order Mark (BOM) `\uFEFF` right at the baseline 
+         origin crown of the text stream layout. This tells Microsoft Excel 
+         natively that the file uses high-end encoding, prompting it to preserve 
+         your specialized Indian Rupee symbols (`₹`) completely upon launching!
+      */
+      const unicodeByteOrderMarkBOM = new Uint8Array([0xEF, 0xBB, 0xBF]);
+      const blobBinaryStreamFile = new Blob([unicodeByteOrderMarkBOM, calculatedCsvContentString], {
+        type: 'text/csv;charset=utf-8;'
+      });
+
+      // 4. GENERATE TEMPORARY PORTAL GATEWAY ANCHOR DOWNLOAD TRACK
+      const hiddenDownloadAnchorNode = document.createElement("a");
+      
+      if (navigator.msSaveBlob) { 
+        // Fallback interface patch for obsolete legacy rendering systems
+        navigator.msSaveBlob(blobBinaryStreamFile, "Atelier_Financial_Ledger_Q2.csv");
+        return;
+      }
+
+      // Generate a hidden structural binary object data URL link route
+      const binaryObjectURLRoute = URL.createObjectURL(blobBinaryStreamFile);
+      hiddenDownloadAnchorNode.setAttribute("href", binaryObjectURLRoute);
+      
+      // Enforce an explicit download naming parameter profile matching a gourmet studio
+      hiddenDownloadAnchorNode.setAttribute("download", "Atelier_Financial_Ledger_Q2.csv");
+      
+      // Hide link clear out of your active browser viewport layout borders
+      hiddenDownloadAnchorNode.style.visibility = 'hidden';
+      document.body.appendChild(hiddenDownloadAnchorNode);
+      
+      // 5. FIRE CHASSIS TRIGGER TRANSMISSION TRANSFORMS
+      hiddenDownloadAnchorNode.click(); /* AUTOMATICALLY SIMULATES MOUSE CLICK DOWN */
+      
+      // Clean up background memory tracks to block leaks
+      document.body.removeChild(hiddenDownloadAnchorNode);
+      URL.revokeObjectURL(binaryObjectURLRoute);
+    });
+
+  });
+})();
+
+</script>
+<style>
+    /* ==========================================================================
+   MINIMALIST COUTURE TABULAR LEDGER SCHEME
+   ========================================================================== */
+.beacon-revenue-pulse {
+  background-color: #52C41A !important; /* Emerald green currency focus pulse dot */
+  box-shadow: 0 0 10px #52C41A !important;
+}
+
+/* 1. HORIZONTAL SCROLLER ENVELOPE PREVENTS PHONE VIEWPORT CLIPPING */
+.ledger-table-horizontal-scroller {
+  width: 100% !important;
+  overflow-x: auto !important; /* Unlocks smooth native side scrolling tracking on smartphone layers */
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 32px !important;
+  background-color: rgba(23, 14, 8, 0.2) !important;
+  border: 1px solid rgba(247, 243, 238, 0.05) !important; /* Faint wire border envelope frame line */
+  border-radius: 16px !important;
+}
+
+/* Removes generic default browser scrollbar bloat to maintain extreme minimalist scannability */
+.ledger-table-horizontal-scroller::-webkit-scrollbar { height: 6px; }
+.ledger-table-horizontal-scroller::-webkit-scrollbar-track { background: transparent; }
+.ledger-table-horizontal-scroller::-webkit-scrollbar-thumb { background: rgba(203, 181, 161, 0.15); border-radius: 10px; }
+
+/* 2. THE MASTER TABULAR LAYOUT MATRIX CONTAINER GRID RULES */
+.atelier-minimal-ledger-table {
+  width: 100% !important;
+  min-width: 800px !important; /* Forces layout rows table width constants to protect alignment strings on compression viewports */
+  border-collapse: collapse !important;
+  text-align: left !important;
+}
+
+/* TABLE LAYER COLUMN HEADER BLOCKS FORMATTING */
+.atelier-minimal-ledger-table thead tr {
+  border-bottom: 1px solid rgba(203, 181, 161, 0.15) !important; /* Luxury brand caramel gold baseline layout indicators */
+}
+
+.atelier-minimal-ledger-table th {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  padding: 20px 24px !important;
+}
+
+/* TABULAR CELL DATA NODES OVERRIDES */
+.atelier-minimal-ledger-table td {
+  padding: 22px 24px !important;
+  vertical-align: middle !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.9rem !important;
+  color: #C1B4AA !important; /* Soft coffee gray descriptions text block */
+}
+
+/* Alternating linear stripe layers framework background shades */
+.atelier-minimal-ledger-table tbody tr {
+  border-bottom: 1px solid rgba(247, 243, 238, 0.03) !important;
+  background-color: transparent;
+  transition: all 0.3s ease !important;
+}
+.atelier-minimal-ledger-table tbody tr:nth-child(even) {
+  background-color: rgba(247, 243, 238, 0.01) !important;
+}
+
+/* TYPOGRAPHY AND BADGES BLOCKS DESIGN */
+.ledger-cycle-token {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: #A39387 !important;
+  letter-spacing: 0.5px !important;
+}
+
+.ledger-client-envelope {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+.ledger-client-envelope strong { font-family: 'Playfair Display', serif !important; font-size: 1.05rem !important; font-weight: 700 !important; color: #F7F3EE !important; transition: color 0.3s ease !important; }
+.ledger-client-envelope span { font-size: 0.75rem !important; color: #7A6F66 !important; margin-top: 2px !important; }
+
+.ledger-cost-pill { font-size: 0.88rem !important; font-variant-numeric: tabular-nums !important; color: #8C6D53 !important; }
+.ledger-gross-pill { font-size: 0.88rem !important; font-variant-numeric: tabular-nums !important; color: #ECE5DF !important; }
+
+/* Glowing financial returns yields badges */
+.ledger-profit-glow {
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: 0.5px !important;
+  padding: 4px 12px !important;
+  border-radius: 30px !important;
+}
+.ledger-profit-glow.yield-positive {
+  background-color: rgba(82, 196, 26, 0.04) !important;
+  border: 1px solid rgba(82, 196, 26, 0.2) !important;
+  color: #52C41A !important; /* Shines clean finance green */
+  text-shadow: 0 0 10px rgba(82, 196, 26, 0.1) !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED ACTIVE PORTAL TRADING ROW MOUSE HOVER OVERRIDES
+   ========================================================================== */
+.atelier-minimal-ledger-table tbody tr:hover {
+  background-color: rgba(43, 28, 17, 0.4) !important; /* Warm cake caramel highlight backing wash */
+}
+.atelier-minimal-ledger-table tbody tr:hover .ledger-client-envelope strong {
+  color: #CBB5A1 !important; /* Shines title to brand caramel gold on hover focus tracking */
+}
+.atelier-minimal-ledger-table tbody tr:hover .ledger-profit-glow.yield-positive {
+  border-color: rgba(82, 196, 26, 0.45) !important;
+  box-shadow: 0 0 12px rgba(82, 196, 26, 0.15) !important;
+}
+
+/* ==========================================================================
+   3. SUMMARY INSIGHT BAR RUNWAY FOOTER TERMINALS
+   ========================================================================== */
+.ledger-summary-insight-runway {
+  width: 100% !important;
+  background: linear-gradient(145deg, rgba(38, 24, 15, 0.45) 0%, rgba(23, 14, 8, 0.6) 100__) !important;
+  border: 1px solid rgba(203, 181, 161, 0.08) !important;
+  border-radius: 16px !important;
+  padding: 24px 36px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 30px !important;
+  box-sizing: border-box !important;
+}
+
+.insight-meta-left { display: flex !important; flex-direction: column !important; align-items: flex-start !important; }
+.insight-meta-left span { font-size: 0.68rem !important; font-weight: 700 !important; color: #7A6F66 !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; margin-bottom: 4px !important; }
+.insight-meta-left h3 { font-family: 'Playfair Display', serif !important; font-size: 1.3rem !important; font-weight: 700 !important; font-style: italic !important; color: #F7F3EE !important; }
+
+/* Theized solid gold capsule button controller profile */
+.ledger-action-pill-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  height: 40px !important;
+  padding: 0 24px !important;
+  border-radius: 40px !important; /* Curved pill architecture shapes coordinates nav button systems */
+  cursor: pointer !important;
+  outline: none !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(247, 243, 238, 0.15) !important;
+  color: #ECE5DF !important;
+  transition: all 0.4s ease !important;
+}
+.ledger-action-pill-btn:hover {
+  background-color: #CBB5A1 !important; /* Warm brand gold fill bloom on hover focus */
+  border-color: #CBB5A1 !important;
+  color: #170E08 !important; /* Inverts text layers to black espresso */
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   FLUID PHONE BREAKPOINTS TERMINAL MATRIX RESPONSIVE OVERRIDES
+   ========================================================================== */
+@media (max-width: 768px) {
+  .ledger-summary-insight-runway {
+    flex-direction: column !important; /* Stacks information data and button vertically on phone screens */
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding: 24px 20px !important;
+  }
+  .ledger-action-pill-btn { width: 100% !important; text-align: center !important; } /* Mobile fluid block touch target expansion mapping */
+}
+
+</style>
+
+      <!-- PANEL 5: VAULT SETTINGS -->
+     <!-- ENHANCED VAULT SECURITY SETTINGS ENGINE PANEL -->
+<section id="panel-settings" class="dash-view-panel" aria-label="Vault Security Settings Space">
+  
+  <!-- STANDARDIZED SLIM INTRO HEADER CONSTRUCT -->
+  <div class="panel-header-editorial-block">
+    <div class="panel-header-meta-trail">
+      <span class="panel-status-beacon-dot beacon-vault-pulse"></span>
+      <span class="panel-micro-tag">System Parameters Console</span>
+    </div>
+    <h1 class="panel-display-title">Atelier Vault <em>Security Settings</em></h1>
+    <p class="panel-descriptor">Adjust digital configuration parameters, studio operational profile permissions, and secret password encryption keys from a secure hub.</p>
+  </div>
+
+  <!-- MINIMAL 2-COLUMN LUXURY SETTINGS COCKPIT GRID -->
+  <div class="settings-minimal-cockpit-grid">
+    
+    <!-- LEFT CANVASES SUB-GRID: STUDIO OPERATIONAL PREFERENCES -->
+    <div class="settings-sub-panel-chassis">
+      <div class="settings-card-inner">
+        <h2 class="settings-card-serif-title">Studio Profile Configuration ⚙️</h2>
+        <p class="settings-card-descriptor-text">Update public communications variables and active consultation availability buffers.</p>
+        
+        <form class="settings-minimal-form-engine" onsubmit="event.preventDefault(); alert('Studio operational parameters successfully updated.');">
+          
+          <div class="settings-input-envelope-field">
+            <label class="settings-editorial-label">Flagship Atelier Moniker</label>
+            <input type="text" value="Sugar &amp; Spice Atelier" class="settings-luxury-text-input" required autocomplete="off">
+          </div>
+
+          <div class="settings-input-envelope-field">
+            <label class="settings-editorial-label">Public Contact Hotline</label>
+            <input type="tel" value="+91 7010792745" class="settings-luxury-text-input" required autocomplete="off">
+          </div>
+
+          <div class="settings-input-envelope-field">
+            <label class="settings-editorial-label">Consultation Slot Interval</label>
+            <div class="settings-custom-select-wrapper">
+              <select class="settings-luxury-select-input" required>
+                <option value="30">30-Minute Taste Windows</option>
+                <option value="60" selected>60-Minute Architecture Briefs</option>
+                <option value="120">120-Minute Master VIP Reviews</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="settings-action-submit-hub">
+            <button type="submit" class="settings-submit-vogue-pill-btn">Save Configurations</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- RIGHT CANVASES SUB-GRID: CRYPTO SECURITY PARAMETERS -->
+    <div class="settings-sub-panel-chassis">
+      <div class="settings-card-inner">
+        <h2 class="settings-card-serif-title">Security Key Credentials 🔑</h2>
+        <p class="settings-card-descriptor-text">Modify private vault passwords and manage your executive login authentication keys.</p>
+        
+        <form class="settings-minimal-form-engine" onsubmit="event.preventDefault(); alert('Security credentials updated. Secure encryption keys rotated successfully.');">
+          
+          <div class="settings-input-envelope-field">
+            <label class="settings-editorial-label">Current Security Key</label>
+            <div class="settings-password-field-wrapper">
+              <input type="password" id="vault-current-pass" value="architect2026" class="settings-luxury-text-input" required autocomplete="current-password">
+              <span class="settings-password-toggle-eye" onclick="toggleDashboardPasswordVisibility('vault-current-pass', this)">🙈</span>
+            </div>
+          </div>
+
+          <div class="settings-input-envelope-field">
+            <label class="settings-editorial-label">New Secret Password</label>
+            <div class="settings-password-field-wrapper">
+              <input type="password" id="vault-new-pass" placeholder="••••••••" class="settings-luxury-text-input" required autocomplete="new-password">
+              <span class="settings-password-toggle-eye" onclick="toggleDashboardPasswordVisibility('vault-new-pass', this)">🙈</span>
+            </div>
+          </div>
+
+          <div class="settings-input-envelope-field">
+            <label class="settings-editorial-label">Verify Key Match</label>
+            <div class="settings-password-field-wrapper">
+              <input type="password" id="vault-confirm-pass" placeholder="••••••••" class="settings-luxury-text-input" required autocomplete="new-password">
+              <span class="settings-password-toggle-eye" onclick="toggleDashboardPasswordVisibility('vault-confirm-pass', this)">🙈</span>
+            </div>
+          </div>
+
+          <div class="settings-action-submit-hub">
+            <button type="submit" class="settings-submit-vogue-pill-btn">Rotate Vault Keys</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+<style>
+    /* ==========================================================================
+   MINIMALIST VAULT SETTINGS COMPACT COCKPIT DESIGN
+   ========================================================================== */
+.beacon-vault-pulse {
+  background-color: #A39387 !important; /* Muted security silver status beacon dot */
+  box-shadow: 0 0 10px #A39387 !important;
+}
+
+/* Responsive side-by-side cockpit panel splits config */
+.settings-minimal-cockpit-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* 2 clean layout tracks */
+  gap: 30px !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+}
+
+.settings-sub-panel-chassis {
+  position: relative !important;
+  background-color: rgba(23, 14, 8, 0.4) !important; /* Translucent smoked dark cocoa glass shell */
+  border: 1px solid rgba(247, 243, 238, 0.08) !important; /* Ultra thin minimalist wire frame border line */
+  border-radius: 20px !important;
+  box-sizing: border-box !important;
+  
+  transform: translateY(0) translateZ(0) !important;
+  will-change: transform, border-color, box-shadow;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important,
+              border-color 0.4s ease !important,
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.settings-card-inner {
+  padding: 36px 32px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+}
+
+.settings-card-serif-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  font-style: italic !important; /* Luxury signature formatting match */
+  color: #F7F3EE !important;
+  margin-bottom: 4px !important;
+  text-align: left !important;
+}
+
+.settings-card-descriptor-text {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.85rem !important;
+  color: #7A6F66 !important;
+  line-height: 1.5 !important;
+  margin-bottom: 28px !important;
+  text-align: left !important;
+}
+
+/* ==========================================================================
+   INTERACTIVE INPUT INPUT ENGINE FIELDS LAYOUT
+   ========================================================================== */
+.settings-minimal-form-engine {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  width: 100% !important;
+}
+
+.settings-input-envelope-field {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+.settings-editorial-label {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 700 !important;
+  color: #7A6F66 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 8px !important;
+  transition: color 0.3s ease !important;
+}
+
+.settings-password-field-wrapper {
+  position: relative !important;
+  width: 100% !important;
+}
+
+/* Luxury fields overrides (DELETES BOX BLOCKS BORDERS) */
+.settings-luxury-text-input,
+.settings-luxury-select-input {
+  width: 100% !important;
+  background-color: #120B06 !important; /* Deep embedded input container */
+  border: 1px solid rgba(203, 181, 161, 0.15) !important;
+  border-radius: 12px !important;
+  padding: 14px 18px !important;
+  font-family: inherit !important;
+  font-size: 0.9rem !important;
+  color: #F7F3EE !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important,
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.settings-password-field-wrapper .settings-luxury-text-input { padding-right: 46px !important; }
+
+/* Inline eye switcher icon handle */
+.settings-password-toggle-eye {
+  position: absolute !important;
+  right: 18px !important; top: 50% !important;
+  transform: translateY(-50%) !important;
+  cursor: pointer !important;
+  font-size: 1rem !important;
+  opacity: 0.35 !important;
+  user-select: none !important;
+  transition: opacity 0.3s ease !important;
+}
+.settings-password-toggle-eye:hover { opacity: 0.85 !important; }
+
+/* REACTION FOCUS INDEPENDENT LABELS ILLUMINATION REACTION GLOWS */
+.settings-luxury-text-input:focus,
+.settings-luxury-select-input:focus {
+  border-color: #CBB5A1 !important; /* Shines gold on focus links */
+  background-color: #170E08 !important;
+  box-shadow: 0 0 12px rgba(203, 181, 161, 0.06) !important;
+}
+
+.settings-input-envelope-field:focus-within .settings-editorial-label {
+  color: #CBB5A1 !important; /* Illuminates upper mini tag label concurrently */
+}
+
+/* ==========================================================================
+   ATELIER RE-BALANCED COUTURE BUTTON CAPSULE PILL
+   ========================================================================== */
+.settings-action-submit-hub {
+  width: 100% !important;
+  margin-top: 6px !important;
+  text-align: right !important;
+}
+
+.settings-submit-vogue-pill-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  height: 40px !important;
+  padding: 0 24px !important;
+  border-radius: 40px !important; /* Curved pill curves shapes geometry */
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  background-color: #CBB5A1 !important; /* Brand solid gold caramel backing */
+  border: 1px solid #CBB5A1 !important;
+  color: #170E08 !important; /* Espresso Core Black text face */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.settings-submit-vogue-pill-btn:hover {
+  background-color: #E2D2C3 !important; /* Vanilla gold color bloom on active hover focus */
+  border-color: #E2D2C3 !important;
+  transform: translateY(-2px) !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED CARD MATRIX POINTER HOVERS (SOFT ACCENT DEPTH MARGINS)
+   ========================================================================== */
+.settings-sub-panel-chassis:hover {
+  transform: translateY(-4px) !important; /* Gentle vertical card lift */
+  border-color: rgba(203, 181, 161, 0.28) !important; /* Gold wire highlight focus */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ==========================================================================
+   FLUID MOBILE RESPONSIVE RESET BREAKPOINTS OVERRIDES
+   ========================================================================== */
+@media (max-width: 1100px) {
+  /* Flattens dual cockpit split track panels directly into a single vertical stacked column flow layout */
+  .settings-minimal-cockpit-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .settings-card-inner { padding: 28px 20px !important; }
+}
+
+</style>
+<script>
+    // ==========================================================================
+// VAULT DASHBOARD SETTINGS PASSWORD EYE CONTROLLER ENGINE
+// ==========================================================================
+(function injectDashboardSettingsPasswordEngine() {
+  window.toggleDashboardPasswordVisibility = function (inputFieldId, iconElement) {
+    const targetInputNode = document.getElementById(inputFieldId);
+    if (targetInputNode && iconElement) {
+      if (targetInputNode.type === "password") {
+        targetInputNode.type = "text";
+        iconElement.textContent = "👁️"; // Shifts icon tag to concealed blind tracking state
+      } else {
+        targetInputNode.type = "password";
+        iconElement.textContent = "🙈";
+      }
+    }
+  };
+})();
+
+</script>
+    </main>
+
+  </div>
+<style>
+    /* ==========================================================================
+   1. CORE CHASSIS DESIGN & THEMED RESET OVERRIDES
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #0F0905; /* Deep roasted chocolate admin core backdrop */
+  color: #F7F3EE;            /* Crisp ivory silk text color */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.dashboard-root-body {
+  display: flex;
+  position: relative;
+  min-height: 100vh;
+}
+
+.dash-bg-holder {
+  position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 4; overflow: hidden;
+}
+.dash-backdrop-img {
+  width: 100%; height: 100%; object-fit: cover; opacity: 0.94; /* Subdued texture lines */
+  filter: grayscale(40%) brightness(25%);
+}
+.dash-smoky-mask {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, #0F0905 0%, rgba(23, 14, 8, 0.9) 100%); z-index: 2;
+}
+
+/* ==========================================================================
+   2. FLOATING LEFT SIDEBAR MODULE CHASSIS (GLASSMORPHIC BACKING)
+   ========================================================================== */
+.dash-sidebar-chassis {
+  position: fixed;
+  top: 0; left: 0;
+  width: 280px;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(23, 14, 8, 0.75) 0%, rgba(15, 9, 5, 0.9) 100%);
+  border-right: 1px solid rgba(203, 181, 161, 0.12); /* Fine gold wire framing line wire */
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  padding: 40px 24px;
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   ENHANCED PORTAL BRAND HUBS STYLING (REFRESH ENGINE OVERRIDES)
+   ========================================================================== */
+.sidebar-brand-axis {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-bottom: 50px !important;
+  padding: 10px 8px !important;
+  border-radius: 12px !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important; /* Converts basic box element into a responsive link track pointer */
+  user-select: none !important;
+  outline: none !important;
+  
+  /* Preps layer tracks for hardware GPU acceleration rendering bounds */
+  transform: scale(1) translateZ(0) !important;
+  will-change: transform, background-color, border-color;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important,
+              background-color 0.4s ease !important,
+              border-color 0.4s ease !important;
+}
+
+/* Base housing wrapper forces perfect axis alignment calculations during orbital spins */
+.brand-sparkle-spin-wrapper {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 28px !important;
+  height: 28px !important;
+  will-change: transform;
+}
+
+.brand-logo-spark {
+  font-size: 24px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+/* ==========================================================================
+   ACTIVE INTERACTIVE HOVER & REFRESH ROTATION SYSTEM
+   ========================================================================== */
+
+/* Ambient backdrop highlights breathe softly onto the logo on keyboard/mouse focus link */
+.sidebar-brand-axis:hover,
+.sidebar-brand-axis:focus-visible {
+  background-color: rgba(203, 181, 161, 0.04) !important;
+  border-color: rgba(203, 181, 161, 0.08) !important;
+  transform: scale(1.01) !important;
+}
+
+/* 
+   THE SPINNING RENDER STATE ENGINE:
+   When Javascript dynamically injects this active trigger class, 
+   the gold star runs a fast, smooth 360-degree snap loop animation.
+*/
+.brand-sparkle-spin-wrapper.trigger-radar-spin {
+  animation: studioLogoCompassSpin 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+}
+
+/* Infinite fluid glowing text shadows pulse wave applied to active titles text */
+.sidebar-brand-axis:hover .brand-text-block h3 {
+  color: #CBB5A1 !important; /* Shines text header string to gold concurrently on focus */
+  text-shadow: 0 0 10px rgba(203, 181, 161, 0.25) !important;
+  transition: color 0.3s ease !important, text-shadow 0.3s ease !important;
+}
+
+/* ==========================================================================
+   HIGH PERFORMANCE GRAPHICS ANIMATION KEYFRAMES
+   ========================================================================== */
+@keyframes studioLogoCompassSpin {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); } /* Expands slightly at mid-point for secondary pop depth */
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+
+.sidebar-menu-item {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 16px 20px;
+  border-radius: 12px;
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer; outline: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.menu-icon-token { font-size: 18px; line-block: 1; transition: transform 0.3s ease; }
+.menu-text-label { font-size: 0.88rem; font-weight: 700; color: #A39387; transition: color 0.3s ease; }
+.menu-active-laser-indicator { position: absolute; left: 0; top: 25%; width: 3px; height: 50%; background-color: #D4AF37; opacity: 0; transform: scaleY(0); transition: all 0.4s ease; }
+
+/* HOVER MICRO INTERACTIONS SELECTIONS */
+.sidebar-menu-item:hover {
+  background-color: rgba(247, 243, 238, 0.03);
+}
+.sidebar-menu-item:hover .menu-text-label { color: #ECE5DF; }
+.sidebar-menu-item:hover .menu-icon-token { transform: scale(1.1); }
+
+/* ACTIVE PRESENCE PORTAL NODE FOCUS */
+.sidebar-menu-item.active-menu-item {
+  background-color: rgba(203, 181, 161, 0.08) !important;
+  border-color: rgba(203, 181, 161, 0.15) !important;
+}
+.sidebar-menu-item.active-menu-item .menu-text-label { color: #D4AF37 !important; font-weight: 700; }
+.sidebar-menu-item.active-menu-item .menu-active-laser-indicator { opacity: 1; transform: scaleY(1); box-shadow: 0 0 10px #D4AF37; }
+
+/* Lower exit controller portal button rules */
+.sidebar-lower-footer { border-top: 1px solid rgba(203, 181, 161, 0.08); padding-top: 24px; }
+.sidebar-logout-pill-btn {
+  width: 100%; background-color: transparent; border: 1px solid rgba(247, 243, 238, 0.12); padding: 14px 20px; border-radius: 40px;
+  display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer; outline: none;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.logout-icon-token { font-size: 16px; }
+.sidebar-logout-pill-btn .logout-text-label { font-size: 0.82rem; font-weight: 700; color: #ECE5DF; text-transform: uppercase; letter-spacing: 1px; }
+
+.sidebar-logout-pill-btn:hover {
+  background-color: #8C6D53 !important; border-color: #8C6D53 !important;
+  box-shadow: 0 8px 22px rgba(140, 109, 83, 0.25);
+}
+
+/* ==========================================================================
+   3. CENTRAL RUNWAY WORKSPACE & TOP BAR CONFIGURATION
+   ========================================================================== */
+.dash-central-runway-wrapper {
+  margin-left: 280px; /* Leaves clear space for the left floating sidebar width */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 5;
+}
+
+/* ==========================================================================
+   PURE WHITE VECTOR BELL OVERRIDES (ELIMINATES COLORED EMOJI ICON)
+   ========================================================================== */
+.topnav-utility-btn {
+  position: relative !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px !important;
+  
+  /* Prep hardware acceleration layers to protect fluid rotational velocity curves */
+  transform: scale(1) rotate(0deg) translateZ(0) !important;
+  will-change: transform, filter;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.3, 1) !important,
+              filter 0.3s ease !important;
+}
+
+/* Vector path scaling metrics */
+.utility-white-bell-svg {
+  width: 22px !important;  /* Elegant minimalist thickness balances */
+  height: 22px !important;
+  display: block !important;
+}
+
+.utility-white-bell-svg path {
+  fill: #FDFBF7 !important; /* Force crisp, pure white vanilla color tone natively */
+  transition: fill 0.3s ease !important;
+}
+
+/* Live gold status beacon indicator dot alignment */
+.alert-pulse-beacon-dot {
+  position: absolute !important;
+  top: 1px !important;
+  right: 1px !important;
+  width: 6px !important;
+  height: 6px !important;
+  background-color: #D4AF37 !important; /* Pastry caramel gold token color */
+  border-radius: 50% !important;
+  box-shadow: 0 0 10px #D4AF37 !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   SUPERCHARGED VECTOR BELL ACTIVE HOVER MATRIX REACTION
+   ========================================================================== */
+.topnav-utility-btn:hover {
+  /* Dynamic 3D spring tilt rotation on mouse cursor hover focus tracking loops */
+  transform: scale(1.1) rotate(12deg) translateZ(0) !important;
+  
+  /* Sweeps an editorial gold leaf drop shadow neon halo aura right behind vector path lines */
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.65)) !important;
+}
+
+.topnav-utility-btn:hover .utility-white-bell-svg path {
+  fill: #D4AF37 !important; /* Switches inner bell fill smoothly into luxury gold on hover focus */
+}
+
+
+.dash-top-navigation-bar {
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid rgba(203, 181, 161, 0.08);
+  padding: 0 40px;
+  display: flex; justify-content: space-between; align-items: center;
+  background-color: rgba(15, 9, 5, 0.3);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+
+.topnav-left-breadcrumbs { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+.breadcrumb-root { color: #7A6F66; }
+.breadcrumb-divider { color: rgba(203, 181, 161, 0.2); }
+.breadcrumb-node-active { color: #CBB5A1; transition: color 0.3s ease; }
+
+.topnav-right-controls-hub { display: flex; align-items: center; gap: 24px; }
+
+/* Bell alerts button with live amber status beacon dot */
+.topnav-utility-btn {
+  position: relative; background: transparent; border: none; outline: none; cursor: pointer; font-size: 20px; transition: transform 0.3s ease;
+}
+.topnav-utility-btn:hover { transform: scale(1.1) rotate(8deg); }
+.alert-pulse-beacon-dot { position: absolute; top: -1px; right: -2px; width: 6px; height: 6px; background-color: #D4AF37; border-radius: 50%; box-shadow: 0 0 8px #D4AF37; }
+
+/* User profile avatar configuration ring */
+.topnav-profile-avatar-node { position: relative; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; transition: transform 0.3s ease; }
+.topnav-profile-avatar-node:hover { transform: scale(1.05); }
+.profile-actual-avatar-img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 1px solid rgba(203, 181, 161, 0.2); }
+.profile-online-ring-glow { position: absolute; bottom: 0; right: 0; width: 10px; height: 10px; background-color: #52C41A; border: 2px solid #0F0905; border-radius: 50%; }
+
+/* ==========================================================================
+   4. MULTI PANEL VIEWPORT MULTIPLEX DISPATCH PANEL
+   ========================================================================== */
+.dash-content-viewport-canvas {
+  flex-grow: 1; padding: 50px 40px; width: 100%;
+}
+
+.dash-view-panel {
+  display: none; /* Initial hidden default parameter targets */
+  width: 100%;
+  animation: panelSlideReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.dash-view-panel.active-panel-view {
+  display: block !important; /* Mounts target active panel onto runway viewport cleanly */
+}
+
+.panel-header-editorial-block { margin-bottom: 36px; text-align: left; }
+.panel-display-title { font-family: 'Playfair Display', Georgia, serif; font-size: 2rem; font-weight: 700; color: #F7F3EE; margin-bottom: 8px; }
+.panel-display-title em { font-style: italic; font-weight: 400; color: #E6D4C3; }
+.panel-descriptor { font-size: 0.92rem; color: #A39387; max-width: 600px; line-height: 1.6; }
+
+/* Placeholder data block wireframe boxes layout bounds */
+.placeholder-blueprint-wireframe-box {
+  width: 100%; height: 320px;
+  background: rgba(38, 24, 15, 0.3); border: 1px dashed rgba(203, 181, 161, 0.15); border-radius: 20px;
+  display: flex; align-items: center; justify-content: center; padding: 30px; text-align: center;
+}
+.placeholder-blueprint-wireframe-box p { font-size: 0.9rem; font-weight: 600; color: #7A6F66; letter-spacing: 0.5px; }
+
+/* Mobile Action Trigger bar default hidden state track */
+.mobile-menu-trigger-bar { display: none; }
+
+/* ==========================================================================
+   5. PERFORMANCE MOVEMENT TIMELINES GRAPHICS REVEALS
+   ========================================================================== */
+@keyframes panelSlideReveal {
+  0% { opacity: 0; transform: translateY(15px) scale(0.995); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DASHBOARD RESET BREAKPOINTS (992PX MOBILE OVERRIDES)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .dash-sidebar-chassis {
+    transform: translateX(-100%); /* Hides sidebar frame out of screen margins on phone views */
+  }
+  
+  /* Action class mounts sidebar flyout menu panel cleanly over the runway */
+  .dash-sidebar-chassis.mobile-sidebar-open {
+    transform: translateX(0) !important;
+    box-shadow: 25px 0 50px rgba(0, 0, 0, 0.8);
+  }
+
+  .dash-central-runway-wrapper {
+    margin-left: 0 !important; /* Spreads workspace canvas 100% wide end-to-end on tablets */
+  }
+
+  /* Reveals mobile hamburger header strip portal bar */
+  .mobile-menu-trigger-bar {
+    display: flex !important; justify-content: space-between; align-items: center;
+    width: 100%; height: 64px; background-color: #170E08; padding: 0 20px;
+    border-bottom: 1px solid rgba(203, 181, 161, 0.12); position: relative; z-index: 150;
+  }
+  .mobile-studio-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #CBB5A1; }
+.mobile-hamburger-btn { background: transparent; border: none; outline: none; color: #F7F3EE; font-size: 24px; cursor: pointer; }.dash-top-navigation-bar { padding: 0 20px; height: 70px; }.dash-content-viewport-canvas { padding: 40px 20px; }}
+
+/* ==========================================================================
+   6. BULLETPROOF MOBILE DASHBOARD RE-FLOW (992PX AND BELOW)
+   ========================================================================== */
+@media (max-width: 992px) {
+  
+  /* 1. SECURES THE OUTER CANVASES BOUNDS */
+  html, body {
+    width: 100% !important;
+    overflow-x: hidden !important; /* Prevents unwanted horizontal screen sliding */
+  }
+
+  .dashboard-root-body {
+    display: block !important; /* Unclashes desktop side-by-side flex tracks */
+    width: 100% !important;
+  }
+
+  /* 2. FORCES THE MAIN WORKSPACE RUNWAY TO ACCEPTS FULL-WIDTH MOBILE LIMITS */
+  .dash-central-runway-wrapper {
+    margin-left: 0 !important; /* Strips out the 280px left space used on desktops */
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;   /* Clears fixed layout constraints so elements shrink fluidly */
+    display: block !important;
+    overflow-x: hidden !important;
+  }
+
+  /* 3. RE-FLOWS THE TOP BAR HEADER TO FIT SMARTPHONES */
+  .dash-top-navigation-bar {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 60px !important;
+    padding: 14px 20px !important; /* Compact spacing frames text perfectly */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 16px !important;
+  }
+
+  /* Cleans up breadcrumbs so they fit snug inside narrow screen boundaries */
+  .topnav-left-breadcrumbs {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.5px !important;
+    display: flex !important;
+    flex-wrap: wrap !important; /* Forces text onto a new line if the phone gets ultra small */
+    gap: 4px !important;
+  }
+
+  /* 4. RE-SHAPES MOBILE CONTENT PANEL PADDING */
+  .dash-content-viewport-canvas {
+    padding: 36px 20px !important; /* Balanced safety margin blocks text clipping */
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .panel-header-editorial-block {
+    margin-bottom: 24px !important;
+    width: 100% !important;
+  }
+
+  /* FORCES FLUID TEXT WRAPPING ON EDITORIAL TITLES */
+  .panel-display-title {
+    font-size: 1.6rem !important; /* Smaller size scale footprint matches phone displays */
+    line-height: 1.35 !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important; /* Unlocks the unbreakable single line text layout bug */
+  }
+
+  .panel-descriptor {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    width: 100% !important;
+  }
+
+  /* 5. WIREFRAME CONTAINER STRETCHES RESPONSIVELY END-TO-END */
+  .placeholder-blueprint-wireframe-box {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 260px !important; /* Compact depth limits prevent screen bloat */
+    padding: 24px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .placeholder-blueprint-wireframe-box p {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ==========================================================================
+     MOBILE HAMBURGER TRIGGER DOCK BAR OVERRIDES
+     ========================================================================== */
+  .mobile-menu-trigger-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 64px !important;
+    background-color: #170E08 !important; /* Solid brand espresso chocolate */
+    padding: 0 20px !important;
+    border-bottom: 1px solid rgba(203, 181, 161, 0.12) !important;
+    position: relative !important;
+    z-index: 150 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 6. COUTURE FIXED OVERLAY MOBILE FLYOUT MENU CONTAINER */
+  .dash-sidebar-chassis {
+    position: fixed !important;
+    top: 64px !important; /* Drops menu right below your top bar header line */
+    left: 0 !important;
+    width: 100vw !important; /* Spreads out 100% full screen width on phones */
+    height: calc(100vh - 64px) !important;
+    transform: translateX(-100%) !important; /* Hides panel off-screen natively */
+    z-index: 99999 !important;
+    padding: 30px 24px !important;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  /* Once class trigger mounts via javascript click, menu glides forward beautifully */
+  .dash-sidebar-chassis.mobile-sidebar-open {
+    transform: translateX(0) !important;
+  }
+
+  .sidebar-brand-axis {
+    display: none !important; /* Hides desktop sidebar brand branding to prevent layout clashing */
+  }
+
+  .sidebar-navigation-menu {
+    gap: 6px !important;
+  }
+
+  .sidebar-menu-item {
+    padding: 12px 16px !important;
+  }
+}
+
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  
+  const breadcrumbNodeActive = document.getElementById('breadcrumb-active-node');
+  const sidebarChassis = document.querySelector('.dash-sidebar-chassis');
+
+  // 1. MULTI-PANEL ROUTING SWITCHER CONTROLLER MOTOR
+  window.switchDashboardActivePanel = function (clickedMenuItemBtn) {
+    if (!clickedMenuItemBtn || !breadcrumbNodeActive) return;
+    if (clickedMenuItemBtn.classList.contains('active-menu-item')) return;
+
+    // A. Strip active focus classes from current menu parameters node
+    document.querySelector('.sidebar-menu-item.active-menu-item').classList.remove('active-menu-item');
+    clickedMenuItemBtn.classList.add('active-menu-item');
+
+    // B. Strip visibility class strings from active viewport layout panel
+    document.querySelector('.dash-view-panel.active-panel-view').classList.remove('active-panel-view');
+
+    // C. Mount visibility tokens onto target selected canvas slot row
+    const targetPanelID = clickedMenuItemBtn.getAttribute('data-target');
+    const targetPanelSection = document.getElementById(targetPanelID);
+    if (targetPanelSection) {
+      targetPanelSection.classList.add('active-panel-view');
+    }
+
+    // D. Extract label parameter strings to re-update top header bar breadcrumbs
+    const activeLabelString = clickedMenuItemBtn.querySelector('.menu-text-label').textContent;
+    breadcrumbNodeActive.textContent = activeLabelString;
+
+    // E. Auto-close sidebar on smartphones after panel selection
+    if (sidebarChassis && sidebarChassis.classList.contains('mobile-sidebar-open')) {
+      sidebarChassis.classList.remove('mobile-sidebar-open');
+    }
+  };
+
+  // 2. MOBILE HAMBURGER SIDEBAR FLYOUT CONTROLLER
+  window.toggleMobileSidebarChassis = function () {
+    if (sidebarChassis) {
+      sidebarChassis.classList.toggle('mobile-sidebar-open');
+    }
+  };
+
+  // 3. SECURE LOGOUT SEQUENCE ROUTER PIPELINE
+  window.triggerPartnerLogoutSequence = function () {
+    const confirmationConsent = confirm("Exit Token Authentication Protocol?\n\nAre you sure you want to securely seal your atelier encryption vaults and sign out?");
+    if (confirmationConsent) {
+      alert("Sign-Out Validated: Destroying local tracking session cookies files...");
+      window.location.href = "login.html"; // Routes them straight back to your log-in screen
+    }
+  };
+
+});
+
+// Append this function directly inside your central DOMContentLoaded script block
+// ==========================================================================
+// UNBREAKABLE STUDIO HARDWARE REFRESH MOTOR (FIXES TYPO & FUNCTION ERRORS)
+// ==========================================================================
+(function injectDualNamespaceRefreshEngine() {
+  
+  // High-priority core execution function
+  function triggerHardBrowserPageReload(clickedLogoElement) {
+    if (!clickedLogoElement) return;
+
+    const sparkleIconWrapper = clickedLogoElement.querySelector('.brand-sparkle-spin-wrapper');
+
+    // 1. Activate the 360-degree golden rotation keyframe animation loop
+    if (sparkleIconWrapper) {
+      sparkleIconWrapper.classList.add('trigger-radar-spin');
+    }
+
+    // 2. FORCES A TRUE, ABSOLUTE WEB REFRESH EFFECT
+    /* 
+       A short 300ms delay lets the star logo spin halfway on the screen first.
+       Then, it performs a complete page refresh to pull completely fresh files.
+    */
+    setTimeout(() => {
+      window.location.reload(); /* FORCES FULL NATIVE BROWSER RELOAD (SAME AS F5) */
+    }, 300);
+  }
+
+  // BIND BOTH DUAL NAMESPACE PROFILES REGISTRIES TO THE GLOBAL WINDOW MATRIX
+  /* 
+     This completely stops spelling typos from breaking the site.
+     Whether your file is named patner-dashboard or partner-dashboard, 
+     the button clicks will connect flawlessly.
+  */
+  window.executeStudioWorkspaceRefresh = function(btnElement) {
+    triggerHardBrowserPageReload(btnElement);
+  };
+  
+  window.executeStudioWorkspaceRefresh = function(btnElement) {
+    triggerHardBrowserPageReload(btnElement);
+  };
+
+})();
+
+
+</script>
+</body>
+</html>

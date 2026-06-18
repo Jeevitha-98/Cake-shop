@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atelier Portal Vault — Sugar &amp; Spice Atelier</title>
+
+  <!-- Premium Typography Integration Pipeline -->
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+<body class="auth-page-body">
+
+  <!-- CINEMATIC BACKDROP IMMERSION HOOK (TRUE FULL VIEWPORT COVER) -->
+  <div class="auth-bg-holder">
+    <!-- BACKGROUND IMAGE OPTION: Replace path below safely with your choice luxury background image asset -->
+    <img src="./Assests/catering.webp" alt="Atelier Showroom Display Background" class="auth-backdrop-img">
+    <div class="auth-smoky-mask"></div>
+  </div>
+
+  <!-- CENTRAL AUTHENTICATION CANVAS -->
+  <main class="auth-main-container">
+    <div class="auth-card-inner-box login-stagger-frame">
+      
+      <!-- FLOATING NAVIGATION BUTTON ANCHORED INSIDE THE CARD -->
+      <div class="auth-inner-card-navigation">
+        <a href="index.html" class="auth-back-portal-btn">
+          <span class="portal-arrow-vector">←</span> Home
+        </a>
+      </div>
+      
+      <!-- EDITORIAL HEADER MODULE -->
+      <div class="auth-card-header">
+        <span class="auth-micro-tag">— Atelier Vault —</span>
+        <h1 class="auth-main-display-title">Welcome <em>Back.</em></h1>
+        <p class="auth-descriptor-text">Select your operational role parameters to unlock your custom project registry dashboard.</p>
+      </div>
+
+      <!-- THE CORE AUTHENTICATION VALIDATOR SYSTEM ENGINE -->
+      <form id="atelier-login-form" class="auth-form-engine">
+        
+        <!-- LUXURY ROLE SELECTION SPLIT SLOTS GRID -->
+        <div class="auth-input-envelope-field">
+          <label class="auth-editorial-label">Select Operational Profile Access</label>
+          <div class="role-selection-split-grid">
+            
+            <!-- OWNER SLOT CODE CONDUIT -->
+            <div class="role-selector-pill active-role" data-role="owner" onclick="assignActivePortalRole(this)">
+              <div class="role-icon-spark">👑</div>
+              <div class="role-text-meta">
+                <h4>Atelier Owner</h4>
+                <p>Studio Dashboard</p>
+              </div>
+            </div>
+
+            <!-- CLIENT SLOT CODE CONDUIT -->
+            <div class="role-selector-pill" data-role="client" onclick="assignActivePortalRole(this)">
+              <div class="role-icon-spark">🥂</div>
+              <div class="role-text-meta">
+                <h4>Private Client</h4>
+                <p>Registry Deck</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- Internal tracking element caches your selected profile data states natively -->
+          <input type="hidden" id="assigned-auth-role" value="owner">
+        </div>
+
+        <!-- INPUT 1: EMAIL ADDRESS -->
+        <div class="auth-input-envelope-field">
+          <label class="auth-editorial-label">Email Address</label>
+          <input type="email" id="login-email" placeholder="name@example.com" class="auth-luxury-text-input" required autocomplete="email">
+        </div>
+
+        <!-- INPUT 2: SECURITY PASSWORD KEY -->
+        <div class="auth-input-envelope-field" style="margin-bottom: 4px;">
+          <label class="auth-editorial-label">Security Password Key</label>
+          <div class="password-field-wrapper">
+            <input type="password" id="login-password" placeholder="••••••••" class="auth-luxury-text-input" required autocomplete="current-password">
+            <span class="password-toggle-eye-icon" onclick="togglePasswordVisibility('login-password', this)">🙈</span>
+          </div>
+        </div>
+
+        <!-- FORGOT PASSWORD LINK BLOCK -->
+        <div class="auth-auxiliary-links-row">
+          <a href="404.html" class="auth-card-forgot-link" onclick="triggerForgotPasswordRecovery()">Forgot Password?</a>
+        </div>
+
+        <!-- SUBMIT ACTION ENTRY MODULE PILL CTA BUTTON -->
+        <div class="auth-action-submit-hub">
+          <button type="submit" class="auth-submit-vogue-pill-btn">
+            Log In Securely
+            <span class="submit-arrow-vector">→</span>
+          </button>
+        </div>
+
+        <!-- SOCIAL ACCESS PORTALS LOGGING STRIPS BAR -->
+        <div class="auth-social-separator-strip">
+          <div class="separator-wire-line"></div>
+          <span class="separator-text-tag">Or Sign In With</span>
+          <div class="separator-wire-line"></div>
+        </div>
+
+        <div class="auth-social-buttons-flex-row">
+          <button type="button" class="social-portal-btn btn-google" onclick="triggerSocialRedirectionRoute('Google')">
+            <span class="social-btn-brand-icon">G</span> Google
+          </button>
+          <button type="button" class="social-portal-btn btn-facebook" onclick="triggerSocialRedirectionRoute('Facebook')">
+            <span class="social-btn-brand-icon">F</span> Facebook
+          </button>
+        </div>
+
+      </form>
+
+      <!-- BASE SWITCH LINK ATELIER FOOTER -->
+      <div class="auth-card-footer-redirect">
+        <p>Don't have an account? <a href="signup.html" class="footer-inversion-link">Create Account</a></p>
+      </div>
+
+    </div>
+  </main>
+
+<style>
+    /* ==========================================================================
+   1. FIXED FULL SCREEN BACKGROUND CANVAS CONFIGURATION
+   ========================================================================== */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0; padding: 0;
+  background-color: #170E08; 
+  color: #F7F3EE;            
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.auth-page-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-bg-holder {
+  position: fixed; /* Locks background static while form panels scroll */
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.auth-backdrop-img {
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: 0.15; 
+  filter: grayscale(15%) brightness(40%) contrast(105%);
+  animation: continuousAuthZoom 24s ease-in-out infinite alternate;
+}
+
+.auth-smoky-mask {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(23, 14, 8, 0.85) 0%, rgba(23, 14, 8, 0.5) 60%, #170E08 100__);
+  z-index: 2;
+}
+
+/* ==========================================================================
+   2. RE-POSITIONED BACK TO HOME BUTTON (INSIDE THE CARD CHASSIS TOP RIGHT)
+   ========================================================================== */
+.auth-inner-card-navigation {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  margin-bottom: 24px !important;       
+}
+
+.auth-back-portal-btn {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  text-decoration: none !important;
+  background-color: rgba(247, 243, 238, 0.08) !important; /* Translucent glass style harmonizes inside dark card */
+  border: 1px solid rgba(247, 243, 238, 0.15) !important;
+  color: #ECE5DF !important;
+  padding: 10px 18px !important;
+  border-radius: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.auth-back-portal-btn .portal-arrow-vector { display: inline-block !important; transition: transform 0.3s ease !important; }
+.auth-back-portal-btn:hover { background-color: #CBB5A1 !important; border-color: #CBB5A1 !important; color: #170E08 !important; box-shadow: 0 4px 12px rgba(203, 181, 161, 0.2) !important; }
+.auth-back-portal-btn:hover .portal-arrow-vector { transform: translateX(-3px) !important; }
+
+/* ==========================================================================
+   3. CENTRAL AUDIO CARD PANEL BLOCKS CONTAINER
+   ========================================================================== */
+.auth-main-container {
+  position: relative;
+  z-index: 5;
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0 !important; 
+}
+
+.auth-card-inner-box {
+  background: linear-gradient(145deg, rgba(23, 14, 8, 0.65) 0%, rgba(15, 9, 5, 0.85) 100__) !important;
+  border: 1px solid rgba(203, 181, 161, 0.1) !important;
+  border-radius: 24px !important;
+  padding: 48px 40px !important;
+  width: 90% !important;
+  max-width: 520px !important; /* Balanced layout layout box profile coordinates width dimensions limits */
+  box-shadow: 0 30px 65px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  
+  opacity: 0;
+  transform: translateY(20px) scale(0.98);
+  animation: authCardUnfold 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.1s;
+}
+
+.auth-card-header { margin-bottom: 28px; text-align: left; }
+.auth-micro-tag { display: block; font-size: 0.72rem; font-weight: 700; color: #CBB5A1; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+.auth-main-display-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; color: #F7F3EE; line-height: 1.2; margin-bottom: 8px; }
+.auth-main-display-title em { font-style: italic; font-weight: 400; color: #E6D4C3; }
+.auth-descriptor-text { font-size: 0.88rem; line-height: 1.5; color: #A39387; }
+
+/* ==========================================================================
+   4. LUXURY ASYMMETRICAL PORTAL ROLE ACCORDION SELECTION SWITCH
+   ========================================================================== */
+.role-selection-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.role-selector-pill {
+  background-color: #120B06;
+  border: 1px solid rgba(203, 181, 161, 0.12);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform, border-color, box-shadow;
+}
+
+.role-icon-spark {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.role-text-meta { display: flex; flex-direction: column; align-items: flex-start; }
+.role-text-meta h4 { font-size: 0.85rem; font-weight: 700; color: #F7F3EE; margin: 0; transition: color 0.3s ease; }
+.role-text-meta p { font-size: 0.68rem; font-weight: 600; color: #7A6F66; text-transform: uppercase; margin: 0; }
+
+.role-selector-pill:hover {
+  border-color: rgba(203, 181, 161, 0.3);
+  background-color: rgba(38, 24, 15, 0.4);
+}
+
+/* ACTIVE PORTAL PROFILE LIGHT OVERRIDES */
+.role-selector-pill.active-role {
+  border-color: #CBB5A1 !important;
+  background-color: rgba(43, 28, 17, 0.5) !important;
+  box-shadow: 0 0 15px rgba(203, 181, 161, 0.06);
+}
+.role-selector-pill.active-role .role-text-meta h4 { color: #CBB5A1 !important; }
+
+/* ==========================================================================
+   5. TEXT FIELDS FORMS DESIGN CHASSIS
+   ========================================================================== */
+.auth-form-engine { display: flex; flex-direction: column; gap: 20px; width: 100%; }
+.auth-input-envelope-field { display: flex; flex-direction: column; align-items: flex-start; width: 100%; }
+.auth-editorial-label { font-size: 0.7rem; font-weight: 700; color: #7A6F66; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; transition: color 0.3s ease; }
+
+.password-field-wrapper { position: relative; width: 100%; }
+
+.auth-luxury-text-input {
+  width: 100%;
+  background-color: #120B06 !important; 
+  border: 1px solid rgba(203, 181, 161, 0.15) !important;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #F7F3EE;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.password-field-wrapper .auth-luxury-text-input { padding-right: 50px; }
+.password-toggle-eye-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 1.05rem; opacity: 0.35; user-select: none; transition: all 0.3s ease; }
+.password-toggle-eye-icon:hover { opacity: 0.85; transform: translateY(-50%) scale(1.1); }
+
+.auth-luxury-text-input:focus { border-color: #CBB5A1 !important; background-color: #170E08 !important; box-shadow: 0 0 15px rgba(203, 181, 161, 0.08) !important; }
+.auth-input-envelope-field:focus-within .auth-editorial-label { color: #CBB5A1 !important; }
+
+/* Forgot password right drop line alignment track */
+.auth-auxiliary-links-row {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -6px;
+}
+.auth-card-forgot-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #7A6F66;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.auth-card-forgot-link:hover { color: #CBB5A1; text-decoration: underline; }
+
+/* ==========================================================================
+   6. LUXURY CAPSULE SUBMIT CONTROLS FILL PORTAL
+   ========================================================================== */
+.auth-action-submit-hub { width: 100%; margin-top: 4px; }
+.auth-submit-vogue-pill-btn {
+  width: 100%; height: 52px;
+  background-color: #CBB5A1; color: #170E08; border: 1px solid #CBB5A1; border-radius: 50px;
+  font-family: inherit; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  box-shadow: 0 6px 18px rgba(203, 181, 161, 0.12);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.submit-arrow-vector { display: inline-block; transition: transform 0.3s ease; }
+.auth-submit-vogue-pill-btn:hover { background-color: #E2D2C3; border-color: #E2D2C3; transform: translateY(-2px); box-shadow: 0 10px 24px rgba(203, 181, 161, 0.25); }
+.auth-submit-vogue-pill-btn:hover .submit-arrow-vector { transform: translateX(5px); }
+
+/* ==========================================================================
+   7. INLINE SOCIAL BUTTONS MATRIX RE-REVIEWS
+   ========================================================================== */
+.auth-social-separator-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  margin: 10px 0;
+}
+.separator-wire-line { flex-grow: 1; height: 1px; background-color: rgba(203, 181, 161, 0.1); }
+.separator-text-tag { font-size: 0.68rem; font-weight: 700; color: #7A6F66; text-transform: uppercase; letter-spacing: 1px; }
+
+.auth-social-buttons-flex-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.social-portal-btn {
+  height: 48px;
+  background-color: rgba(247, 243, 238, 0.02);
+  border: 1px solid rgba(247, 243, 238, 0.12);
+  border-radius: 12px;
+  font-family: inherit; font-size: 0.8rem; font-weight: 700; color: #ECE5DF;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* ==========================================================================
+   BULLETPROOF MOBILE MEDIA QUERY RE-FLOW (768PX AND BELOW)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  /* Adds room at the top to prevent the header bar from overlapping card elements */
+  .auth-main-container { 
+    padding: 80px 0 40px 0 !important; 
+  }
+  
+  /* Cushions inner boundaries beautifully within compact mobile screen margins */
+  .auth-card-inner-box { 
+    padding: 36px 24px !important; 
+    border-radius: 20px !important;
+    width: 92% !important;
+  }
+
+  /* 
+     1. THE ROLE GRID RE-ENGINEERING FIX: 
+     Flattens the side-by-side panels instantly into a single column vertical stack.
+     Completely eliminates the right-edge clipping overflow bug shown in your image.
+  */
+  .role-selection-split-grid { 
+    grid-template-columns: 1fr !important; /* One full-width item per row block */
+    gap: 12px !important;                 /* Snug spacing keeps the form compact */
+  }
+
+  /* Extends touch target layout dimensions edge-to-edge fluidly inside the card borders */
+  .role-selector-pill {
+    width: 100% !important;
+    padding: 14px 18px !important;
+  }
+
+  /* 
+     2. SOCIAL BUTTONS RE-ENGINEERING FIX:
+     Flattens the side-by-side Google and Facebook blocks vertically for smartphones.
+  */
+  .auth-social-buttons-flex-row { 
+    grid-template-columns: 1fr !important; 
+    gap: 12px !important;
+  }
+
+  .social-portal-btn {
+    width: 100% !important;
+    height: 46px !important; /* Snugger mobile profile prevents excessive scrolling */
+  }
+
+  /* 
+     3. TOP CORNER NAVIGATION BUTTON SAFETY RESET:
+     Balances the back link layout parameters within mobile screen constraints.
+  */
+  .auth-inner-card-navigation { 
+    margin-bottom: 20px !important; 
+  }
+
+  .auth-back-portal-btn { 
+    padding: 8px 14px !important; 
+    font-size: 0.68rem !important; 
+  }
+
+  /* Force-locks position values permanently to prevent cursor translation bugs on mobile layers */
+  .role-selector-pill:hover {
+    transform: none !important;
+  }
+}
+
+
+.social-btn-brand-icon { font-family: 'Playfair Display', serif; font-style: italic; color: #CBB5A1; font-size: 1.05rem; }.social-portal-btn:hover {background-color: rgba(247, 243, 238, 0.06);border-color: rgba(203, 181, 161, 0.3);transform: translateY(-2px);}/* Footer switches redirect anchor blocks row */.auth-card-footer-redirect { margin-top: 24px; text-align: center; }.auth-card-footer-redirect p { font-size: 0.85rem; color: #7A6F66; }.footer-inversion-link { color: #CBB5A1; text-decoration: none; font-weight: 700; transition: color 0.3s ease; }.footer-inversion-link:hover { color: #E2D2C3; text-decoration: underline; }/* ==========================================================================8. CORE KEYFRAME TIMELINES RENDERING GRAPHICS========================================================================== */@keyframes continuousAuthZoom { 0% { transform: scale(1); } 100% { transform: scale(1.06); } }@keyframes authCardUnfold { 0% { opacity: 0; transform: translateY(20px) scale(0.98); } 100% { opacity: 1; transform: translateY(0) scale(1); } }/* ==========================================================================9. RESPONSIVE RE-FLOW CRITERIA BREAKPOINTS========================================================================== /@media (max-width: 550px) {.auth-card-inner-box { padding: 36px 20px !important; border-radius: 20px; }.role-selection-split-grid { grid-template-columns: 1fr; gap: 12px; } / Stacks profiles vertically on tight viewports */.auth-social-buttons-flex-row { grid-template-columns: 1fr; gap: 12px; }}
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  
+  const loginFormEngine = document.getElementById('atelier-login-form');
+  const roleInputTracker = document.getElementById('assigned-auth-role');
+  const emailInputSelector = document.getElementById('login-email');
+
+  // 1. DYNAMIC PROFILE ACCESS SELECTION SLOT SWAPPER
+  window.assignActivePortalRole = function (clickedRolePill) {
+    if (!clickedRolePill) return;
+    if (clickedRolePill.classList.contains('active-role')) return;
+
+    // Remove active state from the alternative option cell
+    document.querySelector('.role-selector-pill.active-role').classList.remove('active-role');
+    clickedRolePill.classList.add('active-role');
+
+    // Sync state back to hidden input node for form compilation
+    const assignedRoleString = clickedRolePill.getAttribute('data-role');
+    roleInputTracker.value = assignedRoleString;
+  };
+
+  // 2. CORE LOGIN ACCOUNT FORM ROUTER VALIDATOR
+  if (loginFormEngine) {
+    loginFormEngine.addEventListener('submit', function (event) {
+      event.preventDefault(); // Securely blocks browser page refreshes
+
+      const targetedRole = roleInputTracker.value;
+      const emailValue = emailInputSelector.value.trim();
+
+      alert(`Welcome to the Vault!\n\nAuthenticated successfully as: ${targetedRole.toUpperCase()}\nAccount: ${emailValue}`);
+
+      // 3. DYNAMIC ROUTING TO REDIRECT DESTINATION DASHBOARDS BASED ON ACTIVE ROLE
+      if (targetedRole === "owner") {
+        window.location.href = "partner-dashboard.html"; // Routes to your internal baking matrix master panel
+      } else {
+        window.location.href = "client-dashboard.html"; // Routes to private lookbook commissioning registry deck
+      }
+    });
+  }
+
+  // 4. FORGOT PASSWORD SIMULATION REACTION
+  window.triggerForgotPasswordRecovery = function () {
+    alert("Password Reset Pipeline Activated: An absolute security verification trace loop token has been dispatched to your validated recovery contact channel.");
+  };
+
+  // 5. SOCIAL CONNECTIONS INTERACTION TEST PIPELINE (REDIRECTS STRIP TO 404 GATEWAY)
+  window.triggerSocialRedirectionRoute = function (socialPlatformNameString) {
+    alert(`Connecting framework link modules straight into ${socialPlatformNameString} API server tracks...`);
+    window.location.href = "404.html"; // Automatically forces navigation straight to your customized 404 canvas
+  };
+
+  // 6. PASSWORD VISIBILITY TOGGLE FUNCTION
+  window.togglePasswordVisibility = function (inputFieldId, iconElement) {
+    const targetInput = document.getElementById(inputFieldId);
+    if (targetInput && iconElement) {
+      if (targetInput.type === "password") {
+        targetInput.type = "text";
+        iconElement.textContent = "👁️";
+      } else {
+        targetInput.type = "password";
+        iconElement.textContent = "🙈";
+      }
+    }
+  };
+
+});
+</script>
+</body>
+</html>
