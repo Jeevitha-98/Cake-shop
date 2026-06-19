@@ -124,24 +124,40 @@
   </div>
 </header>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   const menuToggleButton = document.getElementById("menu-toggle-trigger");
   const navigationMenuOverlay = document.getElementById("mobile-nav-overlay");
   const overlayLinksList = document.querySelectorAll(".nav-links a");
   const mainHeaderElement = document.querySelector(".global-header");
 
+  // Reusable function to handle full scroll locking states safely
+  function toggleBackgroundScroll(shouldLock) {
+    if (shouldLock) {
+      document.body.classList.add("no-scroll");
+      document.documentElement.classList.add("no-scroll"); // Targets both layers for mobile
+    } else {
+      document.body.classList.remove("no-scroll");
+      document.documentElement.classList.remove("no-scroll");
+    }
+  }
+
   // 1. MOBILE HAMBURGER NAVIGATION SYSTEM
   if (menuToggleButton && navigationMenuOverlay) {
-    // Open/Close menu overlay view on click
     menuToggleButton.addEventListener("click", function (event) {
       event.stopPropagation();
-      navigationMenuOverlay.classList.toggle("mobile-menu-active");
+      
+      // Toggle the menu active state
+      const isNowActive = navigationMenuOverlay.classList.toggle("mobile-menu-active");
+      
+      // Lock or unlock background according to active state
+      toggleBackgroundScroll(isNowActive);
     });
 
     // Close panel drawer automatically upon choosing a routing option
     overlayLinksList.forEach(function (link) {
       link.addEventListener("click", function () {
         navigationMenuOverlay.classList.remove("mobile-menu-active");
+        toggleBackgroundScroll(false);
       });
     });
 
@@ -149,6 +165,7 @@
     document.addEventListener("click", function (event) {
       if (!navigationMenuOverlay.contains(event.target) && !menuToggleButton.contains(event.target)) {
         navigationMenuOverlay.classList.remove("mobile-menu-active");
+        toggleBackgroundScroll(false);
       }
     });
   }
@@ -156,7 +173,6 @@
   // 2. DYNAMIC SCROLL CAPSULE CONVERSION CONTROLLER
   if (mainHeaderElement) {
     window.addEventListener("scroll", function () {
-      // Flattens out floating capsule design to sticky top bar after 40px scroll depth
       if (window.scrollY > 40) {
         mainHeaderElement.classList.add("scrolled-state");
       } else {
@@ -165,9 +181,87 @@
     });
   }
 });
-
 </script>
+<style>
+  /* FORCE STOPS BACKGROUND SCROLLING */
+body.no-scroll, 
+html.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100% !important;
+}
 
+/* KEEPS OVERLAY MENU AT THE TOP ALONE */
+#mobile-nav-overlay {
+  position: fixed !important;
+  top: 80px !important;       /* Adjust this pixel value to match the exact height of your top bar */
+  left: 5% !important;        /* Centers it aligned with your floating capsule design width */
+  width: 90% !important;      /* Keeps the elegant capsule rounded card width look */
+  
+  height: auto !important;    /* CRITICAL: Stops it from opening full screen */
+  max-height: 75vh !important;/* Keeps the list contained inside a neat window */
+  overflow-y: auto !important;/* Allows scrolling ONLY inside the menu card if needed */
+  
+  z-index: 9999 !important;   /* Places card content safely above main page */
+  display: none;              /* Base hidden state */
+}
+
+/* ACTIVATION RULE */
+#mobile-nav-overlay.mobile-menu-active {
+  display: block !important;
+}
+/* --- 1. DESKTOP VIEW STYLE OVERRIDES --- */
+/* Ensure your links are explicitly forced visible on wider desktop screens */
+@media (min-width: 992px) {
+  #mobile-nav-overlay,
+  .nav-links, 
+  .global-header nav {
+    display: flex !important; /* Forces the header links row to show up on desktop */
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+/* --- 2. MOBILE ONLY VIEW STYLES --- */
+/* This restricts the mobile overlay rules strictly to screens smaller than 991px */
+@media (max-width: 991px) {
+  /* FORCE STOPS BACKGROUND SCROLLING */
+  body.no-scroll, 
+  html.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed !important;
+    width: 100% !important;
+  }
+
+  /* KEEPS OVERLAY MENU AT THE TOP ALONE */
+  #mobile-nav-overlay {
+    position: fixed !important;
+    top: 80px !important;       
+    left: 5% !important;        
+    width: 90% !important;      
+    
+    height: auto !important;    
+    max-height: 75vh !important;
+    overflow-y: auto !important;
+    
+    z-index: 9999 !important;   
+    display: none !important; /* Hidden by default on mobile only */
+  }
+
+  /* ACTIVATION RULE ON MOBILE */
+  #mobile-nav-overlay.mobile-menu-active {
+    display: block !important;
+  }
+}
+
+</style>
 <!-- MAIN OUR STORY CANVAS TARGET -->
 <main class="story-page-canvas">
   
@@ -3701,7 +3795,7 @@ animation-name: verticalLineEnergyPulse;}}
 <div class="footer-social-wrapper" aria-label="Atelier Social Media Connections Grid">
   
   <!-- INSTAGRAM CREST LINK -->
-  <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon-box" aria-label="Explore Our Instagram Lookbook Feed">
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Explore Our Instagram Lookbook Feed">
     <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
       <rect x="2" y="2" width="20" height="20" rx="5" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       <path d="M16 11.37C16.1234 12.7122 15.6171 14.0206 14.5916 14.9915C13.566 15.9624 12.1804 16.4716 10.7417 16.4018C9.303 16.332 8.01426 15.688 7.15545 14.6111C6.29665 13.5342 5.918 12.1822 6.10177 10.8504C6.28555 9.51855 7.00632 8.31114 8.10648 7.49841C9.20664 6.68567 10.5393 6.37128 11.8105 6.62358C13.0817 6.87588 14.1166 7.66258 14.6908 8.81016C15.265 9.95773 15.3013 11.2721 15.79 11.37Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -3710,19 +3804,24 @@ animation-name: verticalLineEnergyPulse;}}
   </a>
 
   <!-- PINTEREST CREST LINK -->
-  <a href="https://pinterest.com" target="_blank" rel="noopener" class="social-icon-box" aria-label="Pin Our Custom Cake Blueprints on Pinterest">
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Pin Our Custom Cake Blueprints on Pinterest">
     <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
       <path d="M12 2C6.48 2 2 6.48 2 12C2 16.23 4.63 19.84 8.35 21.31C8.26 20.48 8.24 19.16 8.45 18.25C8.64 17.43 9.68 12.98 9.68 12.98C9.68 12.98 9.36 12.33 9.36 11.38C9.36 9.88 10.23 8.76 11.32 8.76C12.25 8.76 12.7 9.46 12.7 10.3C12.7 11.23 12.11 12.63 11.8 13.93C11.54 15.01 12.34 15.89 13.41 15.89C15.35 15.89 16.67 13.56 16.67 10.43C16.67 7.73 14.88 5.75 11.96 5.75C8.57 5.75 5.86 8.28 5.86 11.83C5.86 12.85 6.22 13.84 6.78 14.51C6.88 14.63 6.89 14.71 6.86 14.84L6.57 15.99C6.52 16.18 6.4 16.23 6.22 16.15C5.03 15.61 4.38 13.96 4.38 11.78C4.38 7.9 7.42 3.63 12.38 3.63C16.34 3.63 19.34 6.48 19.34 10.3C19.34 14.36 17 17.5 13.55 17.5C12.39 17.5 11.3 16.86 10.93 16.14L10.3 18.57C10.07 19.45 9.49 20.57 9.07 21.25C10.03 21.54 11.04 21.7 12 21.7C17.52 21.7 22 17.22 22 11.7C22 6.18 17.52 1.7 12 1.7V2Z" fill="#FDFBF7"/>
     </svg>
   </a>
 
   <!-- FACEBOOK CREST LINK -->
-  <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon-box" aria-label="Visit Our FaceBook Community Salon Page">
+  <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Visit Our FaceBook Community Salon Page">
     <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
       <path d="M18 2H15C12.24 2 10 4.24 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.45 14.45 6 15 6H18V2Z" stroke="#FDFBF7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   </a>
-
+ 
+   <a href="404.html" target="_blank" rel="noopener" class="social-icon-box" aria-label="Follow Our Real-time Broadcasts on X">
+    <svg class="social-media-crest-svg" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+    </svg>
+  </a>
 </div>
 
       </div>

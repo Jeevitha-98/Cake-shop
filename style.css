@@ -267,10 +267,11 @@ body {
   padding: 0;
 }
 
+
 .nav-links a:not(.auth-btn) {
   text-decoration: none;
-  font-family: 'Playfair Display', Georgia, serif; /* Premium luxury font */
-  font-style: italic; /* High-end editorial vibe */
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Premium luxury font */
+  
   color: #ECE5DF; /* Pure ivory silk tint */
   font-size: 1.05rem;
   font-weight: 500;

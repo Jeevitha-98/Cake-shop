@@ -26,6 +26,57 @@
   <header class="mobile-menu-trigger-bar">
     <span class="mobile-studio-logo">Stackly Partner Deck</span>
     <button class="mobile-hamburger-btn" onclick="toggleMobileSidebarChassis()">☰</button>
+    <style>
+      @media (max-width: 991px) {
+  /* Stop the background from sliding around behind the panel */
+  body.no-scroll, 
+  html.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed !important;
+    width: 100% !important;
+  }
+
+  /* Force the sidebar panel to hug the top and only wrap its contents */
+  #sidebarChassis, 
+  .sidebarChassis, /* Use the exact class/ID selector your project targets */
+  [data-sidebar] { 
+    position: fixed !important;
+    top: 70px !important;        /* Adjust this to match the exact height of your 'Stackly Partner Deck' header bar */
+    left: 4% !important;         /* Inward spacing for a clean floating look */
+    width: 92% !important;       /* Consistent layout width alignment */
+    
+    height: auto !important;     /* CRITICAL: Strips out full screen height */
+    max-height: 70vh !important; /* Bounds the drawer size cleanly */
+    overflow-y: auto !important; /* Keeps internal lists scrollable if items expand */
+    
+    z-index: 9999 !important;    /* Keeps layout components stratified on top */
+  }
+}
+@media (max-width: 991px) {
+  /* TARGETS THE SIDEBAR LAYOUT LAYER */
+  #sidebar-chassis,
+  .sidebar-chassis,
+  #sidebarChassis,
+  .sidebarChassis,
+  aside { 
+    position: fixed !important;
+    top: 70px !important;        /* Pushes it down directly under 'Stackly Partner Deck' header */
+    left: 4% !important;         /* Matches your clean capsule margins */
+    width: 92% !important;       /* Keeps side spaces uniform */
+    
+    /* THE CRITICAL FIXES FOR FULL-SCREEN DROP DOWN */
+    height: auto !important;     /* Strips out h-100 / 100vh height inheritance */
+    max-height: 75vh !important; /* Forces the box to clip elegantly before the screen base */
+    overflow-y: auto !important; /* Lets you scroll internal list items inside the card safely */
+    
+    bottom: auto !important;     /* Prevents bottom pin stretch */
+    z-index: 9999 !important;    /* Floating stack order priority */
+  }
+}
+
+    </style>
+
   </header>
 
   <!-- ==========================================================================
@@ -39,7 +90,7 @@
         <input type="file" id="studio-hidden-logo-uploader" accept="image/*" style="display: none;" onchange="processStudioLogoLocalReplacement(this)">
       </div>
       <div class="brand-text-block" onclick="executeStudioWorkspaceRefresh(this)" title="Click text block to force hard dashboard refresh" role="button">
-        <h3>Stackly Client</h3>
+        <h3>Stackly Partner</h3>
         <p>Registry Deck</p>
       </div>
     </div>
@@ -2418,10 +2469,22 @@ html, body {
 
   // 2. MOBILE HAMBURGER SIDEBAR FLYOUT CONTROLLER
   window.toggleMobileSidebarChassis = function () {
-    if (sidebarChassis) {
-      sidebarChassis.classList.toggle('mobile-sidebar-open');
+  if (sidebarChassis) {
+    // Toggle the open state class
+    const isNowOpen = sidebarChassis.classList.toggle('mobile-sidebar-open');
+    
+    // Toggle the background scroll lock
+    if (isNowOpen) {
+      document.body.classList.add('no-scroll');
+      document.documentElement.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+      document.documentElement.classList.remove('no-scroll');
     }
-  };
+  }
+};
+
+
 
   // 3. SECURE LOGOUT SEQUENCE ROUTER PIPELINE
   window.triggerPartnerLogoutSequence = function () {
