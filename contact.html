@@ -243,12 +243,12 @@ html.no-scroll {
   /* KEEPS OVERLAY MENU AT THE TOP ALONE */
   #mobile-nav-overlay {
     position: fixed !important;
-    top: 80px !important;       
-    left: 5% !important;        
-    width: 90% !important;      
-    
-    height: auto !important;    
-    max-height: 75vh !important;
+     top: 90px !important;
+left: 0 !important;
+width: 75% !important;
+
+height: 100vh !important;
+max-height: 100vh !important;
     overflow-y: auto !important;
     
     z-index: 9999 !important;   
@@ -720,10 +720,16 @@ html, body {
           <form id="atelier-direct-message-form" class="gateway-form-engine">
             
             <!-- INPUT CONTAINER 1: FULL NAME -->
-            <div class="form-input-envelope-field">
-              <label class="input-label-editorial">Full Name</label>
-              <input type="text" placeholder="Your elegant name..." class="gateway-luxury-text-input" required autocomplete="name">
-            </div>
+        <input
+    type="text"
+    placeholder="Your elegant name..."
+    class="gateway-luxury-text-input"
+    required
+    autocomplete="name"
+    maxlength="50"
+    pattern="[A-Za-z ]+"
+    title="Please enter only letters and spaces"
+    oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '')">
 
             <!-- INPUT CONTAINER 2: EMAIL ADDRESS -->
             <div class="form-input-envelope-field">
@@ -732,10 +738,16 @@ html, body {
             </div>
 
             <!-- INPUT CONTAINER 3: PHONE NUMBER -->
-            <div class="form-input-envelope-field">
-              <label class="input-label-editorial">Phone Number</label>
-              <input type="tel" placeholder="10-digit mobile number" pattern="[0-9]{10}" class="gateway-luxury-text-input" required autocomplete="tel">
-            </div>
+          <input
+  type="tel"
+  placeholder="10-digit mobile number"
+  class="gateway-luxury-text-input"
+  required
+  autocomplete="tel"
+  inputmode="numeric"
+  maxlength="10"
+  pattern="[0-9]{10}"
+  oninput="this.value=this.value.replace(/[^0-9]/g,'')">
 
             <!-- INPUT CONTAINER 4: DROPDOWN SELECTION PROFILE -->
             <div class="form-input-envelope-field">
