@@ -273,7 +273,7 @@ html.no-scroll {
   <!-- LUXURY BRAND HIGH-DENSITY IMAGE BACKDROP LAYER -->
 <div class="image-background-container">
   <!-- IMAGE BACKGROUND OPTION: Replace path safely below with your luxury cake showroom texture artwork -->
-  <img src="./Assests/Home - hero.webp" alt="Atelier Showroom Flagship Backdrop" class="hero-bg-actual-img" onerror="this.src='https://placehold.co'">
+  <img src="./Assests/home.webp" alt="Atelier Showroom Flagship Backdrop" class="hero-bg-actual-img" onerror="this.src='https://placehold.co'">
   <div class="image-darkness-overlay"></div>
 </div>
 
@@ -3834,16 +3834,22 @@ html.no-scroll {
   .carousel-navigation-threads {
     position: relative;
     z-index: 99; /* Forces the navigation layer to the absolute top so it can be clicked */
-    margin-top: 30px; /* Pushes the entire navigation element lower and down */
+    margin-top: 50px; /* Pushes the entire navigation element lower and down */
   }
 
   @media (max-width: 480px) {
 
+
+  .testimonial-section-header,
+  .luxury-testimonial-heading {
+    margin-bottom: 120px !important;
+  }
+
+
   /* 1. Reset parent constraints so content can push downwards */
   .testimonial-main-container,
   .testimonial-carousel-viewport {
-    height: auto !important;
-    max-height: none !important;
+
     padding-bottom: 80px; /* Creates empty space at the bottom for the arrows to sit in */
     position: relative;
   }
@@ -4069,6 +4075,7 @@ html.no-scroll {
   text-align: center;
   margin-bottom: 60px;
 }
+
 
 .testimonial-micro-tag {
   font-family: 'Plus Jakarta Sans', sans-serif;
